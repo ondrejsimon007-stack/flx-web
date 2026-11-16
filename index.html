@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+<html lang="cs"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#f5f4f0" name="theme-color"/><meta content="FLX – návrhy, zakázková výroba nábytku a kompletní realizace interiérů od roku 1990." name="description"/><title>FLX — Interiéry. Od návrhu po realizaci.</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><style>
+:root{--paper:#f5f4f0;--ink:#181a18;--muted:#73766e;--line:#d9d9d1;--accent:#b4c6a4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}img{display:block;width:100%}::selection{background:#c6d7b9}.shell{max-width:1660px;padding:0 5vw;margin:auto}.top{height:86px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:4}.logo{font-family:Manrope,sans-serif;font-size:34px;font-weight:800;letter-spacing:-.12em;padding-right:10px}.top nav{display:flex;gap:35px;font-size:12px;letter-spacing:.13em;font-weight:700}.top nav a:hover,.link:hover{opacity:.55}.mobile{display:none}.intro{padding-top:110px;padding-bottom:85px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;display:flex;align-items:center;gap:12px}.eyebrow:before{content:'';width:25px;height:1px;background:currentColor}.intro h1{font-family:Manrope,sans-serif;font-size:clamp(58px,9vw,150px);font-weight:600;letter-spacing:-.087em;line-height:1.05;margin:30px 0 45px;max-width:1350px}.intro h1 em{font-style:normal;color:#a1a89b}.intro-bottom{display:flex;align-items:end;justify-content:space-between;gap:30px}.intro-bottom p{font-size:17px;line-height:1.65;max-width:440px;color:#5f625b;margin:0}.round-link{border:1px solid #999c94;width:88px;height:88px;border-radius:50%;display:grid;place-items:center;font-size:35px;transition:.2s}.round-link:hover{background:var(--ink);color:white}.hero-image{height:min(66vw,750px);min-height:430px;position:relative;overflow:hidden;background:#ccc}.hero-image img{height:100%;object-fit:cover;object-position:center 48%;filter:brightness(.84)}.hero-label{position:absolute;bottom:35px;left:5vw;color:white;font-size:12px;letter-spacing:.15em;text-transform:uppercase}.section{padding-top:120px;padding-bottom:115px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:44px;gap:30px}.section-head h2{font-family:Manrope;font-size:clamp(42px,6vw,84px);letter-spacing:-.075em;font-weight:600;line-height:1.1;margin:22px 0 0}.section-head p{max-width:350px;color:var(--muted);line-height:1.7;margin:0 0 6px}.filters{display:flex;gap:12px;align-items:center;margin-bottom:35px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:transparent;border-radius:100px;padding:11px 19px;font-size:12px}.filter.active,.filter:hover{background:var(--ink);color:white;border-color:var(--ink)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:26px;row-gap:65px}.project{cursor:pointer}.project:nth-child(4n+1){grid-column:span 1}.project-photo{overflow:hidden;background:#e0dfda;aspect-ratio:1.45}.project-photo img{height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.1,1)}.project:hover .project-photo img{transform:scale(1.045)}.project-meta{display:flex;justify-content:space-between;align-items:start;gap:12px;padding-top:19px}.project h3{font-family:Manrope;font-size:clamp(19px,2.2vw,28px);letter-spacing:-.045em;font-weight:600;margin:0}.project small{color:var(--muted);font-size:12px;white-space:nowrap}.project p{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:9px 0 0}.show-more{display:block;margin:75px auto 0;background:transparent;border:1px solid var(--ink);border-radius:40px;padding:18px 42px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.show-more:hover{background:var(--ink);color:white}.dark{background:#1d211d;color:#f5f4f0}.services{padding-top:115px;padding-bottom:115px}.services .section-head p{color:#a8aea5}.service{display:grid;grid-template-columns:65px 1fr 50px;align-items:center;gap:15px;padding:32px 0;border-top:1px solid #555a54}.service:last-child{border-bottom:1px solid #555a54}.service span{color:#aab1a7;font-size:13px}.service h3{font-family:Manrope;font-size:clamp(23px,3.6vw,48px);font-weight:500;letter-spacing:-.055em;margin:0}.service .arrow{font-size:28px;text-align:right}.about{display:grid;grid-template-columns:1fr 1fr;gap:9vw;padding-top:130px;padding-bottom:140px}.about h2{font-family:Manrope;font-size:clamp(44px,6vw,83px);letter-spacing:-.075em;line-height:1.08;font-weight:600;margin:27px 0}.about p{line-height:1.85;color:#5e625c;font-size:17px;max-width:530px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:50px}.stat strong{display:block;font-family:Manrope;font-size:64px;letter-spacing:-.08em;font-weight:600}.stat small{color:var(--muted)}.contact{background:#dce3d6;padding-top:100px;padding-bottom:110px}.contact h2{font-family:Manrope;font-size:clamp(50px,8vw,120px);letter-spacing:-.08em;font-weight:600;line-height:1.05;margin:30px 0 45px}.contact a.email{font-size:clamp(24px,3.5vw,48px);font-family:Manrope;letter-spacing:-.055em;border-bottom:1px solid currentColor}.contact p{margin-top:30px;color:#5c6559}.footer{display:flex;justify-content:space-between;padding-top:25px;padding-bottom:25px;font-size:12px;color:#777a72;gap:20px}.modal{position:fixed;inset:0;background:var(--paper);z-index:20;overflow:auto;display:none}.modal.open{display:block}.modal-head{position:sticky;top:0;background:rgba(245,244,240,.97);backdrop-filter:blur(15px);display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;border-bottom:1px solid var(--line);z-index:2}.back{background:none;border:0;font-size:13px;letter-spacing:.05em}.modal-title{font-family:Manrope;font-size:clamp(45px,7vw,95px);letter-spacing:-.08em;font-weight:600;margin:65px 0 12px}.modal-sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:45px}.modal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-bottom:100px}.modal-grid img{height:100%;object-fit:cover;cursor:zoom-in}.modal-grid figure{margin:0;background:#ddd;aspect-ratio:1.4;overflow:hidden}.modal-grid figure:first-child{grid-column:span 2;aspect-ratio:1.85}.lightbox{display:none;position:fixed;inset:0;background:rgba(12,14,12,.97);z-index:30;align-items:center;justify-content:center;padding:65px}.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:100%;object-fit:contain;width:auto}.lightbox button{position:absolute;background:transparent;color:white;border:0;font-size:35px}.closezoom{top:15px;right:25px}.prev{left:15px;top:50%}.next{right:15px;top:50%}.count{position:absolute;bottom:18px;color:#bbb;font-size:12px}.notice{font-size:12px;color:#777a72;margin-top:25px}@media(max-width:700px){.top{height:72px}.top nav{gap:15px;font-size:10px}.top nav a:nth-child(2),.top nav a:nth-child(3){display:none}.intro{padding-top:75px;padding-bottom:65px}.intro h1{font-size:clamp(54px,12vw,80px);margin:22px 0 30px}.intro-bottom p{font-size:14px}.round-link{width:60px;height:60px;flex-shrink:0}.hero-image{min-height:340px;height:65vh}.section{padding-top:80px;padding-bottom:75px}.section-head{display:block}.section-head p{margin-top:25px}.grid{grid-template-columns:1fr;gap:42px}.project-photo{aspect-ratio:1.4}.about{grid-template-columns:1fr;padding-top:80px;padding-bottom:85px;gap:15px}.services{padding-top:80px;padding-bottom:80px}.service{grid-template-columns:32px 1fr 22px;padding:25px 0}.modal-grid{grid-template-columns:1fr}.modal-grid figure:first-child{grid-column:span 1;aspect-ratio:1.4}.modal-title{margin-top:40px}.lightbox{padding:45px 15px}.footer{flex-direction:column}}
+
+/* FLX editorial portfolio / inspirace volnou architektonickou sazbou */
+:root{--paper:#f7f7f4;--ink:#191919;--line:#e1e1dc}
+.top{border-bottom:0;height:100px}.logo{font-size:40px;letter-spacing:-.11em}.top nav{font-weight:500;letter-spacing:.09em}
+.intro{padding-top:78px;padding-bottom:65px}.intro h1{font-weight:500;letter-spacing:-.09em;max-width:1120px}
+.hero-image{height:min(62vw,740px)}.hero-image img{filter:brightness(.93)}
+.section{padding-top:125px}.section-head h2{font-weight:500}.section-head{margin-bottom:75px}
+.grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:16px;row-gap:clamp(55px,8vw,145px);align-items:start}
+.project{grid-column:span 6;position:relative;min-width:0;outline-offset:5px}
+.project:nth-child(6n+1){grid-column:1/span 7;margin-top:0}
+.project:nth-child(6n+2){grid-column:9/span 4;margin-top:105px}
+.project:nth-child(6n+3){grid-column:2/span 4;margin-top:65px}
+.project:nth-child(6n+4){grid-column:7/span 6;margin-top:0}
+.project:nth-child(6n+5){grid-column:1/span 5;margin-top:85px}
+.project:nth-child(6n+6){grid-column:8/span 5;margin-top:20px}
+.project-photo{aspect-ratio:1.35;position:relative;overflow:hidden;background:#e7e6e1}
+.project:nth-child(6n+2) .project-photo,.project:nth-child(6n+3) .project-photo{aspect-ratio:.85}
+.project:nth-child(6n+5) .project-photo{aspect-ratio:1.05}
+.project-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,0) 58%);opacity:0;transition:opacity .35s}
+.project:hover .project-photo:after,.project:focus-visible .project-photo:after{opacity:1}
+.project-photo img{transition:transform .75s cubic-bezier(.2,.7,.1,1),filter .4s}.project:hover .project-photo img{transform:scale(1.055)}
+.project-overlay{position:absolute;inset:auto 0 0;z-index:2;padding:28px;color:#fff;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s}
+.project:hover .project-overlay,.project:focus-visible .project-overlay{opacity:1;transform:translateY(0)}
+.project-overlay h3{font-size:clamp(23px,3vw,48px);font-weight:500;letter-spacing:-.06em;line-height:1.08;margin:0}
+.project-overlay span{display:block;font-size:11px;letter-spacing:.15em;margin-top:13px;text-transform:uppercase}
+.project-meta{padding-top:14px}.project-meta h3{font-size:13px;font-weight:500;letter-spacing:.015em}.project-meta p{display:none}.project-meta small{font-size:11px}
+.modal-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:18px;row-gap:65px}.modal-grid figure{grid-column:span 6;aspect-ratio:1.25}.modal-grid figure:first-child{grid-column:span 12;aspect-ratio:1.9}.modal-grid figure:nth-child(4n+2){grid-column:span 5;aspect-ratio:.95}.modal-grid figure:nth-child(4n+3){grid-column:span 7;aspect-ratio:1.45}
+@media(max-width:700px){.top{height:75px}.intro{padding-top:55px}.section-head{margin-bottom:38px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px;row-gap:36px}.project,.project:nth-child(n){grid-column:span 2;margin-top:0}.project:nth-child(3n+2){grid-column:span 1}.project:nth-child(3n+3){grid-column:span 1;margin-top:60px}.project:nth-child(3n+2) .project-photo,.project:nth-child(3n+3) .project-photo{aspect-ratio:.8}.project-overlay{opacity:1;transform:none;padding:12px}.project-photo:after{opacity:.65}.project-overlay h3{font-size:clamp(15px,3.7vw,23px)}.project-overlay span{font-size:9px;margin-top:7px}.project-meta h3{font-size:11px}.modal-grid{grid-template-columns:1fr;row-gap:16px}.modal-grid figure,.modal-grid figure:first-child,.modal-grid figure:nth-child(n){grid-column:span 1;aspect-ratio:1.35}}
+@media(hover:none){.project-overlay{opacity:1;transform:none}.project-photo:after{opacity:.7}}
+.logo img{display:block;width:118px;height:auto;object-fit:contain}.modal-head .logo img{width:105px}
+/* FLX v3 – fotografie hned pod navigací, text přes fotografii */
+.top{height:76px}
+.intro{position:absolute;z-index:2;top:76px;left:0;right:0;pointer-events:none;padding-top:clamp(45px,8vh,120px);padding-bottom:0;color:#fff;max-width:none}
+.intro .eyebrow{color:#fff}
+.intro h1{font-size:clamp(55px,8.5vw,136px);line-height:1.02;max-width:1200px;margin:26px 0 28px;text-shadow:0 2px 22px rgba(0,0,0,.17)}
+.intro h1 em{color:#fff}
+.intro-bottom{align-items:center;max-width:1200px}
+.intro-bottom p{color:#fff;font-size:clamp(14px,1.3vw,17px);max-width:480px;text-shadow:0 1px 12px rgba(0,0,0,.25)}
+.intro .round-link{pointer-events:auto;border-color:rgba(255,255,255,.8);color:#fff;width:65px;height:65px}
+.intro .round-link:hover{background:#fff;color:#151515}
+.hero-image{height:clamp(570px,83vh,1000px);min-height:570px}
+.hero-image:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.44) 0%,rgba(0,0,0,.18) 55%,rgba(0,0,0,0) 100%);pointer-events:none}
+.hero-image img{filter:none;object-position:center center}
+.hero-label{z-index:1;bottom:26px}
+#realizace.section{padding-top:72px;padding-bottom:85px}
+#realizace .section-head{margin-bottom:30px}
+#realizace .filters{margin-bottom:22px}
+#realizace .grid{column-gap:8px;row-gap:10px;align-items:start}
+#realizace .project,#realizace .project:nth-child(n){margin-top:0}
+#realizace .project-meta{padding-top:6px}
+#realizace .project-meta h3{font-size:12px}
+#realizace .project-photo{aspect-ratio:1.3}
+#realizace .project:nth-child(6n+2) .project-photo,#realizace .project:nth-child(6n+3) .project-photo{aspect-ratio:.88}
+#realizace .project:nth-child(6n+5) .project-photo{aspect-ratio:1.08}
+@media(max-width:700px){
+ .top{height:68px}.intro{top:68px;padding-top:60px}
+ .intro h1{font-size:clamp(43px,10vw,76px);margin:18px 0 22px}
+ .intro-bottom{align-items:flex-start;gap:12px}.intro-bottom p{font-size:13px;line-height:1.55;max-width:280px}
+ .intro .round-link{width:44px;height:44px;font-size:24px;flex-shrink:0}
+ .hero-image{height:75vh;min-height:560px}.hero-image:after{background:linear-gradient(180deg,rgba(0,0,0,.43),rgba(0,0,0,.15) 85%)}
+ #realizace.section{padding-top:55px}
+ #realizace .grid{column-gap:5px;row-gap:8px}
+ #realizace .project:nth-child(n){margin-top:0}
+ #realizace .project-meta{padding-top:5px}
+ #realizace .project-meta h3{font-size:10px}
+}
+
+/* FLX v4: hustá asymetrická mřížka bez opakovaných titulků */
+#projectGrid.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;align-items:stretch;grid-auto-flow:row}
+#projectGrid .project,#projectGrid .project:nth-child(n){grid-column:auto;margin:0;min-width:0;height:clamp(220px,31vw,490px)}
+#projectGrid .project:nth-child(6n+1){grid-column:span 7}
+#projectGrid .project:nth-child(6n+2){grid-column:span 5}
+#projectGrid .project:nth-child(6n+3){grid-column:span 4}
+#projectGrid .project:nth-child(6n+4){grid-column:span 8}
+#projectGrid .project:nth-child(6n+5){grid-column:span 6}
+#projectGrid .project:nth-child(6n+6){grid-column:span 6}
+#projectGrid .project-photo,#projectGrid .project:nth-child(n) .project-photo{width:100%;height:100%;aspect-ratio:auto;position:relative}
+#projectGrid .project-photo img{width:100%;height:100%;object-fit:cover}
+#projectGrid .project-meta{display:none}
+#projectGrid .project-photo:after{background:rgba(0,0,0,.42);opacity:0;transition:opacity .32s ease}
+#projectGrid .project:hover .project-photo:after,#projectGrid .project:focus-visible .project-photo:after{opacity:1}
+#projectGrid .project:hover .project-photo img,#projectGrid .project:focus-visible .project-photo img{transform:scale(1.055)}
+#projectGrid .project-overlay{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transform:none;opacity:0;transition:opacity .32s ease}
+#projectGrid .project:hover .project-overlay,#projectGrid .project:focus-visible .project-overlay{opacity:1;transform:none}
+#projectGrid .project-overlay h3{font-size:clamp(22px,3vw,48px);font-weight:500;line-height:1.1}
+@media(max-width:700px){#projectGrid.grid{gap:3px}#projectGrid .project,#projectGrid .project:nth-child(n){grid-column:span 12;height:clamp(240px,65vw,420px)}#projectGrid .project-overlay{opacity:1;justify-content:flex-end;align-items:flex-start;text-align:left}#projectGrid .project-photo:after{opacity:1;background:linear-gradient(0deg,rgba(0,0,0,.48),transparent 65%)}#projectGrid .project-overlay h3{font-size:clamp(23px,6vw,35px)}}
+@media(prefers-reduced-motion:reduce){#projectGrid .project-photo img,#projectGrid .project-photo:after,#projectGrid .project-overlay{transition:none}}
+
+.hero-image{isolation:isolate}
+.hero-slides,.hero-slide{position:absolute;inset:0}
+.hero-slide{opacity:0;transition:opacity 1.35s ease;overflow:hidden;z-index:0}
+.hero-slide.active{opacity:1;z-index:1}
+.hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-image:after{z-index:2}
+.intro{z-index:5}
+.hero-label{z-index:5}
+.hero-controls{position:absolute;right:5vw;bottom:23px;z-index:5;display:flex;align-items:center;gap:18px;color:white;font-size:12px;letter-spacing:.15em}
+.hero-controls button{background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.6);border-radius:50%;color:white;width:42px;height:42px;font-size:19px;transition:background .2s}
+.hero-controls button:hover{background:rgba(0,0,0,.55)}
+.project-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 45px;max-width:900px;margin:-20px 0 48px}
+.project-details:empty{display:none}
+.project-details small{font-size:10px;letter-spacing:.16em;color:#7d807a;font-weight:700}
+.project-details p{font-size:15px;line-height:1.65;margin:9px 0 12px}
+.project-details .verify{grid-column:1/-1;color:#777;font-size:13px}
+.project-overlay .project-year{font-size:12px;letter-spacing:.12em;opacity:.9;margin-top:8px}
+@media(max-width:700px){.project-details{grid-template-columns:1fr}.hero-controls{right:5vw;bottom:65px}.hero-label{bottom:24px}}
+@media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
+
+/* FLX v6 — střídání 2 / 3 / 4 realizací v horizontálních řadách */
+#projectGrid.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;align-items:stretch}
+#projectGrid .project,#projectGrid .project:nth-child(n){grid-column:span 6;height:clamp(235px,34vw,510px)}
+/* řada 1 — 2 realizace */
+#projectGrid .project:nth-child(1){grid-column:span 7}
+#projectGrid .project:nth-child(2){grid-column:span 5}
+/* řada 2 — 3 realizace */
+#projectGrid .project:nth-child(3){grid-column:span 3;height:clamp(205px,25vw,365px)}
+#projectGrid .project:nth-child(4){grid-column:span 5;height:clamp(205px,25vw,365px)}
+#projectGrid .project:nth-child(5){grid-column:span 4;height:clamp(205px,25vw,365px)}
+/* řada 3 — 4 realizace */
+#projectGrid .project:nth-child(n+6):nth-child(-n+9){grid-column:span 3;height:clamp(185px,21vw,310px)}
+/* řada 4 — 2 realizace */
+#projectGrid .project:nth-child(10){grid-column:span 5;height:clamp(225px,30vw,450px)}
+#projectGrid .project:nth-child(11){grid-column:span 7;height:clamp(225px,30vw,450px)}
+/* řada 5 — 3 realizace */
+#projectGrid .project:nth-child(12){grid-column:span 4;height:clamp(205px,25vw,365px)}
+#projectGrid .project:nth-child(13){grid-column:span 3;height:clamp(205px,25vw,365px)}
+#projectGrid .project:nth-child(14){grid-column:span 5;height:clamp(205px,25vw,365px)}
+/* řada 6 — 2 realizace */
+#projectGrid .project:nth-child(15){grid-column:span 7;height:clamp(235px,34vw,510px)}
+#projectGrid .project:nth-child(16){grid-column:span 5;height:clamp(235px,34vw,510px)}
+#projectGrid .project-overlay h3{font-size:clamp(17px,2.35vw,38px)}
+@media(max-width:850px) and (min-width:601px){
+ #projectGrid .project:nth-child(n){grid-column:span 6;height:clamp(210px,34vw,350px)}
+ #projectGrid .project:nth-child(4n+1){grid-column:span 7}
+ #projectGrid .project:nth-child(4n+2){grid-column:span 5}
+ #projectGrid .project:nth-child(4n+3){grid-column:span 5}
+ #projectGrid .project:nth-child(4n+4){grid-column:span 7}
+}
+@media(max-width:600px){
+ #projectGrid.grid{gap:3px}
+ #projectGrid .project:nth-child(n){grid-column:span 12;height:clamp(230px,65vw,420px)}
+}
+
+/* FLX v7: detail realizace — těsné asymetrické řady */
+#modalGrid.modal-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;margin-bottom:45px;align-items:stretch}
+#modalGrid.modal-grid figure,#modalGrid.modal-grid figure:first-child{margin:0;min-width:0;grid-column:span 6;aspect-ratio:auto;height:clamp(180px,30vw,420px);overflow:hidden;background:#e5e5e5}
+#modalGrid.modal-grid figure img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+#modalGrid.modal-grid figure:hover img{transform:scale(1.035)}
+#modalGrid.modal-grid figure:nth-child(1){grid-column:span 7}
+#modalGrid.modal-grid figure:nth-child(2){grid-column:span 5}
+#modalGrid.modal-grid figure:nth-child(3n+3){grid-column:span 4;height:clamp(170px,23vw,330px)}
+#modalGrid.modal-grid figure:nth-child(3n+4){grid-column:span 4;height:clamp(170px,23vw,330px)}
+#modalGrid.modal-grid figure:nth-child(3n+5){grid-column:span 4;height:clamp(170px,23vw,330px)}
+/* Consistent row composition: 2 / 3 / 4 / 2 / 3 / 4... */
+#modalGrid.modal-grid figure:nth-child(n){grid-column:span 6;height:clamp(180px,30vw,420px)}
+#modalGrid.modal-grid figure:nth-child(12n+1){grid-column:span 7}
+#modalGrid.modal-grid figure:nth-child(12n+2){grid-column:span 5}
+#modalGrid.modal-grid figure:nth-child(12n+3),#modalGrid.modal-grid figure:nth-child(12n+4),#modalGrid.modal-grid figure:nth-child(12n+5){grid-column:span 4;height:clamp(170px,24vw,330px)}
+#modalGrid.modal-grid figure:nth-child(12n+6),#modalGrid.modal-grid figure:nth-child(12n+7),#modalGrid.modal-grid figure:nth-child(12n+8),#modalGrid.modal-grid figure:nth-child(12n+9){grid-column:span 3;height:clamp(155px,19vw,270px)}
+#modalGrid.modal-grid figure:nth-child(12n+10){grid-column:span 5}
+#modalGrid.modal-grid figure:nth-child(12n+11){grid-column:span 7}
+#modalGrid.modal-grid figure:nth-child(12n+12){grid-column:span 12;height:clamp(200px,38vw,490px)}
+@media(max-width:800px) and (min-width:601px){#modalGrid.modal-grid figure:nth-child(n){grid-column:span 6;height:clamp(190px,32vw,320px)}}
+@media(max-width:600px){#modalGrid.modal-grid{gap:3px}#modalGrid.modal-grid figure:nth-child(n){grid-column:span 12;height:clamp(225px,65vw,390px)}}
+
+/* FLX v8: bytové interiéry a připravovaný katalog */
+.top nav{gap:24px}
+.residential{padding-top:110px;padding-bottom:110px}
+.residential-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.living-feature{min-height:480px;padding:36px 32px;display:flex;flex-direction:column;align-items:flex-start;background:#e6e6df;position:relative}
+.living-feature:nth-child(2){background:#d9ddd5}.living-feature:nth-child(3){background:#cbcfc8}
+.living-number{font-size:11px;letter-spacing:.16em;font-weight:700}
+.living-feature h3{font:600 clamp(31px,3.2vw,54px)/1.1 Manrope,sans-serif;letter-spacing:-.065em;margin:auto 0 25px}
+.living-feature p{font-size:15px;line-height:1.7;max-width:320px;margin:0 0 35px}
+.living-link{font-size:11px;letter-spacing:.12em;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:9px}
+.living-link:hover{opacity:.6}
+.living-note{font-size:12px;color:var(--muted);margin-top:22px}
+.furniture{background:#e7e8e1;padding:110px 0}
+.furniture-layout{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.furniture h2{font:600 clamp(48px,5.7vw,90px)/1.07 Manrope,sans-serif;letter-spacing:-.075em;margin:25px 0 30px}
+.furniture p{max-width:490px;line-height:1.8;color:#555c54}
+.furniture-cta{display:inline-block;margin-top:30px;border-bottom:1px solid;padding-bottom:12px;font-size:12px;font-weight:700;letter-spacing:.12em}
+.furniture-preview{background:#222924;color:#f3f3ed;min-height:460px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.furniture-status{font-size:11px;letter-spacing:.16em;color:#cad1c7}
+.furniture-preview-inner span{font-size:12px;letter-spacing:.16em}.furniture-preview-inner strong{display:block;font:600 clamp(46px,5vw,84px)/1.06 Manrope,sans-serif;letter-spacing:-.07em;margin:25px 0}.furniture-preview-inner p{color:#d5d9d2}
+.furniture-preview small{color:#b4bdb2;font-size:11px;line-height:1.6}
+@media(max-width:950px){.top nav{gap:12px;font-size:10px}.residential-grid{grid-template-columns:1fr 1fr}.living-feature:last-child{grid-column:1/-1;min-height:340px}.furniture-layout{gap:30px}}
+@media(max-width:650px){.residential-grid,.furniture-layout{grid-template-columns:1fr}.living-feature,.living-feature:last-child{grid-column:auto;min-height:360px}.residential,.furniture{padding-top:70px;padding-bottom:70px}.furniture-preview{min-height:400px}.top nav{flex-wrap:wrap;justify-content:flex-end}}
+
+/* FLX v9: přilepená navigace, fotografie přes celou šířku */
+html{scroll-padding-top:90px}
+header.top.shell{position:sticky;top:0;z-index:15;max-width:none;width:100%;box-sizing:border-box;height:84px;background:rgba(247,247,244,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08);padding-left:5vw;padding-right:5vw}
+#realizace.section.shell{max-width:none;width:100%;box-sizing:border-box;padding-left:0;padding-right:0}
+#realizace .section-head,#realizace .filters{padding-left:5vw;padding-right:5vw}
+#realizace #projectGrid.grid{width:100%;max-width:none;gap:4px}
+#modal .shell{max-width:none;width:100%;box-sizing:border-box;padding-left:0;padding-right:0}
+#modal .modal-title,#modal .modal-sub,#modal .project-details{margin-left:5vw;margin-right:5vw}
+#modal #modalGrid.modal-grid{gap:4px;width:100%}
+@media(max-width:700px){header.top.shell{height:72px}html{scroll-padding-top:72px}#realizace #projectGrid.grid,#modal #modalGrid.modal-grid{gap:3px}}
+
+/* FLX v10: subtilní okraje, kratší úvod, scroll cue, nová kontaktní sekce */
+#heroSlider.hero-image{height:clamp(390px,64vh,660px);min-height:0;margin:4px 4px 0;position:relative}
+#realizace #projectGrid.grid{padding:0 4px 4px;gap:4px}
+#modal #modalGrid.modal-grid{padding:0 4px 4px;gap:4px}
+.hero-scroll{position:absolute;z-index:7;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;display:flex;align-items:center;flex-direction:column;gap:8px;font-size:10px;letter-spacing:.17em;font-weight:600;text-shadow:0 1px 9px rgba(0,0,0,.4);white-space:nowrap;transition:transform .2s}
+.hero-scroll:hover{transform:translateX(-50%) translateY(5px)}
+.hero-scroll-arrow{font-size:29px;font-weight:300;line-height:1}
+.hero-label{bottom:25px}
+.contact-v10{background:#e9e9e4;color:#171a18;padding:0;overflow:hidden}
+.contact-inner{padding:45px max(5vw,24px) 30px}
+.contact-kicker,.contact-bottom{display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.12em;font-weight:600}
+.contact-kicker{padding-bottom:30px;border-bottom:1px solid #b8bab4}
+.contact-lead{display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:end;padding:72px 0 65px}
+.contact-overline,.contact-small{font-size:11px;letter-spacing:.17em;font-weight:600;color:#686e66}
+.contact-v10 h2{font-size:clamp(60px,9vw,150px);letter-spacing:-.085em;line-height:.98;margin:20px 0 0;font-weight:600}
+.contact-v10 h2 em{font-style:normal;color:#92988d}
+.contact-intro{font-size:clamp(17px,1.5vw,23px);line-height:1.6;max-width:400px;margin:0 0 10px;color:#51574e}
+.contact-rule{height:1px;background:#b8bab4}
+.contact-columns{display:grid;grid-template-columns:1.3fr .7fr;gap:45px;padding:43px 0 85px}
+.contact-mainlink{display:inline-flex;align-items:center;gap:20px;font-size:clamp(25px,4vw,65px);letter-spacing:-.055em;line-height:1.5;border-bottom:1px solid #171a18;margin:20px 0 0;word-break:break-word}
+.contact-mainlink span{font-size:.6em}
+.contact-verify{font-size:11px!important;color:#73776f!important;margin-top:12px!important}
+.contact-place{font-size:18px!important;color:#171a18!important;line-height:1.6;margin:20px 0 28px!important}
+.contact-social{display:inline-block;margin:0 20px 8px 0;border-bottom:1px solid currentColor;font-size:12px;letter-spacing:.08em}
+.contact-bottom{padding-top:23px;border-top:1px solid #b8bab4;color:#656b63}
+@media(max-width:700px){#heroSlider.hero-image{height:clamp(330px,59vh,510px);margin:3px 3px 0}#realizace #projectGrid.grid,#modal #modalGrid.modal-grid{padding-left:3px;padding-right:3px;gap:3px}.hero-scroll{bottom:16px}.hero-label{bottom:72px}.hero-controls{bottom:70px}.contact-inner{padding:28px 20px}.contact-lead,.contact-columns{grid-template-columns:1fr;gap:28px}.contact-lead{padding:52px 0 45px}.contact-columns{padding:35px 0 55px}.contact-v10 h2{font-size:clamp(58px,13vw,92px)}.contact-bottom{font-size:9px;line-height:1.6}}
+
+/* FLX v11 — kontakty převzaté z veřejné stránky flx.cz/kontakt */
+.contact-ident{font-size:12px!important;color:#73776f!important;margin-top:25px!important}
+.contact-hours{margin-top:22px;max-width:370px}
+.contact-hours>div{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-bottom:1px solid #d4d5d0;font-size:14px}
+.contact-hours>div span:first-child{font-weight:700;letter-spacing:.1em}
+.contact-people-head{display:flex;justify-content:space-between;gap:16px;padding:44px 0 24px;font-size:11px;letter-spacing:.1em;color:#777}
+.contact-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 45px;margin-bottom:72px}
+.contact-people article{border-top:1px solid #b8bab4;padding:26px 0 35px;display:flex;flex-direction:column;align-items:flex-start}
+.contact-person-role{font-size:10px!important;letter-spacing:.13em;color:#73776f!important;margin:0 0 18px!important}
+.contact-people h3{font-size:clamp(22px,2.3vw,35px);letter-spacing:-.045em;font-weight:500;margin:0 0 20px}
+.contact-people article a{font-size:15px;line-height:1.9;border-bottom:1px solid transparent}
+.contact-people article a:hover{border-bottom-color:currentColor}
+@media(max-width:700px){.contact-people{grid-template-columns:1fr;gap:0}.contact-people-head span:last-child{display:none}.contact-hours>div{font-size:12px}}
+
+.catalog{padding:95px 4px 80px;background:#f5f4f0;color:#1b1d1a;scroll-margin-top:80px}.catalog-intro{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;margin-bottom:38px}.catalog-intro h2{font-size:clamp(48px,7vw,112px);font-weight:500;letter-spacing:-.065em;line-height:.98;margin:15px 0 0}.catalog-intro>p{font-size:16px;line-height:1.7;max-width:450px}.catalog-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 4px 12px}.catalog-tab{padding:11px 17px;border:1px solid #c6c8c1;background:transparent;color:#222;font-size:11px;letter-spacing:.09em;cursor:pointer}.catalog-tab.active,.catalog-tab:hover{background:#222;color:#fff;border-color:#222}.catalog-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px}.catalog-card{grid-column:span 4;min-width:0;background:#e7e7e2}.catalog-card:nth-child(1),.catalog-card:nth-child(5){grid-column:span 5}.catalog-card:nth-child(2),.catalog-card:nth-child(6){grid-column:span 3}.catalog-card:nth-child(3),.catalog-card:nth-child(4){grid-column:span 4}.catalog-photo{position:relative;aspect-ratio:1.15;overflow:hidden;background:#deded9}.catalog-photo img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .6s ease}.catalog-card:hover .catalog-photo img{transform:scale(1.045)}.catalog-fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;font-size:clamp(24px,3vw,40px);letter-spacing:-.04em}.catalog-fallback small{font-size:11px;letter-spacing:0;margin-top:12px}.catalog-photo.image-unavailable .catalog-fallback{display:flex}.catalog-card-foot{display:flex;justify-content:space-between;gap:12px;padding:19px 20px 23px;align-items:end}.catalog-card-foot small{font-size:10px;letter-spacing:.08em;color:#737770}.catalog-card-foot h3{font-size:clamp(19px,2vw,27px);font-weight:500;margin:8px 0 0}.catalog-card-foot a{font-size:11px;white-space:nowrap;color:inherit;text-decoration:none;border-bottom:1px solid #222;padding-bottom:5px}.catalog-end{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-top:48px}.catalog-end p{max-width:720px;line-height:1.8}.catalog-end a{white-space:nowrap;color:inherit;font-size:12px;text-decoration:none;border-bottom:1px solid;padding-bottom:8px}.catalog-disclaimer{font-size:11px;color:#777;line-height:1.7;margin-top:24px}.catalog-card[hidden]{display:none!important}@media(max-width:900px){.catalog-card,.catalog-card:nth-child(n){grid-column:span 6}}@media(max-width:650px){.catalog-intro{grid-template-columns:1fr}.catalog-card,.catalog-card:nth-child(n){grid-column:span 12}.catalog-end{display:block}.catalog-end a{display:inline-block;margin-top:16px}.catalog{padding-top:60px}}
+
+/* V16: stručná hlavička portfolia a adaptivní kategorie */
+#realizace .section-head{display:block}
+#realizace .section-head h2{margin-bottom:20px}
+#realizace .portfolio-filter-bar{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+#realizace .portfolio-filter-bar .filter{white-space:nowrap}
+#realizace .filters{margin-top:10px;margin-bottom:16px}
+@media(max-width:700px){#realizace .portfolio-filter-bar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:8px;-webkit-overflow-scrolling:touch}#realizace .portfolio-filter-bar::-webkit-scrollbar{display:none}#realizace .section-head h2{margin-bottom:13px}}
+
+/* FLX V17: jednotné mobilní ovládání titulní galerie */
+.hero-mobile-down{display:none}
+@media(max-width:760px){
+ #heroSlider .hero-controls{position:absolute!important;left:50%!important;right:auto!important;bottom:18px!important;transform:translateX(-50%)!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:18px!important;z-index:10!important;white-space:nowrap!important}
+ #heroSlider .hero-controls button,#heroSlider .hero-controls .hero-mobile-down{display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:44px!important;height:44px!important;min-width:44px!important;border-radius:50%!important;border:1px solid rgba(255,255,255,.75)!important;background:rgba(0,0,0,.24)!important;color:#fff!important;font-size:22px!important;font-weight:400!important;line-height:1!important;text-decoration:none!important;padding:0!important;letter-spacing:0!important;backdrop-filter:blur(4px)}
+ #heroSlider #heroIndex,#heroSlider > .hero-scroll{display:none!important}
+ #heroSlider .hero-label{bottom:80px!important}
+}
+
+/* FLX V24 — zakázková výroba a showroom */
+.flx-showroom{border-top:1px solid #d3d4ce;border-bottom:1px solid #d3d4ce;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(22px,5vw,80px);align-items:center;padding-top:clamp(28px,5vw,60px)!important;padding-bottom:clamp(28px,5vw,60px)!important}
+.flx-showroom h2{font-size:clamp(30px,4vw,62px);letter-spacing:-.055em;line-height:1.1;margin:12px 0 15px;font-weight:500}
+.flx-showroom p{max-width:440px;font-size:clamp(13px,1.2vw,16px);line-height:1.65;color:#666b64;margin:0}
+.flx-showroom-photo{aspect-ratio:1.8;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1px solid #c9cbc5;background:linear-gradient(135deg,#e6e7e2,#d6d8d1);color:#737971;text-align:center;padding:18px}
+.flx-showroom-photo span{font-size:10px;letter-spacing:.17em;text-transform:uppercase}
+.flx-showroom-photo svg{width:30px;height:30px;opacity:.55}
+.flx-manufacture{font-weight:600!important;color:inherit!important;font-size:clamp(16px,1.7vw,23px)!important;letter-spacing:-.025em;line-height:1.35!important}
+@media(max-width:700px){.flx-showroom{grid-template-columns:1fr;gap:15px;padding-top:20px!important;padding-bottom:22px!important}.flx-showroom h2{font-size:30px;margin:8px 0 9px}.flx-showroom p{font-size:12px;line-height:1.5}.flx-showroom-photo{aspect-ratio:2.2}.flx-manufacture{font-size:16px!important}}
+
+/* FLX V35 – zarovnání, výrazný claim, příběhy a bytové realizace */
+#uvod.intro{padding-top:clamp(65px,7vw,125px);padding-bottom:clamp(55px,7vw,105px)}
+#uvod .eyebrow,#uvod h1,#uvod .intro-bottom{max-width:1500px;margin-left:auto;margin-right:auto}
+#uvod h1{font-size:clamp(54px,8.1vw,136px);line-height:1.04;letter-spacing:-.077em;margin-top:30px;margin-bottom:35px}
+#uvod h1 .flx-head-second{display:block;font-size:clamp(34px,5.3vw,88px);letter-spacing:-.065em;white-space:normal;margin-top:10px}
+#uvod .intro-bottom{justify-content:flex-start}#uvod .intro-bottom p{max-width:680px;font-size:clamp(15px,1.5vw,20px)}
+.flx-story{margin:55px auto 70px;max-width:1000px;padding:40px 4vw;border-top:1px solid #d4d6cf;border-bottom:1px solid #d4d6cf}
+.flx-story p{font-family:Manrope,Arial,sans-serif;font-size:clamp(23px,3.2vw,43px);font-weight:500;letter-spacing:-.045em;line-height:1.38;margin:24px 0 0}
+.flx-living-more{padding:38px 0 45px}.flx-living-label{font-size:11px;letter-spacing:.18em;font-weight:700;margin-bottom:25px}.flx-living-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.flx-living-card{border:0;background:none;padding:0;text-align:left;color:inherit;cursor:pointer}.flx-living-card img{aspect-ratio:1.4;object-fit:cover;transition:transform .3s}.flx-living-card:hover img{filter:brightness(.91)}.flx-living-card span{display:flex;justify-content:space-between;gap:8px;font-family:Manrope;font-size:clamp(15px,1.6vw,22px);font-weight:600;margin-top:14px;letter-spacing:-.03em}.flx-living-card b{font-weight:400}
+@media(max-width:700px){#uvod h1{font-size:clamp(47px,10.8vw,80px)}#uvod h1 .flx-head-second{font-size:clamp(28px,6.5vw,50px)}.flx-living-cards{grid-template-columns:1fr 1fr;gap:20px 12px}.flx-living-card span{font-size:14px}.flx-story{margin:28px auto 35px;padding:24px 3vw}.flx-story p{font-size:24px}}
+</style><style>
+/* FLX v13: střídmá úvodní typografie, kompaktní portfolio a produktová mozaika */
+.hero-heritage{position:absolute;right:5vw;top:12%;z-index:6;display:flex;flex-direction:column;align-items:flex-end;gap:9px;text-align:right;color:white;text-shadow:0 1px 12px rgba(0,0,0,.25);pointer-events:none}
+.heritage-number{font-size:clamp(11px,1.1vw,15px);letter-spacing:.21em;font-weight:500}.heritage-number strong{font-weight:700;font-size:1.18em}
+.heritage-rotator{display:block;position:relative;width:min(36vw,360px);height:25px;font-size:clamp(11px,1.2vw,16px);letter-spacing:.025em}
+.heritage-line{position:absolute;right:0;top:0;white-space:nowrap;opacity:0;transform:translateY(7px);transition:opacity 1s ease,transform 1s ease}
+.heritage-line.is-on{opacity:1;transform:translateY(0)}
+#realizace.section{padding-top:36px!important}
+#realizace .section-head{margin-bottom:20px!important;align-items:end}
+#realizace .section-head h2{font-size:clamp(31px,3.8vw,55px)!important;letter-spacing:-.06em!important;margin-top:9px!important}
+#realizace .section-head p{font-size:13px;max-width:270px}
+#realizace .filters{margin-bottom:12px!important}
+#produkty .catalog-grid{display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:4px!important;padding:0 4px!important}
+#produkty .catalog-card{grid-column:span 3!important;min-width:0!important;display:block!important;margin:0!important}
+#produkty .catalog-card:nth-child(9n+1),#produkty .catalog-card:nth-child(9n+5){grid-column:span 4!important}
+#produkty .catalog-card:nth-child(9n+2),#produkty .catalog-card:nth-child(9n+3),#produkty .catalog-card:nth-child(9n+4),#produkty .catalog-card:nth-child(9n+6),#produkty .catalog-card:nth-child(9n+7),#produkty .catalog-card:nth-child(9n+8),#produkty .catalog-card:nth-child(9n+9){grid-column:span 2!important}
+#produkty .catalog-card[hidden]{display:none!important}
+#produkty .catalog-photo{height:auto!important;aspect-ratio:1.08!important;min-height:0!important;position:relative}
+#produkty .catalog-photo img{height:100%!important;object-fit:cover!important}
+#produkty .catalog-card-foot{padding:10px 7px 18px!important;gap:4px;flex-wrap:wrap}
+#produkty .catalog-card-foot h3{font-size:clamp(14px,1.5vw,20px)!important;margin:4px 0!important}
+#produkty .catalog-card-foot small{font-size:10px!important}
+#produkty .catalog-card-foot a{font-size:10px!important}
+#produkty .catalog-placeholder{background:#e3e3dc;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;text-align:center;gap:12px}
+#produkty .catalog-sample:nth-child(3n) .catalog-placeholder{background:#d5dad1}
+#produkty .catalog-sample:nth-child(4n) .catalog-placeholder{background:#dedbd4}
+.catalog-placeholder-brand{font-family:Manrope,Arial,sans-serif;font-weight:600;font-size:clamp(18px,2.5vw,36px);letter-spacing:-.05em}
+.catalog-placeholder-label{font-size:8px;letter-spacing:.13em;color:#777;max-width:160px;line-height:1.6}
+.catalog-demo-note{margin:14px 5vw 35px;color:#747871;font-size:12px;line-height:1.6}
+.contact-map-wrap{margin:48px 0 65px;position:relative}.contact-map-caption{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:15px;font-size:11px;letter-spacing:.1em}
+.contact-map-wrap iframe{display:block;width:100%;height:clamp(280px,34vw,450px);border:0;filter:grayscale(1) contrast(.92)}
+.map-direct{display:inline-block;margin-top:15px;font-size:12px;letter-spacing:.12em;border-bottom:1px solid currentColor;padding-bottom:5px}
+.person-portrait{width:clamp(74px,8vw,116px);height:clamp(74px,8vw,116px);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(20,28,20,.09);color:#555e54;font-family:Manrope;font-size:27px;font-weight:500;letter-spacing:-.06em;margin-bottom:24px;border:1px solid rgba(20,28,20,.13)}
+.contact-people article{min-width:0}
+.team-future{display:contents}.future-person{min-height:170px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;justify-content:center;border-top:1px solid rgba(20,28,20,.16)}.future-person span{font-size:55px;font-weight:300;line-height:1}.future-person small{font-size:10px;letter-spacing:.13em;color:#777}
+@media(max-width:900px){#produkty .catalog-card,#produkty .catalog-card:nth-child(n){grid-column:span 4!important}}
+@media(max-width:600px){.hero-heritage{top:11%;right:6vw}.heritage-rotator{width:65vw;font-size:11px}#realizace.section{padding-top:25px!important}#realizace .section-head p{margin-top:8px}#produkty .catalog-card,#produkty .catalog-card:nth-child(n){grid-column:span 6!important}#produkty .catalog-card-foot{padding:9px 5px 14px!important}#produkty .catalog-card-foot a{display:block} .contact-map-caption{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.heritage-line{transition:none}}
+
+/* FLX v14 – mobilní rytmus a zkrácení sekcí */
+@media(max-width:760px){
+ header.top.shell{height:auto!important;min-height:76px;padding:12px 4vw!important;display:flex!important;align-items:center!important;gap:12px!important;flex-wrap:nowrap!important}
+ header.top .logo{flex:0 0 65px!important;min-width:0!important;margin:0!important}
+ header.top .logo img{max-width:65px!important;height:auto!important}
+ header.top nav{flex:1 1 auto!important;min-width:0!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px 5px!important;align-items:center!important;justify-items:center!important}
+ header.top nav a,header.top nav a:nth-child(2),header.top nav a:nth-child(3){display:block!important;font-size:9px!important;letter-spacing:.015em!important;white-space:nowrap!important;line-height:1.4!important}
+ html{scroll-padding-top:85px}
+ #heroSlider.hero-image{height:clamp(350px,58svh,560px)!important}
+ #heroSlider .hero-controls{right:12px!important;left:auto!important;bottom:18px!important;gap:8px!important}
+ #heroSlider .hero-controls button{width:36px!important;height:36px!important}
+ #heroSlider .hero-scroll{left:50%!important;bottom:14px!important;transform:translateX(-50%)!important;font-size:9px!important}
+ #heroSlider .hero-scroll-arrow{font-size:21px!important}
+ #heroSlider .hero-label{bottom:82px!important;left:15px!important;max-width:65%;font-size:9px!important}
+ #realizace #projectGrid.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-flow:row!important;gap:3px!important}
+ #realizace #projectGrid .project:nth-child(n){grid-column:span 1!important;height:clamp(145px,42vw,280px)!important;min-width:0!important}
+ #realizace #projectGrid .project:nth-child(5n+1){grid-column:span 2!important;height:clamp(230px,60vw,390px)!important}
+ #realizace #projectGrid .project-photo{height:100%!important;aspect-ratio:auto!important}
+ #realizace #projectGrid .project-overlay h3{font-size:clamp(13px,3.7vw,22px)!important}
+ #bydleni.residential,#nabytek.furniture,#produkty.catalog,.services,#onas.about{padding-top:46px!important;padding-bottom:48px!important}
+ #bydleni .living-feature,#bydleni .living-feature:last-child{min-height:240px!important}
+ #nabytek .furniture-preview{min-height:260px!important}
+ #produkty .catalog-intro{margin-bottom:18px!important}
+ #produkty .catalog-intro h2{font-size:42px!important}
+ #produkty .catalog-grid{gap:3px!important}
+ #produkty .catalog-photo{aspect-ratio:1.2!important}
+ #produkty .catalog-card-foot{padding:6px 4px 9px!important}
+ #produkty .catalog-card-foot h3{font-size:12px!important}
+ #produkty .catalog-card-foot small{font-size:9px!important}
+ .service{padding:16px 0!important}
+ #onas.about .stats{margin-top:24px!important}
+ .contact-people article{padding:18px 0!important}
+ .contact-people{margin-bottom:30px!important}
+ .contact-map-wrap{margin:25px 0 30px!important}
+ .contact-map-wrap iframe{height:240px!important}
+}
+@media(max-width:380px){header.top .logo{flex-basis:52px!important}header.top .logo img{max-width:52px!important}header.top nav a{font-size:8px!important}}
+.catalog-more{display:block;margin:25px auto 0;border:1px solid #222;background:transparent;border-radius:40px;padding:13px 30px;font-size:12px;letter-spacing:.08em;cursor:pointer}
+.catalog-more:hover{background:#222;color:#fff}
+
+/* FLX V15 — project detail cover, shared desktop/mobile */
+#modal .project-hero{position:relative;min-height:clamp(500px,82vh,940px);display:flex;align-items:flex-end;overflow:hidden;background:#262626;color:#fff}
+#modal .project-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#modal .project-hero-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.77),rgba(0,0,0,.34) 38%,transparent 76%)}
+#modal .project-hero-content{position:relative;z-index:1;padding:60px max(5vw,24px) 54px;width:100%;box-sizing:border-box}
+#modal .project-hero-kicker{font-size:11px;letter-spacing:.19em;margin-bottom:18px;opacity:.85}
+#modal .project-hero .modal-title{color:white!important;margin:0 0 12px!important;font-size:clamp(38px,6.8vw,100px);line-height:1.04;max-width:1000px;text-wrap:balance}
+#modal .project-hero .modal-sub{color:rgba(255,255,255,.86)!important;margin:0 0 24px!important;font-size:12px;letter-spacing:.09em}
+#modal .project-hero .project-details{margin:0!important;display:flex;flex-wrap:wrap;gap:20px 45px;max-width:1000px}
+#modal .project-hero .project-details>div{max-width:440px}
+#modal .project-hero .project-details small{color:rgba(255,255,255,.7)!important;font-size:10px;letter-spacing:.13em}
+#modal .project-hero .project-details p{color:white!important;margin:5px 0 0;font-size:clamp(13px,1.2vw,17px);line-height:1.45}
+#modal .project-gallery-wrap{padding-top:4px}
+#modal #modalGrid.modal-grid{margin:0 0 45px}
+@media(max-width:700px){#modal .project-hero{min-height:clamp(480px,76svh,760px)}#modal .project-hero-content{padding:32px 22px 35px}#modal .project-hero .modal-title{font-size:clamp(34px,10vw,58px)}#modal .project-hero .modal-sub{font-size:10px;margin-bottom:18px!important}#modal .project-hero .project-details{gap:12px 22px}#modal .project-hero .project-details p{font-size:13px}#modal .project-hero-kicker{font-size:10px;margin-bottom:13px}}
+</style><style>
+/* FLX V18: oddělené mobilní ovládání titulní galerie */
+@media(max-width:760px){
+ #heroSlider .hero-controls{left:auto!important;right:15px!important;bottom:18px!important;transform:none!important;gap:9px!important;justify-content:flex-end!important}
+ #heroSlider .hero-controls button{width:44px!important;height:44px!important;min-width:44px!important;font-size:22px!important}
+ #heroSlider .hero-mobile-down{display:flex!important;position:absolute!important;left:50%!important;bottom:18px!important;transform:translateX(-50%)!important;z-index:12!important;align-items:center!important;justify-content:center!important;width:44px!important;height:44px!important;border:1px solid rgba(255,255,255,.75)!important;border-radius:50%!important;background:rgba(0,0,0,.24)!important;color:white!important;font-size:22px!important;line-height:1!important;text-decoration:none!important;backdrop-filter:blur(4px)}
+ #heroSlider #heroIndex,#heroSlider > .hero-scroll{display:none!important}
+}
+@media(max-width:360px){#heroSlider .hero-controls{right:9px!important;gap:5px!important}#heroSlider .hero-controls button{width:40px!important;height:40px!important;min-width:40px!important}#heroSlider .hero-mobile-down{width:40px!important;height:40px!important}}
+</style><style>
+/* FLX V19 — sjednocení rytmu, typografie a filtrů napříč PC a mobilem */
+:root{--flx-space:clamp(48px,5.5vw,82px)}
+#realizace.section,#bydleni.residential,#nabytek.furniture,#produkty.catalog,.services,#onas.about,#kontakt.contact{padding-top:var(--flx-space)!important;padding-bottom:var(--flx-space)!important}
+#realizace .section-head,.catalog-intro{margin-bottom:24px!important}
+#realizace .eyebrow,#bydleni .eyebrow,#nabytek .eyebrow,#produkty .eyebrow,.services .eyebrow,#onas .eyebrow,#kontakt .eyebrow{font-size:10px!important;letter-spacing:.15em!important;font-weight:600!important;text-transform:uppercase!important}
+#realizace .eyebrow:before,#bydleni .eyebrow:before,#nabytek .eyebrow:before,#produkty .eyebrow:before,.services .eyebrow:before,#onas .eyebrow:before,#kontakt .eyebrow:before{width:20px!important;height:1px!important}
+#realizace .portfolio-filter-bar .filter,#produkty .catalog-tabs .catalog-tab{appearance:none!important;border:1px solid #c6c8c1!important;border-radius:100px!important;background:transparent!important;color:#222!important;padding:10px 17px!important;font-size:11px!important;letter-spacing:.035em!important;font-weight:500!important;line-height:1.3!important;text-transform:none!important;white-space:nowrap!important;box-shadow:none!important;text-decoration:none!important}
+#realizace .portfolio-filter-bar .filter.active,#produkty .catalog-tabs .catalog-tab.active,#realizace .portfolio-filter-bar .filter:hover,#produkty .catalog-tabs .catalog-tab:hover{background:#222!important;color:white!important;border-color:#222!important}
+#produkty .catalog-tabs{gap:9px!important;margin-bottom:18px!important}
+#realizace .portfolio-filter-bar{gap:9px!important}
+@media(max-width:760px){
+ :root{--flx-space:32px}
+ #realizace.section,#bydleni.residential,#nabytek.furniture,#produkty.catalog,.services,#onas.about,#kontakt.contact{padding-top:32px!important;padding-bottom:34px!important}
+ #realizace .section-head,.catalog-intro{margin-bottom:16px!important}
+ #realizace .portfolio-filter-bar,#produkty .catalog-tabs{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;gap:7px!important;padding-bottom:5px!important}
+ #produkty .catalog-tabs::-webkit-scrollbar{display:none}
+ #realizace .portfolio-filter-bar .filter,#produkty .catalog-tabs .catalog-tab{padding:9px 14px!important;font-size:11px!important;flex:0 0 auto!important}
+ #heroSlider .hero-controls button,#heroSlider .hero-mobile-down{width:42px!important;height:42px!important;min-width:42px!important;min-height:42px!important;max-width:42px!important;max-height:42px!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;font-size:0!important;line-height:1!important;box-sizing:border-box!important}
+ #heroSlider .hero-controls button::before,#heroSlider .hero-mobile-down::before{content:'';display:block;width:13px;height:13px;border-right:1.8px solid currentColor;border-bottom:1.8px solid currentColor;flex:none}
+ #heroSlider #heroPrev::before{transform:rotate(135deg);margin-left:5px}
+ #heroSlider #heroNext::before{transform:rotate(-45deg);margin-right:5px}
+ #heroSlider .hero-mobile-down::before{transform:rotate(45deg);margin-bottom:5px}
+}
+@media(max-width:360px){#heroSlider .hero-controls button,#heroSlider .hero-mobile-down{width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;max-width:38px!important;max-height:38px!important}}
+
+/* FLX V20 — jednotný rytmus fotografických galerií */
+.flx-more-wrap{display:flex;justify-content:center;padding:26px 12px 6px}
+.flx-more{appearance:none;border:1px solid #252725;background:transparent;color:#252725;border-radius:100px;padding:13px 26px;font-size:11px;font-weight:600;letter-spacing:.08em;cursor:pointer}
+.flx-more:hover{background:#252725;color:white}
+.flx-more[hidden]{display:none!important}
+#bydleni .section-head{margin-bottom:22px!important}
+#bydleni .section-head h2{font-size:clamp(31px,3.8vw,55px)!important;letter-spacing:-.06em!important}
+#bydleni .living-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;margin:0 -4px}
+#bydleni .living-tile{grid-column:span 4;min-height:clamp(260px,32vw,490px);padding:24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:#d8d8d0;color:#222}
+#bydleni .living-tile:nth-child(2){background:#c8cdc6}#bydleni .living-tile:nth-child(3){background:#c9c6bf}
+#bydleni .living-tag{font-size:10px;letter-spacing:.12em;font-weight:600}
+#bydleni .living-tile h3{font-size:clamp(22px,2.8vw,40px);line-height:1.08;letter-spacing:-.045em;font-weight:500;margin:0 0 9px}
+#bydleni .living-tile p{font-size:12px;margin:0}
+#bydleni .living-note{margin:15px 0 0;font-size:11px;color:#73756f}
+#produkty .catalog-intro h2{font-size:clamp(31px,3.8vw,55px)!important;letter-spacing:-.06em!important}
+#produkty .catalog-grid{grid-template-columns:repeat(12,minmax(0,1fr))!important}
+#produkty .catalog-card,#produkty .catalog-card:nth-child(n){grid-column:span 2!important}
+#produkty .catalog-photo{aspect-ratio:1.05!important}
+@media(max-width:900px){#produkty .catalog-card,#produkty .catalog-card:nth-child(n){grid-column:span 3!important}}
+@media(max-width:700px){
+ #bydleni .living-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;margin:0 -3px}
+ #bydleni .living-tile{grid-column:span 1;min-height:clamp(190px,53vw,300px);padding:15px}
+ #bydleni .living-tile:first-child{grid-column:span 2;min-height:clamp(220px,61vw,360px)}
+ #bydleni .living-tile h3{font-size:clamp(19px,5vw,29px)}
+ #bydleni .living-tile p{font-size:10px}
+ #bydleni .section-head{margin-bottom:16px!important}
+ #produkty .catalog-card,#produkty .catalog-card:nth-child(n){grid-column:span 4!important}
+ #produkty .catalog-card-foot h3{font-size:11px!important}
+ #produkty .catalog-card-foot small{font-size:8px!important}
+ .flx-more-wrap{padding-top:18px}
+}
+</style><style id="flx-v21-hero-fix">
+/* V21: bezpečné oddělení úvodního titulku a informace o založení */
+@media (max-width:700px){
+ #heroSlider .hero-heritage{top:auto!important;bottom:120px!important;right:16px!important;left:auto!important;max-width:72%!important;align-items:flex-end!important;text-align:right!important;gap:5px!important}
+ #heroSlider .heritage-number{font-size:10px!important;line-height:1.4!important;letter-spacing:.14em!important}
+ #heroSlider .heritage-rotator{width:min(68vw,270px)!important;height:36px!important;font-size:11px!important;line-height:1.45!important}
+ #heroSlider .heritage-line{white-space:normal!important;max-width:100%!important;text-align:right!important}
+ #heroSlider .hero-label{left:15px!important;right:auto!important;bottom:76px!important;max-width:55%!important}
+}
+@media (max-width:390px){#heroSlider .hero-heritage{bottom:132px!important;max-width:78%!important}#heroSlider .heritage-rotator{height:42px!important}}
+</style><style id="flx-v22-compact">
+/* V22 – kompaktní rytmus a oddělené texty úvodní fotografie */
+#bydleni .living-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px}
+#bydleni .living-photo{grid-column:span 3;aspect-ratio:1.18;overflow:hidden;background:#d5d5cf}
+#bydleni .living-photo:nth-child(1),#bydleni .living-photo:nth-child(6){grid-column:span 6;aspect-ratio:1.7}
+#bydleni .living-photo img{width:100%;height:100%;object-fit:cover}
+#produkty .catalog-intro h2{line-height:1.08!important}
+@media(max-width:700px){
+ :root{--flx-space:19px!important}
+ #realizace.section,#bydleni.residential,#nabytek.furniture,#produkty.catalog,.services,#onas.about,#kontakt.contact{padding-top:22px!important;padding-bottom:24px!important}
+ #realizace .section-head h2,#bydleni .section-head h2,#produkty .catalog-intro h2,.services .section-head h2,#onas h2{font-size:clamp(27px,7.5vw,36px)!important;line-height:1.12!important}
+ #realizace .section-head,#bydleni .section-head,#produkty .catalog-intro{margin-bottom:12px!important}
+ #bydleni .living-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px}
+ #bydleni .living-photo,#bydleni .living-photo:nth-child(n){grid-column:span 1;aspect-ratio:1.05}
+ #bydleni .living-photo:nth-child(1),#bydleni .living-photo:nth-child(6){grid-column:span 2;aspect-ratio:1.8}
+ #bydleni .living-note{margin-top:8px!important;font-size:10px!important}
+ #produkty .catalog-intro p,#bydleni .section-head p{font-size:12px!important;line-height:1.5!important;margin-top:8px!important}
+ #produkty .catalog-tabs{margin-bottom:9px!important}
+ #produkty .catalog-photo{aspect-ratio:1.12!important}
+ #produkty .catalog-grid{gap:3px!important}
+ .flx-more-wrap{padding:12px 8px 3px!important}
+ /* Slogan nahoře vlevo, letopočet dole vpravo: nikdy stejná výška */
+ #heroSlider .hero-heritage{position:absolute!important;inset:18px auto auto 16px!important;right:auto!important;bottom:auto!important;width:min(76vw,300px)!important;max-width:76vw!important;align-items:flex-start!important;text-align:left!important;display:flex!important;flex-direction:column-reverse!important;gap:0!important}
+ #heroSlider .heritage-rotator{width:100%!important;height:46px!important;font-size:12px!important;line-height:1.35!important}
+ #heroSlider .heritage-line{text-align:left!important;max-width:100%!important}
+ #heroSlider .heritage-number{position:fixed!important;display:none!important}
+ #heroSlider .hero-heritage .heritage-number{display:block!important;position:absolute!important;top:calc(clamp(350px,58svh,560px) - 114px)!important;left:auto!important;right:-4vw!important;white-space:nowrap!important;text-align:right!important;font-size:11px!important}
+ #heroSlider .hero-label{bottom:79px!important;left:14px!important;max-width:52%!important}
+}
+
+@media(max-width:700px){#heroSlider > .heritage-number{display:block!important;position:absolute!important;z-index:8!important;right:15px!important;bottom:78px!important;top:auto!important;left:auto!important;color:#fff!important;font-size:10px!important;letter-spacing:.1em!important;text-shadow:0 1px 8px #000!important;white-space:nowrap!important}#heroSlider .hero-label{max-width:45%!important}}
+@media(min-width:701px){#heroSlider > .heritage-number{position:absolute;z-index:8;right:5vw;top:12%;color:white;font-size:12px;letter-spacing:.14em}}
+</style><style id="flx-v23-refinement">
+/* FLX V23: typografický rytmus, úvodní fotografie a kontakty */
+#kontakt .contact-people article{position:relative;padding-right:clamp(92px,12vw,150px)!important;min-height:155px}
+#kontakt .contact-people .person-portrait{position:absolute!important;right:0!important;top:20px!important;margin:0!important;width:clamp(70px,9vw,112px)!important;height:clamp(70px,9vw,112px)!important}
+#kontakt .contact-hours{max-width:430px;margin-top:12px}
+#kontakt .contact-hours>div{padding:7px 0;gap:10px}
+#onas .stat strong{font-size:clamp(30px,4vw,48px)!important;letter-spacing:-.045em}
+@media(max-width:700px){
+ #heroSlider .hero-label{position:absolute!important;left:15px!important;right:15px!important;top:auto!important;bottom:171px!important;max-width:calc(100% - 30px)!important;font-size:10px!important}
+ #heroSlider .hero-heritage{position:absolute!important;left:15px!important;right:auto!important;top:auto!important;bottom:105px!important;width:calc(100% - 30px)!important;max-width:calc(100% - 30px)!important;display:block!important;text-align:left!important;transform:none!important}
+ #heroSlider .heritage-rotator{display:block!important;position:relative!important;width:100%!important;height:42px!important;font-size:11px!important;line-height:1.4!important}
+ #heroSlider .heritage-line{left:0!important;right:auto!important;text-align:left!important;max-width:100%!important}
+ #heroSlider > .heritage-number{display:block!important;position:absolute!important;top:auto!important;bottom:74px!important;right:15px!important;left:auto!important;font-size:10px!important;letter-spacing:.1em!important}
+ #heroSlider > .heritage-number strong{font-size:inherit!important;font-weight:600!important}
+ #realizace.section,#bydleni.residential,#nabytek.furniture,#produkty.catalog,.services,#onas.about,#kontakt.contact{padding-top:14px!important;padding-bottom:15px!important}
+ #realizace .section-head,#bydleni .section-head,#produkty .catalog-intro{margin-bottom:8px!important}
+ #realizace .section-head h2,#bydleni .section-head h2,#produkty .catalog-intro h2,.services .section-head h2,#onas h2{font-size:clamp(25px,6.5vw,31px)!important}
+ #produkty .catalog-card,#produkty .catalog-card:nth-child(n){grid-column:span 4!important}
+ #produkty .catalog-card-foot{padding:6px 3px 8px!important}
+ #produkty .catalog-photo{aspect-ratio:1.2!important}
+ #kontakt .contact-people{margin-bottom:12px!important}
+ #kontakt .contact-people article{padding:13px 86px 16px 0!important;min-height:126px!important}
+ #kontakt .contact-people .person-portrait{top:13px!important;width:72px!important;height:72px!important}
+ #kontakt .contact-people h3{font-size:20px!important;margin-bottom:6px!important}
+ #kontakt .contact-people article a{font-size:12px!important;line-height:1.55!important}
+ #kontakt .contact-person-role{margin-bottom:7px!important;font-size:9px!important}
+ #kontakt .contact-people-head{padding:20px 0 10px!important}
+ #kontakt .contact-hours>div{font-size:11px!important;padding:6px 0!important}
+ #kontakt .contact-lead{padding:22px 0!important}
+ #kontakt .contact-columns{padding:18px 0 20px!important;gap:16px!important}
+ #kontakt .contact-v10 h2{font-size:clamp(40px,10vw,54px)!important}
+ #onas .stats{margin-top:15px!important;gap:10px!important}
+ #onas .stat strong{font-size:34px!important}
+ .flx-more-wrap{padding-top:8px!important}
+}
+</style><style id="flx-v25-styles">
+/* CTA: one consistent, restrained heading size across viewports */
+.contact-lead h2 {font-size:clamp(36px,5.2vw,74px)!important;line-height:1.09!important;letter-spacing:-.065em!important;}
+/* Social links are part of the footer, not another tall section */
+.flx-footer-social {display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:flex-end;}
+.flx-footer-social a,.flx-footer-social span {display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;}
+.flx-footer-social a:hover {color:var(--ink);text-decoration:underline;text-underline-offset:4px;}
+.flx-footer-social .pending {opacity:.55;cursor:default;}
+.flx-footer-social svg {width:15px;height:15px;flex:none;}
+.footer.flx-footer-v25 {align-items:center;flex-wrap:wrap;row-gap:12px;}
+@media(max-width:700px) {
+.contact-lead h2 {font-size:clamp(32px,8.6vw,43px)!important;line-height:1.08!important;margin-top:10px!important;margin-bottom:10px!important;}
+.footer.flx-footer-v25 {gap:12px;padding-top:20px;padding-bottom:24px;}
+.flx-footer-social {justify-content:flex-start;gap:18px;}
+.flx-footer-social a,.flx-footer-social span {font-size:10px;}
+}
+</style><style id="flx-v26-compact-services">
+/* V26: Only visual density of the existing services list; copy unchanged. */
+.services .section-head{margin-bottom:20px!important}
+.services .service{grid-template-columns:42px minmax(0,1fr) 28px;gap:12px;padding:13px 0!important}
+.services .service h3{font-size:clamp(19px,2.1vw,29px)!important;line-height:1.25!important;letter-spacing:-.035em}
+.services .service span:first-child{font-size:11px!important}
+.services .service .arrow{font-size:20px!important}
+@media(max-width:700px){
+.services .section-head{margin-bottom:12px!important}
+.services .service{grid-template-columns:23px minmax(0,1fr) 20px;gap:9px;padding:10px 0!important}
+.services .service h3{font-size:clamp(15px,4.2vw,18px)!important;line-height:1.3!important;letter-spacing:-.025em}
+.services .service span:first-child{font-size:10px!important}
+.services .service .arrow{font-size:16px!important}
+}
+</style><style id="flx-v27-unified-headings">
+/* Stejný nadpisový systém pro všechny tři galerie */
+#realizace .section-head,#bydleni .section-head,#produkty .section-head{display:grid!important;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)!important;align-items:end!important;gap:22px!important;margin-bottom:22px!important;padding-left:0!important;padding-right:0!important}
+#realizace .section-head h2,#bydleni .section-head h2,#produkty .section-head h2{font-family:Manrope,Arial,sans-serif!important;font-size:clamp(32px,4.2vw,62px)!important;line-height:1.08!important;font-weight:500!important;letter-spacing:-.065em!important;margin:10px 0 0!important}
+#realizace .section-head p,#bydleni .section-head p,#produkty .section-head p{font-size:clamp(12px,1.1vw,15px)!important;line-height:1.6!important;max-width:460px!important;margin:0!important;color:var(--muted)!important}
+#realizace .section-head .eyebrow,#bydleni .section-head .eyebrow,#produkty .section-head .eyebrow{font-size:10px!important;letter-spacing:.16em!important}
+#realizace .portfolio-filter-bar,#produkty .catalog-tabs{margin:0 0 18px!important;padding-left:0!important;padding-right:0!important}
+#realizace .portfolio-filter-bar{display:flex;gap:8px;flex-wrap:wrap}
+#produkty .catalog-intro{margin-bottom:22px!important}
+@media(max-width:700px){#realizace .section-head,#bydleni .section-head,#produkty .section-head{grid-template-columns:1fr!important;gap:9px!important;margin-bottom:15px!important}#realizace .section-head h2,#bydleni .section-head h2,#produkty .section-head h2{font-size:clamp(28px,8vw,38px)!important}#realizace .section-head p,#bydleni .section-head p,#produkty .section-head p{font-size:12px!important;line-height:1.5!important}#realizace .portfolio-filter-bar,#produkty .catalog-tabs{margin-bottom:12px!important}}
+</style><style id="flx-v28-gallery-width">
+/* V28: sjednocené úzké okraje všech tří galerií podle sekce Bydlení */
+#realizace.section.shell,#bydleni.residential.shell{max-width:none!important;width:100%!important;padding-left:0!important;padding-right:0!important}
+#produkty.catalog{width:100%!important;max-width:none!important;padding-left:0!important;padding-right:0!important}
+#realizace .section-head,#bydleni .section-head,#produkty .section-head{padding-left:5vw!important;padding-right:5vw!important;box-sizing:border-box}
+#realizace .portfolio-filter-bar,#produkty .catalog-tabs{padding-left:5vw!important;padding-right:5vw!important;box-sizing:border-box}
+#realizace #projectGrid.grid,#bydleni .living-gallery,#produkty .catalog-grid{width:calc(100% - 8px)!important;max-width:none!important;margin-left:4px!important;margin-right:4px!important;padding-left:0!important;padding-right:0!important;box-sizing:border-box!important;gap:4px!important}
+@media(max-width:700px){
+#realizace #projectGrid.grid,#bydleni .living-gallery,#produkty .catalog-grid{width:calc(100% - 6px)!important;margin-left:3px!important;margin-right:3px!important;gap:3px!important}
+}
+</style><style id="flx-v29-spacing">
+/* V29: only About and contact invitation vertical rhythm */
+#onas.about{padding-top:28px!important;padding-bottom:30px!important;column-gap:clamp(20px,4vw,60px)!important;row-gap:18px!important}
+#onas.about h2{margin-bottom:12px!important}
+#onas.about p{margin-top:0!important;margin-bottom:12px!important;line-height:1.55!important}
+#onas.about .stats{margin-top:16px!important}
+#kontakt.contact{padding-top:0!important}
+#kontakt .contact-inner{padding-top:25px!important}
+#kontakt .contact-kicker{padding-bottom:17px!important}
+#kontakt .contact-lead{padding-top:26px!important;padding-bottom:26px!important;gap:24px!important}
+#kontakt .contact-lead h2{margin-top:10px!important}
+@media(max-width:700px){
+ #onas.about{padding-top:12px!important;padding-bottom:13px!important;row-gap:9px!important}
+ #onas.about h2{margin-bottom:5px!important}
+ #onas.about p{margin-bottom:8px!important;line-height:1.45!important}
+ #onas.about .stats{margin-top:8px!important}
+ #kontakt .contact-inner{padding-top:14px!important}
+ #kontakt .contact-kicker{padding-bottom:10px!important}
+ #kontakt .contact-lead{padding-top:12px!important;padding-bottom:14px!important;gap:12px!important}
+ #kontakt .contact-lead h2{margin-top:5px!important;margin-bottom:5px!important}
+ #kontakt .contact-intro{margin-bottom:0!important;line-height:1.45!important}
+}
+</style><style id="flx-v30-desktop-fixes">
+/* Desktop-only corrections; mobile V29 untouched */
+@media(min-width:701px){
+ #heroSlider .hero-heritage{top:auto!important;bottom:92px!important;left:5vw!important;right:auto!important;width:min(45vw,550px)!important;max-width:45vw!important;align-items:flex-start!important;text-align:left!important}
+ #heroSlider .heritage-rotator{width:100%!important;min-height:32px!important;font-size:clamp(14px,1.35vw,20px)!important}
+ #heroSlider .heritage-line{left:0!important;right:auto!important;white-space:normal!important}
+ #heroSlider > .heritage-number{top:35px!important;right:5vw!important;left:auto!important;bottom:auto!important;font-size:clamp(12px,1vw,16px)!important;white-space:nowrap!important}
+ #bydleni .living-gallery{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch!important}
+ #bydleni .living-photo,#bydleni .living-photo:nth-child(n){grid-column:span 1!important;aspect-ratio:1.15!important;min-width:0!important}
+ #bydleni .living-photo img{height:100%!important;width:100%!important;object-fit:cover!important}
+ #produkty .catalog-end{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:35px!important;padding-top:35px!important;padding-bottom:25px!important}
+ #produkty .catalog-end .eyebrow{font-size:clamp(13px,1.2vw,18px)!important}
+ #produkty .catalog-end p{font-size:clamp(15px,1.3vw,20px)!important;line-height:1.7!important;max-width:1000px!important}
+ #produkty .catalog-end a{font-size:13px!important;white-space:nowrap!important}
+}
+@media(min-width:701px) and (max-width:1050px){#heroSlider .hero-heritage{bottom:105px!important;max-width:52vw!important}#heroSlider > .heritage-number{top:22px!important}}
+</style><style id="flx-v31-desktop-polish">
+/* V31: pouze desktop, mobilni pravidla V30 zachovana */
+@media(min-width:701px){
+ #heroSlider .hero-heritage{left:5vw!important;right:auto!important;top:auto!important;bottom:77px!important;width:min(48vw,620px)!important;max-width:48vw!important;display:block!important;text-align:left!important;align-items:flex-start!important;}
+ #heroSlider .heritage-rotator{display:block!important;position:relative!important;width:100%!important;height:34px!important;min-height:34px!important;font-size:clamp(13px,1.25vw,18px)!important;line-height:1.35!important;letter-spacing:.08em!important;}
+ #heroSlider .heritage-line{position:absolute!important;inset:0 auto auto 0!important;text-align:left!important;max-width:100%!important;white-space:nowrap!important;}
+ #heroSlider .hero-label{left:5vw!important;bottom:27px!important;max-width:48vw!important;text-align:left!important;}
+ #heroSlider > .heritage-number{top:35px!important;right:5vw!important;left:auto!important;bottom:auto!important;}
+ #realizace.section{padding-bottom:24px!important;}
+ #realizace .flx-more-wrap{padding-bottom:0!important;margin-bottom:0!important;}
+ #bydleni.residential{padding-top:24px!important;padding-bottom:26px!important;}
+ #bydleni .living-note{margin-bottom:0!important;}
+ #produkty.catalog{padding-top:24px!important;}
+}
+</style><style id="flx-v32">
+/* FLX V32: desktop refinements; mobile V31 layout retained */
+@media(min-width:701px){
+ #heroSlider .hero-heritage{position:absolute!important;top:calc(12% + 43px)!important;right:5vw!important;bottom:auto!important;left:auto!important;width:min(30vw,410px)!important;max-width:30vw!important;align-items:flex-end!important;text-align:right!important;transform:none!important;}
+ #heroSlider .heritage-rotator{width:100%!important;height:44px!important;min-height:44px!important;font-size:clamp(12px,1.1vw,16px)!important;text-align:right!important;}
+ #heroSlider .heritage-line{left:auto!important;right:0!important;text-align:right!important;width:100%!important;}
+ #heroSlider > .heritage-number{top:12%!important;right:5vw!important;bottom:auto!important;left:auto!important;font-size:12px!important;}
+ #produkty .catalog-tabs,#produkty .catalog-grid{width:calc(100% - 8px)!important;max-width:none!important;margin-left:4px!important;margin-right:4px!important;box-sizing:border-box!important;}
+ #produkty .catalog-grid{padding:0!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;gap:4px!important;}
+ #produkty .catalog-card,#produkty .catalog-card:nth-child(n){grid-column:span 2!important;width:auto!important;max-width:none!important;margin:0!important;}
+ #produkty .catalog-card:nth-child(n) .catalog-photo{aspect-ratio:1.1!important;}
+ #sluzby.services{background:#303530!important;color:#f4f4ef!important;}
+ #sluzby .service{border-color:#636a62!important;}
+ #sluzby .section-head p{color:#c0c5bd!important;}
+ #kontakt .contact-lead h2{font-size:clamp(35px,4.4vw,64px)!important;}
+ #kontakt .contact-mainlink{font-size:clamp(24px,3vw,43px)!important;}
+}
+.flx-showroom-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;min-width:0}
+.flx-showroom-photos .flx-showroom-photo{min-width:0;aspect-ratio:1.1;padding:10px}
+.flx-showroom-photos .flx-showroom-photo span{font-size:9px;line-height:1.5}
+@media(max-width:700px){.flx-showroom-photos{grid-template-columns:1fr;gap:7px}.flx-showroom-photos .flx-showroom-photo{aspect-ratio:2.5}}
+</style><style id="flx-v33-consistency">
+/* V33: shared alignment and restrained service design */
+#sluzby.services{background:#f5f4f0!important;color:#242724!important;border:0!important;box-shadow:none!important}
+#sluzby.services .service{border-color:#d2d3cc!important;color:#242724!important}
+#sluzby.services .section-head p,#sluzby.services .eyebrow,#sluzby.services .service span{color:#5f625c!important}
+#sluzby.services .service h3{color:#242724!important}
+#produkty .catalog-tabs{width:auto!important;max-width:none!important;margin-left:5vw!important;margin-right:5vw!important;padding:0!important;box-sizing:border-box!important}
+#produkty .catalog-grid{width:calc(100% - 8px)!important;max-width:none!important;margin:0 4px!important;padding:0!important;box-sizing:border-box!important}
+#produkty .section-head{padding-left:5vw!important;padding-right:5vw!important}
+#kontakt .contact-small{display:block!important;margin-bottom:19px!important}
+@media(min-width:701px){
+ #onas.about.shell,#showroom.flx-showroom.shell{max-width:none!important;width:100%!important;padding-left:5vw!important;padding-right:5vw!important;box-sizing:border-box!important}
+ #kontakt .contact-inner{max-width:none!important;width:100%!important;padding-left:5vw!important;padding-right:5vw!important;box-sizing:border-box!important}
+ #sluzby.services.shell{max-width:none!important;width:100%!important;padding-left:5vw!important;padding-right:5vw!important;box-sizing:border-box!important}
+ #heroSlider .heritage-number{font-size:clamp(17px,1.65vw,25px)!important;line-height:1.2!important}
+ #heroSlider .heritage-number strong{font-size:1.25em!important}
+ #heroSlider .hero-title,#heroSlider .hero-heading,.hero-copy h1,.hero-content h1{font-size:clamp(38px,5.1vw,80px)!important}
+}
+@media(max-width:700px){#produkty .catalog-tabs{margin-left:5vw!important;margin-right:5vw!important}#kontakt .contact-small{margin-bottom:12px!important}}
+</style><style id="flx-v34-dankovi">.living-dankovi{cursor:pointer;position:relative;overflow:hidden}.living-dankovi img{transition:transform .45s ease}.living-dankovi:hover img{transform:scale(1.035)}.living-dankovi-caption{position:absolute;bottom:0;left:0;right:0;padding:35px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:white;font-size:11px;letter-spacing:.09em;display:flex;flex-direction:column;gap:5px}.living-dankovi-caption strong{font-size:clamp(16px,2vw,25px);font-weight:500;letter-spacing:0}@media(max-width:700px){.living-dankovi-caption{padding:26px 12px 12px}}</style><style>/* FLX V36: jedna galerie soukromých interiérů, bez ilustračních fotografií */
+#bydleni .living-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+#bydleni .living-gallery>.living-photo,#bydleni .living-gallery>.flx-living-card{width:100%;height:auto;min-height:260px;aspect-ratio:1.45;grid-column:auto;grid-row:auto;position:relative;overflow:hidden;border:0;border-radius:0;margin:0;padding:0;cursor:pointer;text-align:left;background:#e8e6e1}
+#bydleni .living-gallery>.living-photo img,#bydleni .living-gallery>.flx-living-card img{display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .45s ease}
+#bydleni .living-gallery>.living-photo:hover img,#bydleni .living-gallery>.flx-living-card:hover img{transform:scale(1.035)}
+#bydleni .living-gallery>.flx-living-card span{position:absolute;bottom:0;left:0;right:0;padding:36px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-size:clamp(16px,2vw,25px);font-weight:500;display:flex;justify-content:space-between;align-items:end}
+#bydleni .living-gallery>.flx-living-card span b{font-weight:400}
+@media(max-width:650px){#bydleni .living-gallery{grid-template-columns:1fr;gap:12px}#bydleni .living-gallery>.living-photo,#bydleni .living-gallery>.flx-living-card{min-height:230px}}
+</style><style>
+/* FLX V37 — consistent category navigation and horizontal alignment */
+#bydleni .living-filter-bar, #produkty .catalog-tabs, #realizace .portfolio-filter-bar {margin:20px 0 18px; padding:0; display:flex; gap:9px; align-items:center; flex-wrap:wrap; width:100%; box-sizing:border-box;}
+#bydleni .living-filter-bar .filter, #produkty .catalog-tabs .catalog-tab, #realizace .portfolio-filter-bar .filter {border:1px solid #c6c8c1; border-radius:0; background:transparent; color:#222; padding:11px 17px; font-size:11px; line-height:1.35; letter-spacing:.06em; font-weight:500; text-transform:uppercase; cursor:pointer; white-space:nowrap;}
+#bydleni .living-filter-bar .filter.active, #produkty .catalog-tabs .catalog-tab.active, #realizace .portfolio-filter-bar .filter.active {background:#222; color:#fff; border-color:#222;}
+#produkty .catalog-tabs, #produkty .catalog-grid {width:calc(100% - 2 * var(--flx-content-gutter, 28px)); max-width:var(--flx-content-width, 1440px); margin-left:auto; margin-right:auto;}
+#produkty .section-head.shell {width:calc(100% - 2 * var(--flx-content-gutter, 28px)); max-width:var(--flx-content-width, 1440px); margin-left:auto; margin-right:auto; box-sizing:border-box;}
+#bydleni .living-gallery [hidden] {display:none!important;}
+@media (max-width:700px){#bydleni .living-filter-bar,#produkty .catalog-tabs,#realizace .portfolio-filter-bar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:7px;padding-bottom:7px;}#bydleni .living-filter-bar::-webkit-scrollbar,#produkty .catalog-tabs::-webkit-scrollbar{display:none;}#produkty .catalog-tabs,#produkty .catalog-grid,#produkty .section-head.shell{width:calc(100% - 12px);max-width:none;}#bydleni .living-filter-bar .filter,#produkty .catalog-tabs .catalog-tab{font-size:10px;padding:9px 12px;}}
+</style><style id="flx-v38-precise-alignment">
+/* V38: all three sections use exactly the same 5vw gutter for headings, tabs and counters. */
+#realizace .section-head,#bydleni .section-head,#produkty .section-head,
+#realizace .portfolio-filter-bar,#bydleni .living-filter-bar,#produkty .catalog-tabs,
+#realizace .filters,#bydleni .flx-section-count,#produkty .flx-section-count{
+  width:100%!important;max-width:none!important;box-sizing:border-box!important;
+  margin-left:0!important;margin-right:0!important;
+  padding-left:5vw!important;padding-right:5vw!important;
+}
+#realizace .portfolio-filter-bar,#bydleni .living-filter-bar,#produkty .catalog-tabs{
+  display:flex!important;align-items:center!important;justify-content:flex-start!important;
+  gap:9px!important;margin-top:0!important;margin-bottom:9px!important;
+  flex-wrap:wrap!important;overflow:visible!important;
+}
+#realizace .portfolio-filter-bar .filter,#bydleni .living-filter-bar .filter,#produkty .catalog-tabs .catalog-tab{
+  appearance:none!important;border:1px solid #c6c8c1!important;border-radius:100px!important;
+  background:transparent!important;color:#222!important;padding:10px 17px!important;
+  font-size:11px!important;line-height:1.3!important;letter-spacing:.035em!important;
+  font-weight:500!important;text-transform:none!important;white-space:nowrap!important;
+}
+#realizace .portfolio-filter-bar .filter.active,#bydleni .living-filter-bar .filter.active,#produkty .catalog-tabs .catalog-tab.active{
+  background:#222!important;color:white!important;border-color:#222!important;
+}
+#bydleni .flx-section-count,#produkty .flx-section-count{
+  color:var(--muted)!important;font-size:12px!important;margin-top:0!important;margin-bottom:16px!important;
+}
+#bydleni .living-gallery [hidden],#produkty .catalog-card[hidden]{display:none!important}
+@media(max-width:700px){
+ #realizace .portfolio-filter-bar,#bydleni .living-filter-bar,#produkty .catalog-tabs{
+   flex-wrap:nowrap!important;overflow-x:auto!important;scrollbar-width:none!important;
+   -webkit-overflow-scrolling:touch!important;gap:7px!important;
+ }
+ #realizace .portfolio-filter-bar::-webkit-scrollbar,#bydleni .living-filter-bar::-webkit-scrollbar,#produkty .catalog-tabs::-webkit-scrollbar{display:none}
+ #realizace .portfolio-filter-bar .filter,#bydleni .living-filter-bar .filter,#produkty .catalog-tabs .catalog-tab{padding:9px 14px!important;flex:0 0 auto!important}
+}
+</style><style id="flx-v39-alignment">
+/* V39: all editorial elements share the same horizontal content guide. */
+#uvod.intro.shell{max-width:none!important;width:100%!important;padding-left:5vw!important;padding-right:5vw!important;box-sizing:border-box!important}
+#uvod .eyebrow,#uvod h1,#uvod .intro-bottom{margin-left:0!important;padding-left:0!important;transform:none!important;text-align:left!important}
+#uvod h1 .flx-head-second{margin-left:0!important;padding-left:0!important;transform:none!important}
+#produkty .catalog-end.shell{max-width:none!important;width:100%!important;margin-left:0!important;margin-right:0!important;padding-left:5vw!important;padding-right:5vw!important;box-sizing:border-box!important}
+#produkty .catalog-end .eyebrow{font-family:'DM Sans',Arial,sans-serif!important;font-size:10px!important;letter-spacing:.16em!important;font-weight:700!important;line-height:1.5!important}
+#produkty .catalog-end p{font-family:'DM Sans',Arial,sans-serif!important;font-size:clamp(12px,1.1vw,15px)!important;line-height:1.65!important;font-weight:400!important}
+@media(min-width:701px){
+ #heroSlider > .heritage-number{top:24%!important;right:5vw!important;left:auto!important;bottom:auto!important}
+ #heroSlider .hero-heritage{top:calc(24% + 43px)!important;right:5vw!important;left:auto!important;bottom:auto!important}
+ #heroSlider .hero-label{left:5vw!important}
+}
+@media(max-width:700px){
+ #produkty .catalog-end.shell{padding-left:5vw!important;padding-right:5vw!important}
+ #heroSlider > .heritage-number{top:auto!important;bottom:95px!important;right:5vw!important;left:auto!important}
+ #heroSlider .hero-heritage{left:5vw!important;right:5vw!important;bottom:125px!important;top:auto!important;width:90vw!important;max-width:90vw!important}
+ #heroSlider .hero-label{left:5vw!important}
+}
+</style><style id="flx-v40-final-tuning">
+/* V40: sjednocení drobných nadpisů v showroomu a kontaktu */
+#showroom .eyebrow,#kontakt .contact-overline,#kontakt .contact-small,#kontakt .flx-contact-kicker-label{font-family:'DM Sans',Arial,sans-serif!important;font-size:11px!important;letter-spacing:.19em!important;font-weight:700!important;line-height:1.5!important;text-transform:uppercase!important}
+#kontakt .contact-overline,#kontakt .contact-small,#kontakt .flx-contact-kicker-label{display:inline-flex!important;align-items:center!important;gap:12px!important}
+#kontakt .contact-overline::before,#kontakt .contact-small::before,#kontakt .flx-contact-kicker-label::before{content:'';display:inline-block;flex:none;width:25px;height:1px;background:currentColor}
+#kontakt .contact-overline{margin:0 0 10px!important;color:#686e66!important}
+#kontakt .contact-lead h2{margin-top:6px!important;font-size:clamp(66px,9.5vw,154px)!important}
+#kontakt .contact-columns{padding-top:60px!important;padding-bottom:110px!important;align-items:start!important}
+#kontakt .contact-columns>div:nth-child(2){padding-top:38px!important}
+#kontakt .contact-map-caption .contact-small,#kontakt .contact-people-head .contact-small{white-space:nowrap}
+@media(min-width:701px){#heroSlider>.heritage-number{top:18%!important}}
+@media(max-width:700px){#kontakt .contact-columns{padding-top:44px!important;padding-bottom:70px!important}#kontakt .contact-columns>div:nth-child(2){padding-top:24px!important}#kontakt .contact-lead h2{font-size:clamp(58px,13vw,92px)!important}#heroSlider>.heritage-number{bottom:108px!important;top:auto!important}}
+</style><style id="flx-v41-refinement">
+/* V41: heading scale consistent with gallery sections. */
+@media(min-width:701px){
+ #heroSlider .hero-label{top:12%!important;bottom:auto!important;left:5vw!important;max-width:40%!important;}
+ #heroSlider > .heritage-number{top:12%!important;bottom:auto!important;right:5vw!important;}
+ #heroSlider .hero-heritage{top:calc(12% + 29px)!important;bottom:auto!important;right:5vw!important;left:auto!important;}
+}
+/* Section titles use one common typographic rhythm. */
+#sluzby .section-head h2,#onas h2,#showroom h2,#kontakt .contact-lead h2{
+ font-family:Manrope,Arial,sans-serif!important;
+ font-size:clamp(32px,4.2vw,62px)!important;
+ font-weight:500!important;letter-spacing:-.065em!important;line-height:1.08!important;
+}
+/* Keep supplier names comfortably legible without changing layout. */
+#produkty .catalog-end p{font-size:clamp(14px,1.22vw,17px)!important;line-height:1.7!important;}
+@media(max-width:700px){
+ #sluzby .section-head h2,#onas h2,#showroom h2,#kontakt .contact-lead h2{font-size:clamp(25px,6.5vw,31px)!important;}
+ #produkty .catalog-end p{font-size:13px!important;}
+}
+</style><style id="flx-v42-layout-fixes">
+/* Upper/lower hero labels share the same 25px inset; controls unchanged. */
+@media(min-width:701px){
+ #heroSlider .hero-label{top:auto!important;bottom:25px!important;left:5vw!important;max-width:48%!important;}
+ #heroSlider>.heritage-number{top:25px!important;right:5vw!important;bottom:auto!important;}
+ #heroSlider .hero-heritage{top:82px!important;right:5vw!important;bottom:auto!important;left:auto!important;}
+}
+/* Keep the hero slider arrows exactly where they are. */
+/* Showroom copy begins at the same top edge as the future image placeholders. */
+#showroom.flx-showroom{align-items:start!important;}
+#showroom .flx-showroom-copy{align-self:start!important;padding-top:0!important;margin-top:0!important;}
+/* Contact heading and email are two separate rows, never inline. */
+#kontakt .contact-columns>div:first-child{display:flex!important;flex-direction:column!important;align-items:flex-start!important;min-width:0!important;}
+#kontakt .contact-columns>div:first-child>.contact-small{display:inline-flex!important;flex:0 0 auto!important;}
+#kontakt .contact-mainlink{display:inline-flex!important;margin-top:20px!important;max-width:100%!important;overflow-wrap:anywhere!important;}
+#kontakt .contact-columns{padding-bottom:36px!important;}
+#kontakt .contact-map-wrap{margin-top:20px!important;}
+/* Suppliers: another small increment without changing the editorial alignment. */
+#produkty .catalog-end p{font-size:clamp(15px,1.38vw,19px)!important;line-height:1.7!important;}
+@media(max-width:700px){
+ #heroSlider .hero-label{top:auto!important;bottom:72px!important;left:5vw!important;max-width:52%!important;}
+ #heroSlider>.heritage-number{top:24px!important;bottom:auto!important;right:5vw!important;left:auto!important;}
+ #heroSlider .hero-heritage{top:75px!important;bottom:auto!important;right:5vw!important;left:auto!important;width:auto!important;max-width:90vw!important;}
+ #heroSlider .heritage-rotator{width:min(80vw,330px)!important;}
+ #kontakt .contact-columns{padding-bottom:28px!important;}
+ #kontakt .contact-map-wrap{margin-top:12px!important;}
+ #produkty .catalog-end p{font-size:14px!important;}
+}
+</style><style id="flx-v43-small-adjustments">
+/* Move only the left headline block higher; keep right year, changing text, photo title and arrows untouched. */
+@media(min-width:701px){#uvod.intro{padding-top:clamp(22px,calc(8vh - 26px),94px)!important;}}
+@media(max-width:700px){#uvod.intro{padding-top:34px!important;}}
+/* Inactive continuation control matches the existing portfolio/product buttons. */
+#bydleni .flx-more-wrap{display:flex;justify-content:center;margin-top:32px;}
+#bydleni .flx-more[disabled]{opacity:.42;cursor:default;pointer-events:none;}
+</style><style>.contact-pending{display:block;font-size:13px;opacity:.55;margin-top:8px}</style></head><body><header class="top shell"><a aria-label="FLX – úvod" class="logo" href="#uvod"><img alt="FLX" src="images/3adfbb5f1c39ce62.png"/></a><nav><a href="#realizace">REALIZACE</a><a href="#bydleni">BYDLENÍ</a><a href="#produkty">PRODUKTY</a><a href="#sluzby">SLUŽBY</a><a href="#onas">O NÁS</a><a href="#kontakt">KONTAKT</a></nav></header><main><section class="intro shell" id="uvod"><div class="eyebrow">NÁVRHY · VÝROBA · REALIZACE</div><h1>Prostor.<br/><span class="flx-head-second">Promyšlený <em>do detailu.</em></span></h1><div class="intro-bottom"><p>Navrhujeme a vyrábíme interiéry, ve kterých se propojuje architektura, funkce a poctivé řemeslo. Od prvního návrhu až po poslední detail.</p></div></section><div aria-label="Výběr realizací FLX" class="hero-image" id="heroSlider">
+<div class="hero-slides" id="heroSlides"></div>
+<div class="hero-controls"><button aria-label="Předchozí fotografie" id="heroPrev" type="button">←</button><span id="heroIndex">01 / 05</span><button aria-label="Další fotografie" id="heroNext" type="button">→</button></div>
+<a aria-label="Posunout dolů k realizacím" class="hero-mobile-down" href="#realizace">↓</a><span class="hero-label" id="heroProjectLabel">FLX / VYBRANÉ REALIZACE</span><a aria-label="Posunout dolů k realizacím" class="hero-scroll" href="#realizace"><span>SCROLLOVAT DOLŮ</span><span class="hero-scroll-arrow">↓</span></a>
+<div aria-label="O společnosti FLX" class="hero-heritage"><span aria-live="off" class="heritage-rotator"><span class="heritage-line is-on">Architektura a řemeslo.</span><span class="heritage-line">Vlastní truhlářská výroba.</span><span class="heritage-line">Od návrhu po realizaci.</span></span></div><span class="heritage-number">OD ROKU <strong>1990</strong></span></div><section class="section shell" id="realizace"><div class="section-head"><div><div class="eyebrow">KOMERČNÍ INTERIÉRY</div><h2>Vybrané realizace.</h2></div><p>Navrhujeme a realizujeme kanceláře, obchody i další komerční prostory. Od první myšlenky po zakázkovou výrobu a montáž.</p></div><div aria-label="Filtrovat realizace" class="portfolio-filter-bar" role="group"><button class="filter active" data-project-filter="Vše" type="button">Všechny</button><button class="filter" data-project-filter="Kanceláře" type="button">Kanceláře</button><button class="filter" data-project-filter="Obchody" type="button">Obchody</button><button class="filter" data-project-filter="Restaurace" type="button">Restaurace</button><button class="filter" data-project-filter="Zdravotnictví" type="button">Zdravotnictví</button><button class="filter" data-project-filter="Ostatní" type="button">Ostatní</button></div><div class="filters"><span id="projectCount" style="color:var(--muted);font-size:12px"></span></div><div class="grid" id="projectGrid"></div><div class="flx-more-wrap"><button class="flx-more" id="projectMore" type="button">DALŠÍ REALIZACE ↓</button></div></section><section class="residential shell" id="bydleni"><div class="section-head"><div><div class="eyebrow">SOUKROMÉ INTERIÉRY</div><h2>Prostor pro život.</h2></div><p>Od první skici po poslední úchytku. Navrhujeme a vyrábíme nábytek na míru také pro domácnosti.</p></div><div aria-label="Filtrovat soukromé interiéry" class="portfolio-filter-bar living-filter-bar" role="group"><button aria-pressed="true" class="filter active" data-living-filter="Vše" type="button">Vše</button><button aria-pressed="false" class="filter" data-living-filter="Kuchyně" type="button">Kuchyně</button><button aria-pressed="false" class="filter" data-living-filter="Obývací prostory" type="button">Obývací prostory</button><button aria-pressed="false" class="filter" data-living-filter="Ložnice" type="button">Ložnice</button><button aria-pressed="false" class="filter" data-living-filter="Koupelny" type="button">Koupelny</button><button aria-pressed="false" class="filter" data-living-filter="Dětské pokoje" type="button">Dětské pokoje</button></div><div class="flx-section-count" id="livingCount" aria-live="polite"></div><div aria-label="Realizované soukromé interiéry FLX" class="living-gallery"><div aria-label="Otevřít realizaci Bytový interiér – Daňkovi" class="living-photo living-dankovi" data-living-categories="Kuchyně|Obývací prostory|Ložnice" role="button" tabindex="0"><img alt="Bytový interiér Daňkovi – obývací prostor s kuchyní" loading="lazy" src="images/66bfb65da95d80cb.webp"/><span class="living-dankovi-caption">BYTOVÝ INTERIÉR <strong>Daňkovi ↗</strong></span></div><button class="flx-living-card" data-living="byt_kropikova" data-living-categories="Kuchyně|Koupelny|Obývací prostory" type="button"><img alt="Interiér paní Kropíkové" loading="lazy" src="images/5e102aede11e2762.webp"/><span>Interiér paní Kropíkové<b>↗</b></span></button><button class="flx-living-card" data-living="byt_hradec" data-living-categories="Ložnice|Dětské pokoje" type="button"><img alt="Interiér Hradec" loading="lazy" src="images/f8e29ba44d85808b.webp"/><span>Interiér Hradec<b>↗</b></span></button><button class="flx-living-card" data-living="byt_vendula" data-living-categories="Obývací prostory|Koupelny|Dětské pokoje" type="button"><img alt="Obývací pokoj a pracovna Vendula" loading="lazy" src="images/05d6c51092ada7af.webp"/><span>Obývací pokoj a pracovna Vendula<b>↗</b></span></button></div><div class="flx-more-wrap"><button class="flx-more" type="button" disabled aria-disabled="true" title="Další soukromé interiéry brzy doplníme">DALŠÍ INTERIÉRY ↓</button></div></section><section class="catalog" id="produkty"><div class="section-head shell"><div><div class="eyebrow">PRODUKTY A ZNAČKY</div><h2>Produkty.</h2></div><p>Od kancelářských židlí a stolů po doplňky interiéru. Spolupracujeme s českými i zahraničními výrobci. Pomůžeme vybrat vhodný nábytek a sladit jej s celým prostorem.</p></div><div aria-label="Filtrovat produkty" class="catalog-tabs portfolio-filter-bar flx-unified-filters" role="group"><button class="catalog-tab active" data-filter="Vše" type="button">VŠE</button><button class="catalog-tab" data-filter="Sedací nábytek" type="button">SEDACÍ NÁBYTEK</button><button class="catalog-tab" data-filter="Kancelářský nábytek" type="button">KANCELÁŘSKÝ NÁBYTEK</button></div><div class="flx-section-count" id="catalogCount" aria-live="polite"></div><div class="catalog-grid"><article class="catalog-card" data-category="Sedací nábytek"><div class="catalog-photo"><img alt="LD seating Element" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-unavailable')" src="https://static.wixstatic.com/media/fc2082_4a74110a739140149c7ae616b580d54b~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/fc2082_4a74110a739140149c7ae616b580d54b~mv2.jpg"/><span class="catalog-fallback">LD seating<small>Fotografie produktu se nepodařila načíst</small></span></div><div class="catalog-card-foot"><div><small>LD seating / Sedací nábytek</small><h3>Element</h3></div><a aria-label="Poptat Element" href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20LD%20seating%20Element">POPTAT ↗</a></div></article><article class="catalog-card" data-category="Sedací nábytek"><div class="catalog-photo"><img alt="LD seating Look" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-unavailable')" src="https://static.wixstatic.com/media/fc2082_20cff025229d4cecba854394093a8ace~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/fc2082_20cff025229d4cecba854394093a8ace~mv2.jpg"/><span class="catalog-fallback">LD seating<small>Fotografie produktu se nepodařila načíst</small></span></div><div class="catalog-card-foot"><div><small>LD seating / Sedací nábytek</small><h3>Look</h3></div><a aria-label="Poptat Look" href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20LD%20seating%20Look">POPTAT ↗</a></div></article><article class="catalog-card" data-category="Sedací nábytek"><div class="catalog-photo"><img alt="Antares Grace" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-unavailable')" src="https://static.wixstatic.com/media/fc2082_e6e337dc38ce47629320181557989dce~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/fc2082_e6e337dc38ce47629320181557989dce~mv2.jpg"/><span class="catalog-fallback">Antares<small>Fotografie produktu se nepodařila načíst</small></span></div><div class="catalog-card-foot"><div><small>Antares / Sedací nábytek</small><h3>Grace</h3></div><a aria-label="Poptat Grace" href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20Antares%20Grace">POPTAT ↗</a></div></article><article class="catalog-card" data-category="Sedací nábytek"><div class="catalog-photo"><img alt="Emagra 2511 049" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-unavailable')" src="https://static.wixstatic.com/media/fc2082_123e8d533b9942aa8bc45ca03e1940c6~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/fc2082_123e8d533b9942aa8bc45ca03e1940c6~mv2.jpg"/><span class="catalog-fallback">Emagra<small>Fotografie produktu se nepodařila načíst</small></span></div><div class="catalog-card-foot"><div><small>Emagra / Sedací nábytek</small><h3>2511 049</h3></div><a aria-label="Poptat 2511 049" href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20Emagra%202511%20049">POPTAT ↗</a></div></article><article class="catalog-card" data-category="Sedací nábytek"><div class="catalog-photo"><img alt="RIM VI-14017" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-unavailable')" src="https://static.wixstatic.com/media/fc2082_ab88d7c5675240e58b7a33e4c093a454~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/fc2082_ab88d7c5675240e58b7a33e4c093a454~mv2.jpg"/><span class="catalog-fallback">RIM<small>Fotografie produktu se nepodařila načíst</small></span></div><div class="catalog-card-foot"><div><small>RIM / Sedací nábytek</small><h3>VI-14017</h3></div><a aria-label="Poptat VI-14017" href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20RIM%20VI-14017">POPTAT ↗</a></div></article><article class="catalog-card" data-category="Kancelářský nábytek"><div class="catalog-photo"><img alt="HOBIS Kuchyně HOBIS" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-unavailable')" src="https://static.wixstatic.com/media/fc2082_9d7f83617b284c9593c2e0b01cdf1eca~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/fc2082_9d7f83617b284c9593c2e0b01cdf1eca~mv2.jpg"/><span class="catalog-fallback">HOBIS<small>Fotografie produktu se nepodařila načíst</small></span></div><div class="catalog-card-foot"><div><small>HOBIS / Kancelářský nábytek</small><h3>Kuchyně HOBIS</h3></div><a aria-label="Poptat Kuchyně HOBIS" href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20HOBIS%20Kuchyn%C4%9B%20HOBIS">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">TON</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>TON / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20TON">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">LD seating</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>LD seating / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20LD%20seating">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">RIM</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>RIM / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20RIM">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">Antares</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>Antares / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20Antares">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Kancelářský nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">HOBIS</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>HOBIS / Kancelářský nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20HOBIS">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Kancelářský nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">Emagra</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>Emagra / Kancelářský nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20Emagra">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">TON</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>TON / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20TON">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">RIM</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>RIM / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20RIM">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Kancelářský nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">HOBIS</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>HOBIS / Kancelářský nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20HOBIS">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">LD seating</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>LD seating / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20LD%20seating">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Sedací nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">Antares</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>Antares / Sedací nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20Antares">POPTAT ↗</a></div></article><article class="catalog-card catalog-sample" data-category="Kancelářský nábytek"><div class="catalog-photo catalog-placeholder"><span class="catalog-placeholder-brand">Emagra</span><span class="catalog-placeholder-label">DALŠÍ SORTIMENT · FOTOGRAFIE DOPLNÍME</span></div><div class="catalog-card-foot"><div><small>Emagra / Kancelářský nábytek</small><h3>Výběr značky</h3></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku%20%E2%80%93%20Emagra">POPTAT ↗</a></div></article></div><button class="catalog-more" id="catalogMore" type="button">DALŠÍ PRODUKTY ↓</button><p class="catalog-demo-note">Pracovní výběr sortimentu. U dalších značek jsou zatím typografické zástupné karty; fotografie a konkrétní modely doplníme po výběru.</p><div class="catalog-end shell"><div><div class="eyebrow">VÝBĚR DODAVATELŮ</div><p>LD seating · Antares · Emagra · Office Pro · RIM · Alba · Form design · HOBIS · Techo · Interiér Říčany · TON</p></div><a href="mailto:flx@flx.cz?subject=Popt%C3%A1vka%20n%C3%A1bytku">POPTAT VYBAVENÍ ↗</a></div><p class="catalog-disclaimer shell">Ukázka vybraných modelů z původního webu FLX. Sortiment, dostupnost a provedení ověříme při poptávce. Fotografie produktů se načítají ze stávajícího webu a vyžadují internetové připojení.</p></section><section class="dark"><div class="services shell" id="sluzby"><div class="section-head"><div><div class="eyebrow">SLUŽBY</div><h2>Co děláme.</h2></div><p>Pro kanceláře, veřejné prostory i bydlení. Vlastní výroba nám umožňuje hlídat každý detail.</p></div><div class="service"><span>01</span><h3>Návrhy interiérů a 3D vizualizace</h3><span class="arrow">↗</span></div><div class="service"><span>02</span><h3>Zakázková výroba nábytku</h3><span class="arrow">↗</span></div><div class="service"><span>03</span><h3>Kompletní realizace interiérů</h3><span class="arrow">↗</span></div><div class="service"><span>04</span><h3>Dodávky kancelářského i bytového nábytku</h3><span class="arrow">↗</span></div></div></section><section class="about shell" id="onas"><div><div class="eyebrow">O NÁS</div><h2>Architektura.<br/>Řemeslo.<br/>FLX.</h2></div><div><p>Jsme česká firma s tradicí od roku 1990. Spojujeme architektonický přístup s vlastní truhlářskou výrobou a zkušenostmi z realizací komerčních i soukromých interiérů.</p><p class="flx-manufacture">Od návrhu po realizaci. Vlastní zakázková výroba.</p><p>Věříme v promyšlená řešení, kvalitní materiály a dlouhodobé vztahy s klienty. Od návrhu až po montáž držíme celý proces pod kontrolou.</p><div class="stats"><div class="stat"><strong>1990</strong><small>Rok založení firmy</small></div><div class="stat"><strong>35+</strong><small>Let zkušeností</small></div></div></div></section><section class="flx-showroom shell" id="showroom"><div class="flx-showroom-copy"><div class="eyebrow">NAVŠTIVTE NÁS</div><h2>Showroom.<br/>Pardubice.</h2><p>Materiály, nábytek a řešení interiérů si můžete prohlédnout také v našem vlastním showroomu v Pardubicích.</p></div><div class="flx-showroom-photos"><div aria-label="Místo pro budoucí fotografii showroomu" class="flx-showroom-photo"><svg fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24"><rect height="16" rx="1" width="18" x="3" y="4"></rect><circle cx="8" cy="9" r="2"></circle><path d="m3 17 6-5 4 3 3-4 5 5"></path></svg><span>Zde bude fotografie showroomu</span></div><div aria-label="Místo pro druhou fotografii showroomu" class="flx-showroom-photo"><svg fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24"><rect height="16" rx="1" width="18" x="3" y="4"></rect><circle cx="8" cy="9" r="2"></circle><path d="m3 17 6-5 4 3 3-4 5 5"></path></svg><span>Druhá fotografie showroomu</span></div></div></section><section class="contact contact-v10" id="kontakt"><div class="contact-inner"><div class="contact-kicker"><span class="flx-contact-kicker-label">KONTAKT</span><span>FLX — PARDUBICE</span></div><div class="contact-lead"><div><p class="contact-overline">MÁTE PROJEKT?</p><h2>Pojďme ho<br/><em>vytvořit.</em></h2></div><p class="contact-intro">Od první myšlenky přes návrh až po výrobu a montáž. Napište nám, co plánujete. Rádi s vámi probereme možnosti spolupráce.</p></div><div class="contact-rule"></div><div class="contact-columns"><div><span class="contact-small">HLAVNÍ KONTAKT</span><a class="contact-mainlink" href="mailto:flx@flx.cz">flx@flx.cz <span>↗</span></a><p class="contact-place">FLX spol. s r.o.<br/>Jindřišská 698<br/>530 02 Pardubice</p><a class="contact-social" href="https://www.google.com/maps/search/?api=1&amp;query=Jind%C5%99i%C5%A1sk%C3%A1+698%2C+Pardubice" rel="noopener" target="_blank">ZOBRAZIT NA MAPĚ ↗</a><a class="contact-social" href="https://www.instagram.com/flx_interier/" rel="noopener" target="_blank">INSTAGRAM ↗</a><p class="contact-ident">IČO 25282387  ·  DIČ CZ25282387</p></div><div><span class="contact-small">SHOWROOM / ATELIÉR</span><div class="contact-hours"><div><span>PO</span><span>09:30–12:00 / 13:00–16:00</span></div><div><span>ÚT</span><span>09:30–12:00 / 13:00–16:00</span></div><div><span>ST</span><span>09:30–12:00 / 13:00–18:00</span></div><div><span>ČT</span><span>09:30–12:00 / 13:00–16:00</span></div><div><span>PÁ</span><span>09:30–12:00</span></div></div></div></div><div class="contact-map-wrap"><div class="contact-map-caption"><span class="contact-small">NAJDETE NÁS</span><span>JINDŘIŠSKÁ 698 / PARDUBICE</span></div><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Jind%C5%99i%C5%A1sk%C3%A1%20698%2C%20Pardubice&amp;output=embed" title="Mapa showroomu FLX v Pardubicích"></iframe><a class="map-direct" href="https://www.google.com/maps/search/?api=1&amp;query=Jind%C5%99i%C5%A1sk%C3%A1+698%2C+Pardubice" rel="noopener" target="_blank">OTEVŘÍT MAPU ↗</a></div><div class="contact-rule"></div><div class="contact-people-head"><span class="contact-small">KONTAKTNÍ OSOBY</span><span>OBRAŤTE SE PŘÍMO NA NÁS</span></div><div class="contact-people"><article><p class="contact-person-role">JEDNATELKA / NÁVRHY INTERIÉRŮ</p><div aria-label="Zástupné místo pro portrét" class="person-portrait">BŠ</div><h3>MgA. Barbora Šimon</h3><a href="tel:+420776713121">776 713 121 ↗</a><a href="mailto:flx@flx.cz">flx@flx.cz ↗</a></article><article><p class="contact-person-role">JEDNATEL / ARCHITEKT / REALIZACE</p><div aria-label="Zástupné místo pro portrét" class="person-portrait">OŠ</div><h3>MgA. Ondřej Šimon</h3><a href="tel:+420777581007">777 581 007 ↗</a><a href="mailto:simon@flx.cz">simon@flx.cz ↗</a></article><article><p class="contact-person-role">OBJEDNÁVKY / FAKTURACE</p><div aria-label="Zástupné místo pro portrét" class="person-portrait">MS</div><h3>Bc. Michaela Sedláková</h3><a href="tel:+420777936694">777 936 694 ↗</a><a href="mailto:sedlakova@flx.cz">sedlakova@flx.cz ↗</a></article><article><p class="contact-person-role">MONTÁŽ / SERVIS</p><div aria-label="Zástupné místo pro portrét" class="person-portrait">LL</div><h3>Lukáš Lohýnský</h3><a href="tel:+420777694343">777 694 343 ↗</a><a href="mailto:info@serviszidli.cz">info@serviszidli.cz ↗</a></article><article><p class="contact-person-role">VÝROBA / REALIZACE</p><div aria-label="Zástupné místo pro portrét" class="person-portrait">MD</div><h3>Michal Diesel</h3><span class="contact-pending">Telefon doplníme</span><span class="contact-pending">E-mail doplníme</span></article><article><p class="contact-person-role">PŘÍPRAVA ZAKÁZEK / MONTÁŽ</p><div aria-label="Zástupné místo pro portrét" class="person-portrait">MJ</div><h3>Miloslav Junek</h3><span class="contact-pending">Telefon doplníme</span><span class="contact-pending">E-mail doplníme</span></article></div><div class="contact-bottom"><span>ARCHITEKTURA / VLASTNÍ VÝROBA / REALIZACE</span><span>OD ROKU 1990</span></div></div></section></main><footer class="footer shell flx-footer-v25"><span>© <span id="year"></span> FLX spol. s r.o.</span><nav aria-label="Sociální sítě FLX" class="flx-footer-social"><a aria-label="Instagram FLX" href="https://www.instagram.com/flx_interier/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle></svg>Instagram ↗</a><span class="pending" title="Odkaz doplníme">Facebook ↗</span><span class="pending" title="Odkaz doplníme">LinkedIn ↗</span></nav><span>Návrhy a realizace interiérů od roku 1990</span></footer><div aria-label="Fotografie realizace" aria-modal="true" class="modal" id="modal" role="dialog"><div class="modal-head"><a class="logo" href="#uvod" onclick="closeModal()"><img alt="FLX" src="images/3adfbb5f1c39ce62.png"/></a><button class="back" onclick="closeModal()">← ZPĚT NA REALIZACE</button></div><div class="project-hero" id="projectHero"><img alt="Úvodní fotografie realizace" id="projectHeroImage"/><div class="project-hero-shade"></div><div class="project-hero-content"><div class="project-hero-kicker">FLX / REALIZACE</div><h2 class="modal-title" id="modalTitle"></h2><div class="modal-sub" id="modalSub"></div><div class="project-details" id="projectDetails"></div></div></div><div class="project-gallery-wrap"><div class="modal-grid" id="modalGrid"></div></div></div><div aria-label="Zvětšená fotografie" aria-modal="true" class="lightbox" id="lightbox" role="dialog"><button aria-label="Zavřít" class="closezoom" onclick="closeZoom()">×</button><button aria-label="Předchozí" class="prev" onclick="step(-1)">‹</button><img alt="Detail realizace" id="zoomImg"/><button aria-label="Další" class="next" onclick="step(1)">›</button><div class="count" id="zoomCount"></div></div><script>
+const projects=[{"id":"17_Fyziocentrum","title":"Fyziocentrum","year":"2017","images":["images/9f4a8996bb37ac8f.webp","images/2b7337fe1c659f6f.webp","images/b5d27dbcecf2af4c.webp","images/e0dadf376d741696.webp","images/865e7a61d4d12097.webp","images/865d8d778326b49a.webp","images/ef7652fbe022cc8a.webp","images/2b79c53827abd1aa.webp","images/2f3a7a4f228c37c6.webp","images/186a23fdf0d481f5.webp","images/6f5bcf3305c4bb6a.webp","images/da9256c5e36a14c8.webp","images/8ac461a57467b088.webp","images/54474d8be0d1f0e0.webp","images/6625e005d95a7888.webp","images/6a6d33864c1f8689.webp"],"hero":"images/9f4a8996bb37ac8f.webp","details":{"year":"2018","place":"Pardubice","description":"Rehabilitace","credits":"Návrh FLX (OBA2) · realizace FLX","note":"Na původním webu jsou dvě reference Fyziocentra Baťa (Pardubice 2018 a Praha 2021). Zde je předběžně přiřazena pardubická realizace; ověřit."},"yearStatus":"K OVĚŘENÍ"},{"id":"19_JUSDA","title":"JUSDA","year":"2019","images":["images/df58ef399809c9d9.webp","images/dd3ec1b7e9edfefc.webp","images/662843bfd3d000ea.webp","images/bbf73500b406c082.webp","images/902442e0ab7068f9.webp","images/8e31ea1a789ad833.webp","images/b5a02e51321407cf.webp","images/d5fa872c04bee5bf.webp","images/305379bee7f1abe4.webp","images/25d38b14a148b564.webp","images/f5a7b2c1d6ec9373.webp","images/100db7b61170ea41.webp","images/c4dad98d7aedbdc1.webp"],"hero":"images/dd3ec1b7e9edfefc.webp","details":{}},{"id":"19_ TELEPERFORMANCE","title":"Teleperformance","year":"2019","images":["images/d34707c2aafef7ec.webp","images/4b29d7157e8db96f.webp","images/2ea97a117070b883.webp","images/66fdc99e85249c98.webp","images/c3a649e347a0ab91.webp","images/08ba0e8412a28f82.webp","images/3db6d54c1219e6ec.webp","images/b2e2d1ae30c875ca.webp","images/b89777ac7e484025.webp","images/dbe0fcf310e2ce8f.webp","images/93f993abdb05741f.webp","images/deb1c248542505c6.webp","images/5884b950b1f4a308.webp","images/71676e83b4564024.webp","images/7e498b740e38eae2.webp","images/9bcb1e1a4f8f50d1.webp","images/041a659cfed3453e.webp","images/863918b37bc25e9d.webp","images/be97b7bf3f6606fb.webp"],"hero":"images/d34707c2aafef7ec.webp","details":{"year":"2019","place":"Brno","description":"Kancelářské interiéry","credits":"Realizace FLX"}},{"id":"19_Bodycote","title":"Bodycote","year":"2019","images":["images/039d6d619d3736ee.webp","images/8d5b0b8a1daaba84.webp","images/9fa800ffbf3bdf2e.webp","images/a34f4143d03cba2a.webp","images/e8f4a422b1fde3f5.webp","images/bdf062f5be073967.webp","images/6dacfd032e71f12c.webp","images/01d93cec3fd16006.webp","images/c6e84ceab01a384a.webp"],"hero":"images/039d6d619d3736ee.webp","details":{"year":"2019","place":"Praha","description":"Kancelářské interiéry · sedací nábytek LD","credits":"Návrh FLX · realizace FLX"}},{"id":"21_ CARRIER","title":"Carrier","year":"2021","images":["images/c4a026facd4fd624.webp","images/1fae3b4e21cd7c1d.webp","images/06b050182157dd35.webp","images/d1b70ee27fda50e3.webp","images/760555bde80f1750.webp","images/d521bd67275067ec.webp","images/58d42cf866811d4d.webp","images/000c67dafcde1f99.webp","images/b907c21209502db2.webp","images/c2f1d17b1cba211e.webp","images/fa750f4b2ec29006.webp","images/cba6eb1fe9aeb25b.webp","images/6b76f20936367c1e.webp","images/05dd473dbba8650c.webp","images/2714171a99b76326.webp","images/3fb1df0d582fea1c.webp","images/aca3458e2f4d5e89.webp","images/f33c06ca23ca3f19.webp"],"hero":"images/c4a026facd4fd624.webp","details":{"year":"2021","place":"Mýto","description":"Kancelářské interiéry","credits":"Návrh MS architekti · realizace FLX"}},{"id":"23_ FOXCONN P3_ TESLA","title":"Foxconn P3 – Tesla","year":"2023","images":["images/77a275409dcd2c48.webp","images/1a9b27dd699bb872.webp","images/5f5eba80c64e0fb2.webp","images/d4689353214d98f6.webp","images/bdb1d150f6f04209.webp","images/d03139b0404f63c7.webp","images/db8960d6890b5058.webp","images/bec1e1fa42bb9ad6.webp","images/1baedeaded9b96f7.webp","images/f3217dff627d2c30.webp","images/3a37dc2434ff0efe.webp","images/57903f359d9fc459.webp","images/1f1997f04179b618.webp","images/2bcd08189b811126.webp","images/e45a92d00f4587bb.webp","images/f5ca6bdcf591bab7.webp","images/00777bdd096f0394.webp","images/e2b5643d5e75644a.webp"],"hero":"images/77a275409dcd2c48.webp","details":{"year":"2023","place":"Pardubice","credits":"Návrh FLX · realizace FLX","description":"Foxconn P3"}},{"id":"23_Mlyny","title":"Automatické mlýny","year":"2023","images":["images/0f5905cf38605e63.webp","images/b077473fcca9a2ca.webp","images/333dd7c0a89fc378.webp","images/1fe3ad458e1cf36d.webp","images/7c0a25057c55ff66.webp","images/c102a929f2837a12.webp","images/9ee5d3d14ac9c159.webp","images/6ad28613562f0bc7.webp","images/de3cc18cdc85a8d9.webp","images/dfef8cdb840aec44.webp"],"hero":"images/dfef8cdb840aec44.webp","details":{"year":"2023","place":"Pardubice","description":"Mobiliář exteriéru a interiéru SILO"}},{"id":"22_ DRUªSTVO","title":"Družstvo","year":"2022","images":["images/c62026c2c86a678e.webp","images/3dfbfe14d6a29783.webp","images/6689a7b9581d39bf.webp","images/e5f4afcb7ff397d0.webp","images/63470d63fc019430.webp","images/0941f0cd36a2cd25.webp","images/b53d6da0394f8c66.webp","images/0015db092fba0d81.webp","images/5bfd5acb0bb5314f.webp","images/ddf42de773649551.webp","images/d30a916adf965c84.webp","images/54cecaf9e8dd44c2.webp"],"hero":"images/c62026c2c86a678e.webp","details":{"year":"2022","place":"Pardubice","description":"Dům služeb","credits":"Návrh molo architekti · realizace FLX"}},{"id":"21_Divadlo EXIL v novem","title":"Divadlo EXIL","year":"2021","images":["images/c4a298809bd54da0.webp","images/fd732e1befe4dd26.webp","images/3605fc5c7f1762ea.webp","images/5fdac3f8b740c9f4.webp","images/3a24e974de257e4f.webp","images/14b1455bd55ee209.webp","images/4afb91360cc344ce.webp","images/7981996a96aceef7.webp","images/cb54e47ca0536e5c.webp","images/fecfa55d92bf3fb7.webp","images/8e3268a7fa0bbfaf.webp"],"hero":"images/c4a298809bd54da0.webp","details":{"year":"2021","place":"Pardubice","credits":"Návrh FLX (OBA2) · realizace FLX"}},{"id":"24_ CFIG","title":"CFIG","year":"2025","images":["images/95db52380148d07a.webp","images/7a66227ebdf47a51.webp","images/92cfcaad81fa8299.webp","images/fd863d7d4de30150.webp","images/681777b9b6c98579.webp","images/f7960439c1b3280c.webp","images/5740bc319934023d.webp","images/f48fd6fe23c36a81.webp","images/2a3ccac1f83ea931.webp","images/ebeda5c9ad5104be.webp","images/478c49fa2ff66667.webp","images/9b2eaabf84f005a2.webp","images/66870e5df0c40af4.webp","images/1d83230ead44fc81.webp","images/55b4211557c04338.webp","images/255750876ff1f19c.webp","images/7c16259114fddf05.webp","images/9964af0c98244e6a.webp","images/13a4410d386d31ae.webp","images/ad65d4c856df097a.webp","images/eefb0d43d0267fa4.webp","images/3f0e0e1fedbb1c89.webp"],"hero":"images/95db52380148d07a.webp","details":{"year":"2025","place":"Pardubice"}},{"id":"25_ STILEC & PARTNERS","title":"Stilec & Partners","year":"2025","images":["images/538af3f4905e60ec.webp","images/4dc8f93a965ebbba.webp","images/63fe316c2862f21d.webp","images/7bb82e970241d310.webp","images/82f205a4014d4abe.webp","images/401ebb259d72dbb6.webp","images/b103af2297316665.webp","images/0c018336aac46fb1.webp","images/3766c3be4a39915d.webp","images/c299d0cc08b9ff82.webp"],"hero":"images/538af3f4905e60ec.webp","details":{}},{"id":"25_Dr. Klain Hradec","title":"Dr. Klain – Hradec Králové","year":"2025","images":["images/966a51f8a7ac9879.webp","images/6c9e7fb57e12329d.webp","images/c3ff07a19678f9e8.webp","images/766665a4bcfd5627.webp","images/c21039ff4bba1a27.webp","images/71e5e05d02f41ef6.webp","images/fa883919b4a2ec3f.webp","images/2c2bfd2893564b95.webp","images/d786805b920414cb.webp","images/08afeaafaed300c0.webp","images/fb12f73e08992292.webp","images/4bbe98d09b5d66d3.webp","images/6c8d0234374633b4.webp"],"hero":"images/08afeaafaed300c0.webp","details":{"year":"2024","place":"Dvůr Králové nad Labem","credits":"Návrh molo architekti · realizace FLX","note":"Na současném webu uvedeno „Dr. Klain – Dvůr Králové“, ověřit shodu s galerií označenou Hradec."},"yearStatus":"K OVĚŘENÍ"},{"id":"25_Dr. Klain Pardubice","title":"Dr. Klain – Pardubice","year":"2025","images":["images/4e5c984e732f8ffb.webp","images/a9e9a2c7b2c59b75.webp","images/d497aaf66fcf8f01.webp","images/88a8d14dc92a026e.webp","images/4e0143c8ab694cb1.webp","images/891c13906d1d6c63.webp","images/6bb460e66d5f946b.webp","images/e53d6a5b584fec02.webp","images/a790d21d392e6541.webp","images/bdb54efecfbf628e.webp","images/6ad24b2afad6190b.webp","images/e01db59595371fab.webp","images/afd505f15fe5bf4f.webp","images/7117e4682c496880.webp"],"hero":"images/d497aaf66fcf8f01.webp","details":{}},{"id":"26_Retia_Zavadilka","title":"Retia Závadilka","year":"2026","images":["images/0bf62326beff1945.webp","images/fc46ddd7dda510d4.webp","images/6ff1afceb399a2c0.webp","images/1f3cafe902c5407e.webp","images/63c3ee6007dd8fce.webp","images/b16ec52fcf60fbaf.webp","images/4c73f94f200e9608.webp","images/e7bf12b5ffbbfe8d.webp","images/cb353235bf876366.webp","images/3d100602d7cf47bd.webp","images/cd3ea5b6c3acd6e7.webp","images/143a7b80afcd33b4.webp","images/e1ad03c22ce24b55.webp"],"hero":"images/3d100602d7cf47bd.webp","details":{}},{"id":"26_Poliklinika_Trnova","title":"Poliklinika Trnová","year":"2026","images":["images/8e5cf63644c3c32e.webp","images/398936c2355cd156.webp","images/e1d0663aaed85eef.webp","images/e0b403766d2895d3.webp","images/55d7ffc8203c946b.webp","images/ca6436f25308ce36.webp","images/3ede87eaad8e2d12.webp","images/648aee51e018f46b.webp","images/42eaae0bf9296969.webp","images/54c27092d2ff7270.webp"],"hero":"images/8e5cf63644c3c32e.webp","details":{}},{"id":"25_FOXCONN Cisco","title":"Foxconn Cisco","year":"2025","images":["images/47f57712835697f8.webp","images/f934ed0f2a445163.webp","images/4f58abedda519fa7.webp","images/8c61b5b31128285e.webp","images/f1152265bb9f4324.webp","images/1da2b950f45314d1.webp"],"hero":"images/47f57712835697f8.webp","details":{"year":"2022","place":"Pardubice","credits":"Návrh FLX · realizace FLX","note":"Rok na původním webu 2022; název složky fotografie 25. Ověřit."},"yearStatus":"K OVĚŘENÍ"},{"id":"byt_dankovi","title":"Bytový interiér – Daňkovi","year":"","images":["images/66bfb65da95d80cb.webp","images/cd3ec4a4cb97509d.webp","images/b2892db3e33c9ba8.webp","images/64de9bc439886051.webp","images/59f4a29cac29dc83.webp","images/a1814c8185bdb7e0.webp","images/6b4cfc1c67fb9108.webp","images/1f3d37b14a7dbe4e.webp","images/afdeb5e29e3f06f4.webp","images/aa32c091ac5f0015.webp"],"hero":"images/66bfb65da95d80cb.webp","details":{"description":"Bytový interiér – kuchyně, obývací prostor, ložnice a úložné prostory"}},{"id":"byt_kropikova","title":"Interiér paní Kropíkové","year":"","images":["images/5e102aede11e2762.webp","images/cd6825117cdad7f3.webp","images/93423b48e35c6d28.webp","images/8197eb9ac0f29a3b.webp","images/4a515ac05d34696b.webp","images/e46096309f59849c.webp","images/7821332b24d280ce.webp","images/41268424089d14f2.webp"],"hero":"images/5e102aede11e2762.webp","details":{"description":"Soukromý interiér · zakázkový nábytek","story":"Propojení přírodního dřeva, bílých ploch a výrazných tmavých povrchů vytváří klidný, současný interiér. Zakázkový nábytek sjednocuje jednotlivé místnosti a dává prostor vyniknout osobitým detailům."}},{"id":"byt_hradec","title":"Interiér Hradec","year":"","images":["images/f8e29ba44d85808b.webp","images/88ff5c02c9af581f.webp","images/b0551307cdd4abfe.webp","images/ef8ad90c4811090d.webp","images/38e0f006b2fd240b.webp","images/5526067bdbfd6d42.webp"],"hero":"images/f8e29ba44d85808b.webp","details":{"description":"Soukromý interiér · zakázkový nábytek","story":"Praktické uspořádání a čisté linie doplňují teplé dekory dřeva. Vestavěný nábytek, pracovní místo a promyšlené úložné prostory tvoří jeden vizuální celek."}},{"id":"byt_vendula","title":"Obývací pokoj a pracovna Vendula","year":"","images":["images/05d6c51092ada7af.webp","images/62883f3d203b088a.webp","images/c52d09261ea5c08e.webp"],"hero":"images/05d6c51092ada7af.webp","details":{"description":"Soukromý interiér · zakázkový nábytek","story":"Prostor pro odpočinek i každodenní práci. Jednoduché nábytkové prvky a přirozené materiály propojují různé funkce místnosti do harmonického celku."}}];let expanded=false,projectVisible=0,active=null,zoomIndex=0;const $=id=>document.getElementById(id);$('year').textContent=new Date().getFullYear();const categoryById={'17_Fyziocentrum':'Zdravotnictví'};let selectedProjectCategory='Vše';function categoryFor(p){const t=(p.title+' '+(p.details?.description||'')).toLowerCase();if(/fyziocentrum|poliklinika|dr\. klain|rehabilitace/.test(t))return 'Zdravotnictví';if(/teleperformance|bodycote|carrier|cfig|stilec|cisco|kancelářské/.test(t))return 'Kanceláře';return 'Ostatní'}function render(){const filtered=projects.filter(p=>selectedProjectCategory==='Vše'||categoryFor(p)===selectedProjectCategory);$('projectCount').textContent=filtered.length+' realizací';const pageSize=window.matchMedia('(max-width:700px)').matches?8:11;const list=filtered.slice(0,projectVisible||pageSize);const more=$('projectMore');if(more){more.hidden=list.length>=filtered.length;more.textContent='DALŠÍ REALIZACE ↓';}$('projectGrid').innerHTML=list.map((p,i)=>`<article class="project" tabindex="0" role="button" aria-label="Otevřít ${esc(p.title)}" data-i="${projects.indexOf(p)}"><div class="project-photo"><img loading="lazy" src="${p.hero}" alt="${esc(p.title)} – realizace FLX"><div class="project-overlay"><h3>${esc(p.title)}</h3><span>Prohlédnout realizaci ↗</span></div></div></article>`).join('');document.querySelectorAll('.project').forEach(el=>{const fn=()=>openProject(+el.dataset.i);el.addEventListener('click',fn);el.addEventListener('keydown',e=>{if(e.key==='Enter')fn()})});}function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function openProject(i){active=projects[i];$('modalTitle').textContent=active.title;$('projectHeroImage').src=active.images[0]||active.hero;$('projectHeroImage').alt=active.title+' – úvodní fotografie';const d=active.details||{};$('modalSub').textContent=(d.year||active.year)+(d.place?' / '+d.place:'')+' / '+active.images.length+' FOTOGRAFIÍ';$('projectDetails').innerHTML=[d.description?'<div><small>TYP PROJEKTU</small><p>'+esc(d.description)+'</p></div>':'',d.credits?'<div><small>AUTOŘI A REALIZACE</small><p>'+esc(d.credits)+'</p></div>':'',d.note?'<div class="verify"><small>ÚDAJ K OVĚŘENÍ</small><p>'+esc(d.note)+'</p></div>':''].join('');$('modalGrid').innerHTML=active.images.slice(1).map((src,j)=>`<figure><img loading="lazy" src="${src}" alt="${esc(active.title)} – fotografie ${j+2}" data-index="${j+1}"></figure>`).join('');$('modalGrid').querySelectorAll('img').forEach(el=>el.addEventListener('click',()=>openZoom(+el.dataset.index)));$('modal').classList.add('open');$('modal').scrollTop=0;document.body.style.overflow='hidden';history.replaceState(null,'','#projekt-'+encodeURIComponent(active.id))}function closeModal(){closeZoom();$('modal').classList.remove('open');document.body.style.overflow='';history.replaceState(null,'','#realizace')}function openZoom(i){zoomIndex=i;$('lightbox').classList.add('open');updateZoom()}function updateZoom(){if(!active)return;$('zoomImg').src=active.images[zoomIndex];$('zoomCount').textContent=(zoomIndex+1)+' / '+active.images.length}function closeZoom(){$('lightbox').classList.remove('open')}function step(delta){if(!active)return;zoomIndex=(zoomIndex+delta+active.images.length)%active.images.length;updateZoom()}document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('lightbox').classList.contains('open')?closeZoom():closeModal()}if($('lightbox').classList.contains('open')){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)}});document.querySelectorAll('[data-project-filter]').forEach(btn=>btn.addEventListener('click',()=>{selectedProjectCategory=btn.dataset.projectFilter;projectVisible=0;document.querySelectorAll('[data-project-filter]').forEach(b=>b.classList.toggle('active',b===btn));render()}));$('projectMore').addEventListener('click',()=>{projectVisible=(projectVisible||(window.matchMedia('(max-width:700px)').matches?8:11))+(window.matchMedia('(max-width:700px)').matches?8:11);render()});render();
+const dankoviTile=document.querySelector('.living-dankovi');if(dankoviTile){const openDankovi=()=>openProject(projects.findIndex(p=>p.id==='byt_dankovi'));dankoviTile.addEventListener('click',openDankovi);dankoviTile.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDankovi()}})}
+document.querySelectorAll('[data-living]').forEach(el=>el.addEventListener('click',()=>{const i=projects.findIndex(p=>p.id===el.dataset.living);if(i>=0)openProject(i)}));
+const heroIds=['24_ CFIG','23_Mlyny','25_ STILEC & PARTNERS','26_Retia_Zavadilka','21_Divadlo EXIL v novem'];
+const heroItems=heroIds.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
+$('heroSlides').innerHTML=heroItems.map((p,i)=>'<div class="hero-slide'+(i===0?' active':'')+'"><img src="'+p.hero+'" alt="'+esc(p.title)+' – realizace FLX" '+(i===0?'fetchpriority="high"':'loading="lazy"')+'></div>').join('');
+let heroCurrent=0,heroTimer;
+function showHero(i){heroCurrent=(i+heroItems.length)%heroItems.length;document.querySelectorAll('.hero-slide').forEach((el,j)=>el.classList.toggle('active',j===heroCurrent));$('heroIndex').textContent=String(heroCurrent+1).padStart(2,'0')+' / '+String(heroItems.length).padStart(2,'0');$('heroProjectLabel').textContent='FLX / '+heroItems[heroCurrent].title.toUpperCase();}
+function startHero(){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;clearInterval(heroTimer);heroTimer=setInterval(()=>showHero(heroCurrent+1),6500)}
+$('heroPrev').addEventListener('click',()=>{showHero(heroCurrent-1);startHero()});
+$('heroNext').addEventListener('click',()=>{showHero(heroCurrent+1);startHero()});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)clearInterval(heroTimer);else startHero()});
+showHero(0);startHero();
+if(location.hash.startsWith('#projekt-')){const id=decodeURIComponent(location.hash.slice(8));const i=projects.findIndex(p=>p.id===id);if(i>=0)openProject(i)}
+</script><script>document.querySelectorAll(".catalog-tab").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".catalog-tab").forEach(b=>b.classList.toggle("active",b===btn));document.querySelectorAll(".catalog-card").forEach(c=>c.hidden=btn.dataset.filter!=="Vše"&&c.dataset.category!==btn.dataset.filter)}));</script><script>
+(()=>{const lines=[...document.querySelectorAll('.heritage-line')];if(lines.length&& !window.matchMedia('(prefers-reduced-motion: reduce)').matches){let i=0;setInterval(()=>{if(document.hidden)return;lines[i].classList.remove('is-on');i=(i+1)%lines.length;lines[i].classList.add('is-on')},4700)}})();
+</script>
+<script>
+(()=>{
+ const cards=[...document.querySelectorAll('#produkty .catalog-card')];
+ const more=document.getElementById('catalogMore');
+ let limit=6;
+ function update(){
+  const active=document.querySelector('#produkty .catalog-tab.active');
+  const filter=active?.dataset.filter||'Vše';
+  const matching=cards.filter(c=>filter==='Vše'||c.dataset.category===filter);
+  cards.forEach(c=>{c.hidden=true});
+  matching.slice(0,limit).forEach(c=>{c.hidden=false});
+  more.hidden=matching.length<=limit;
+  document.getElementById('catalogCount').textContent=matching.length+' '+(matching.length===1?'produkt':matching.length>=2&&matching.length<=4?'produkty':'produktů');
+  more.textContent='DALŠÍ PRODUKTY ↓';
+ }
+ document.querySelectorAll('#produkty .catalog-tab').forEach(b=>b.addEventListener('click',()=>{limit=6;update()}));
+ more.addEventListener('click',()=>{limit+=6;update()});
+ update();
+})();
+</script>
+<script>
+/* Residential projects may belong to several categories. */
+(function(){
+ const buttons=[...document.querySelectorAll('[data-living-filter]')];
+ const cards=[...document.querySelectorAll('#bydleni .living-gallery > *[data-living-categories]')];
+ function apply(category){
+   buttons.forEach(b=>{const on=b.dataset.livingFilter===category;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
+   cards.forEach(c=>{c.hidden=category!=='Vše'&&!c.dataset.livingCategories.split('|').includes(category);});
+   const count=cards.filter(c=>!c.hidden).length;document.getElementById('livingCount').textContent=count+' '+(count===1?'realizace':count>=2&&count<=4?'realizace':'realizací');
+ }
+ buttons.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.livingFilter)));
+ apply('Vše');
+})();
+</script></body></html>
