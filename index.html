@@ -914,6 +914,16 @@ header.top.shell{position:sticky;top:0;z-index:15;max-width:none;width:100%;box-
  #bydleni .living-gallery>.living-photo,#bydleni .living-gallery>.flx-living-card{min-height:0!important;height:auto!important;aspect-ratio:1.12!important;grid-column:auto!important;grid-row:auto!important}
  #bydleni .living-gallery>.flx-living-card span,#bydleni .living-gallery>.living-photo .living-dankovi-caption{font-size:clamp(11px,3vw,16px)!important;padding:22px 10px 10px!important}
 }
+</style><style id="flx-v54-mobile-hero-controls-minimal">
+/* Mobile only: remove down-scroll action and quiet the carousel navigation. */
+@media(max-width:700px){
+ #heroSlider .hero-mobile-down,#heroSlider .hero-scroll{display:none!important}
+ #heroSlider .hero-controls{bottom:17px!important;right:5vw!important;gap:7px!important}
+ #heroSlider .hero-controls button{width:29px!important;height:29px!important;min-width:29px!important;min-height:29px!important;max-width:29px!important;max-height:29px!important;border:1px solid rgba(255,255,255,.45)!important;background:rgba(0,0,0,.12)!important;backdrop-filter:none!important}
+ #heroSlider .hero-controls button::before{width:9px!important;height:9px!important;border-right-width:1.3px!important;border-bottom-width:1.3px!important}
+ #heroSlider #heroPrev::before{margin-left:3px!important}
+ #heroSlider #heroNext::before{margin-right:3px!important}
+}
 </style></head><body><header class="top shell"><a aria-label="FLX – úvod" class="logo" href="#uvod"><img alt="FLX" src="images/3adfbb5f1c39ce62.png"/></a><nav><a href="#realizace">REALIZACE</a><a href="#bydleni">BYDLENÍ</a><a href="#produkty">PRODUKTY</a><a href="#sluzby">SLUŽBY</a><a href="#onas">O NÁS</a><a href="#kontakt">KONTAKT</a></nav></header><main><section class="intro shell" id="uvod"><div class="eyebrow">NÁVRHY · VÝROBA · REALIZACE</div><h1>Prostor.<br/><span class="flx-head-second">Promyšlený <em>do detailu.</em></span></h1><div class="intro-bottom"><p>Navrhujeme a vyrábíme interiéry, ve kterých se propojuje architektura, funkce a poctivé řemeslo. Od prvního návrhu až po poslední detail.</p></div></section><div aria-label="Výběr realizací FLX" class="hero-image" id="heroSlider">
 <div class="hero-slides" id="heroSlides"></div>
 <div class="hero-controls"><button aria-label="Předchozí fotografie" id="heroPrev" type="button">←</button><span id="heroIndex">01 / 05</span><button aria-label="Další fotografie" id="heroNext" type="button">→</button></div>
