@@ -799,7 +799,32 @@ header.top.shell{position:sticky;top:0;z-index:15;max-width:none;width:100%;box-
 /* Inactive continuation control matches the existing portfolio/product buttons. */
 #bydleni .flx-more-wrap{display:flex;justify-content:center;margin-top:32px;}
 #bydleni .flx-more[disabled]{opacity:.42;cursor:default;pointer-events:none;}
-</style><style>.contact-pending{display:block;font-size:13px;opacity:.55;margin-top:8px}</style></head><body><header class="top shell"><a aria-label="FLX – úvod" class="logo" href="#uvod"><img alt="FLX" src="images/3adfbb5f1c39ce62.png"/></a><nav><a href="#realizace">REALIZACE</a><a href="#bydleni">BYDLENÍ</a><a href="#produkty">PRODUKTY</a><a href="#sluzby">SLUŽBY</a><a href="#onas">O NÁS</a><a href="#kontakt">KONTAKT</a></nav></header><main><section class="intro shell" id="uvod"><div class="eyebrow">NÁVRHY · VÝROBA · REALIZACE</div><h1>Prostor.<br/><span class="flx-head-second">Promyšlený <em>do detailu.</em></span></h1><div class="intro-bottom"><p>Navrhujeme a vyrábíme interiéry, ve kterých se propojuje architektura, funkce a poctivé řemeslo. Od prvního návrhu až po poslední detail.</p></div></section><div aria-label="Výběr realizací FLX" class="hero-image" id="heroSlider">
+</style><style>.contact-pending{display:block;font-size:13px;opacity:.55;margin-top:8px}</style><style id="flx-v44-mobile-hero">
+/* V44: mobile-only editorial hero. Desktop untouched. */
+@media(max-width:700px){
+ #heroSlider.hero-image{height:clamp(560px,78svh,740px)!important;min-height:560px!important;position:relative!important}
+ #heroSlider:after{background:linear-gradient(180deg,rgba(0,0,0,.47) 0%,rgba(0,0,0,.22) 40%,rgba(0,0,0,.08) 59%,rgba(0,0,0,.45) 100%)!important}
+ #uvod.intro{top:76px!important;left:0!important;right:0!important;padding-top:30px!important;padding-left:5vw!important;padding-right:5vw!important;z-index:8!important;width:100%!important;max-width:none!important;box-sizing:border-box!important}
+ #uvod .eyebrow{font-size:9px!important;letter-spacing:.12em!important;line-height:1.4!important;white-space:nowrap!important}
+ #uvod .eyebrow:before{width:15px!important}
+ #uvod h1{font-size:clamp(42px,10.5vw,60px)!important;line-height:1.07!important;letter-spacing:-.07em!important;margin:17px 0 0!important;max-width:96%!important}
+ #uvod h1 .flx-head-second{display:block!important;font-size:clamp(23px,6.1vw,34px)!important;line-height:1.19!important;letter-spacing:-.06em!important;margin-top:5px!important;max-width:100%!important}
+ #uvod .intro-bottom{display:none!important}
+ #heroSlider>.heritage-number{position:absolute!important;top:auto!important;bottom:195px!important;left:5vw!important;right:auto!important;text-align:left!important;font-size:13px!important;letter-spacing:.09em!important;line-height:1.3!important;max-width:90%!important}
+ #heroSlider>.heritage-number strong{font-size:1.28em!important}
+ #heroSlider .hero-heritage{position:absolute!important;top:auto!important;bottom:138px!important;left:5vw!important;right:auto!important;width:90vw!important;max-width:90vw!important;align-items:flex-start!important;text-align:left!important;gap:0!important}
+ #heroSlider .heritage-rotator{width:90vw!important;max-width:90vw!important;height:39px!important;font-size:12px!important;line-height:1.45!important;text-align:left!important}
+ #heroSlider .heritage-line{max-width:100%!important;text-align:left!important;white-space:normal!important}
+ #heroSlider .hero-label{top:auto!important;bottom:83px!important;left:5vw!important;right:auto!important;max-width:88%!important;font-size:9px!important;line-height:1.45!important}
+ #heroSlider .hero-controls{bottom:18px!important}
+}
+@media(max-width:380px){
+ #uvod h1{font-size:41px!important}
+ #uvod h1 .flx-head-second{font-size:22px!important}
+ #heroSlider>.heritage-number{bottom:194px!important}
+ #heroSlider .hero-heritage{bottom:137px!important}
+}
+</style></head><body><header class="top shell"><a aria-label="FLX – úvod" class="logo" href="#uvod"><img alt="FLX" src="images/3adfbb5f1c39ce62.png"/></a><nav><a href="#realizace">REALIZACE</a><a href="#bydleni">BYDLENÍ</a><a href="#produkty">PRODUKTY</a><a href="#sluzby">SLUŽBY</a><a href="#onas">O NÁS</a><a href="#kontakt">KONTAKT</a></nav></header><main><section class="intro shell" id="uvod"><div class="eyebrow">NÁVRHY · VÝROBA · REALIZACE</div><h1>Prostor.<br/><span class="flx-head-second">Promyšlený <em>do detailu.</em></span></h1><div class="intro-bottom"><p>Navrhujeme a vyrábíme interiéry, ve kterých se propojuje architektura, funkce a poctivé řemeslo. Od prvního návrhu až po poslední detail.</p></div></section><div aria-label="Výběr realizací FLX" class="hero-image" id="heroSlider">
 <div class="hero-slides" id="heroSlides"></div>
 <div class="hero-controls"><button aria-label="Předchozí fotografie" id="heroPrev" type="button">←</button><span id="heroIndex">01 / 05</span><button aria-label="Další fotografie" id="heroNext" type="button">→</button></div>
 <a aria-label="Posunout dolů k realizacím" class="hero-mobile-down" href="#realizace">↓</a><span class="hero-label" id="heroProjectLabel">FLX / VYBRANÉ REALIZACE</span><a aria-label="Posunout dolů k realizacím" class="hero-scroll" href="#realizace"><span>SCROLLOVAT DOLŮ</span><span class="hero-scroll-arrow">↓</span></a>
