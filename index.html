@@ -960,6 +960,16 @@ header.top.shell{position:sticky;top:0;z-index:15;max-width:none;width:100%;box-
 @media(max-width:700px){
  #produkty .catalog-grid>.catalog-card[hidden]{display:none!important}
 }
+</style><style id="flx-v59-product-reset">
+/* Reliable product visibility, even when old display:flex !important rules exist. */
+#produkty .catalog-grid>.catalog-card:not(.flx-product-visible){display:none!important}
+#produkty .catalog-grid>.catalog-card.flx-product-visible{display:block!important}
+@media(max-width:700px){
+ /* Safe initial view before scripts run: four products only. */
+ #produkty .catalog-grid>.catalog-card:nth-child(n+5):not(.flx-product-visible){display:none!important}
+ #produkty .catalog-grid>.catalog-card.flx-product-visible{display:flex!important}
+ #produkty .catalog-card-foot{padding:5px 4px 7px!important}
+}
 </style></head><body><header class="top shell"><a aria-label="FLX – úvod" class="logo" href="#uvod"><img alt="FLX" src="images/3adfbb5f1c39ce62.png"/></a><nav><a href="#realizace">REALIZACE</a><a href="#bydleni">BYDLENÍ</a><a href="#produkty">PRODUKTY</a><a href="#sluzby">SLUŽBY</a><a href="#onas">O NÁS</a><a href="#kontakt">KONTAKT</a></nav></header><main><section class="intro shell" id="uvod"><div class="eyebrow">NÁVRHY · VÝROBA · REALIZACE</div><h1>Prostor.<br/><span class="flx-head-second">Promyšlený <em>do detailu.</em></span></h1><div class="intro-bottom"><p>Navrhujeme a vyrábíme interiéry, ve kterých se propojuje architektura, funkce a poctivé řemeslo. Od prvního návrhu až po poslední detail.</p></div></section><div aria-label="Výběr realizací FLX" class="hero-image" id="heroSlider">
 <div class="hero-slides" id="heroSlides"></div>
 <div class="hero-controls"><button aria-label="Předchozí fotografie" id="heroPrev" type="button">←</button><span id="heroIndex">01 / 05</span><button aria-label="Další fotografie" id="heroNext" type="button">→</button></div>
@@ -983,23 +993,31 @@ if(location.hash.startsWith('#projekt-')){const id=decodeURIComponent(location.h
 (()=>{const lines=[...document.querySelectorAll('.heritage-line')];if(lines.length&& !window.matchMedia('(prefers-reduced-motion: reduce)').matches){let i=0;setInterval(()=>{if(document.hidden)return;lines[i].classList.remove('is-on');i=(i+1)%lines.length;lines[i].classList.add('is-on')},4700)}})();
 </script>
 <script>
+/* FLX V59: independent product pagination, mobile four cards per page. */
 (()=>{
- const cards=[...document.querySelectorAll('#produkty .catalog-card')];
- const more=document.getElementById('catalogMore');
+ const root=document.getElementById('produkty');
+ if(!root)return;
+ const cards=Array.from(root.querySelectorAll('.catalog-grid > .catalog-card'));
+ const tabs=Array.from(root.querySelectorAll('.catalog-tab'));
+ const more=root.querySelector('#catalogMore');
+ const count=root.querySelector('#catalogCount');
  let limit=window.matchMedia('(max-width:700px)').matches?4:6;
- function update(){
-  const active=document.querySelector('#produkty .catalog-tab.active');
-  const filter=active?.dataset.filter||'Vše';
-  const matching=cards.filter(c=>filter==='Vše'||c.dataset.category===filter);
-  cards.forEach(c=>{c.hidden=true;c.style.setProperty('display','none','important');});
-  matching.slice(0,limit).forEach(c=>{c.hidden=false;c.style.removeProperty('display');});
+ function render(){
+  const active=root.querySelector('.catalog-tab.active');
+  const category=active?active.dataset.filter:'Vše';
+  const matching=cards.filter(c=>category==='Vše'||c.dataset.category===category);
+  cards.forEach(c=>{c.hidden=true;c.classList.remove('flx-product-visible');c.style.display='none';});
+  matching.slice(0,limit).forEach(c=>{c.hidden=false;c.classList.add('flx-product-visible');c.style.removeProperty('display');});
   more.hidden=matching.length<=limit;
-  document.getElementById('catalogCount').textContent=matching.length+' '+(matching.length===1?'produkt':matching.length>=2&&matching.length<=4?'produkty':'produktů');
-  more.textContent='DALŠÍ PRODUKTY ↓';
+  count.textContent=matching.length+' '+(matching.length===1?'produkt':matching.length<5?'produkty':'produktů');
  }
- document.querySelectorAll('#produkty .catalog-tab').forEach(b=>b.addEventListener('click',()=>{limit=window.matchMedia('(max-width:700px)').matches?4:6;update()}));
- more.addEventListener('click',()=>{limit+=window.matchMedia('(max-width:700px)').matches?4:6;update()});
- update();
+ tabs.forEach(tab=>tab.addEventListener('click',()=>{
+  tabs.forEach(t=>{const selected=t===tab;t.classList.toggle('active',selected);t.setAttribute('aria-pressed',String(selected));});
+  limit=window.matchMedia('(max-width:700px)').matches?4:6;
+  render();
+ }));
+ more.addEventListener('click',()=>{limit+=window.matchMedia('(max-width:700px)').matches?4:6;render();});
+ render();
 })();
 </script>
 <script>
