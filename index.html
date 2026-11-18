@@ -1090,4 +1090,21 @@ document.querySelectorAll('.catalog-card a[href^="mailto:"]').forEach(link=>{lin
 document.getElementById('flxInquiryClose').addEventListener('click',close);shade.addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const val=id=>document.getElementById(id).value;const subject='Poptávka produktu FLX – '+item.title;const body=['Produkt: '+item.title,'Značka / kategorie: '+item.brand,'Množství: '+val('flxInquiryQty')+' ks','Jméno: '+val('flxInquiryName'),'E-mail: '+val('flxInquiryEmail'),'Telefon: '+val('flxInquiryPhone'),'Poznámka: '+val('flxInquiryMessage'),'Odkaz: '+location.href].join('\n');window.location.href='mailto:felix@felix.cz?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)});
 })();
-</script></body></html>
+</script><style id="flx-type-system-v54">
+/* FLX typography: four coordinated roles on both desktop and mobile.
+   Hero display typography and graphic numerals intentionally remain distinctive. */
+:root{--flx-type-section:clamp(32px,3.8vw,55px);--flx-type-title:clamp(20px,2vw,28px);--flx-type-body:15px;--flx-type-label:12px}
+@media(min-width:701px){
+ #realizace .section-head h2,#bydleni .section-head h2,#produkty .section-head h2,#produkty .catalog-intro h2,.services .section-head h2,#onas h2,.flx-oba2 h2{font-size:var(--flx-type-section)!important;line-height:1.13!important}
+ .services .service h3,#bydleni .living-tile h3,#produkty .catalog-card-foot h3,#kontakt .contact-people h3{font-size:var(--flx-type-title)!important;line-height:1.25!important}
+ .intro-bottom p,.section-head p,#realizace .section-head p,#bydleni .section-head p,#produkty .section-head p,#produkty .catalog-intro p,.flx-oba2-copy p,#onas p,.about p,.services .service p,#kontakt p,.contact-column p,#bydleni .living-tile p,#bydleni .living-note{font-size:var(--flx-type-body)!important;line-height:1.65!important}
+ .eyebrow,#realizace .eyebrow,#bydleni .eyebrow,#produkty .eyebrow,.services .eyebrow,#onas .eyebrow,#kontakt .eyebrow,.flx-section-count,#bydleni .living-tag,#produkty .catalog-card-foot small,#produkty .catalog-card-foot a,#kontakt .contact-person-role,.services .service span:first-child,.flx-more,.catalog-more{font-size:var(--flx-type-label)!important;line-height:1.4!important}
+}
+@media(max-width:700px){
+ :root{--flx-type-section:clamp(27px,7vw,34px);--flx-type-title:clamp(18px,4.8vw,22px);--flx-type-body:14px;--flx-type-label:11.5px}
+ #realizace .section-head h2,#bydleni .section-head h2,#produkty .section-head h2,#produkty .catalog-intro h2,.services .section-head h2,#onas h2,.flx-oba2 h2{font-size:var(--flx-type-section)!important;line-height:1.13!important}
+ .services .service h3,#bydleni .living-tile h3,#produkty .catalog-card-foot h3,#kontakt .contact-people h3{font-size:var(--flx-type-title)!important;line-height:1.25!important}
+ .intro-bottom p,.section-head p,#realizace .section-head p,#bydleni .section-head p,#produkty .section-head p,#produkty .catalog-intro p,.flx-oba2-copy p,#onas p,.about p,.services .service p,#kontakt p,.contact-column p,#bydleni .living-tile p,#bydleni .living-note,#kontakt .contact-people article a,#kontakt .contact-hours>div{font-size:var(--flx-type-body)!important;line-height:1.6!important}
+ .eyebrow,#realizace .eyebrow,#bydleni .eyebrow,#produkty .eyebrow,.services .eyebrow,#onas .eyebrow,#kontakt .eyebrow,.flx-section-count,#bydleni .living-tag,#produkty .catalog-card-foot small,#produkty .catalog-card-foot a,#kontakt .contact-person-role,.services .service span:first-child,.flx-more,.catalog-more{font-size:var(--flx-type-label)!important;line-height:1.4!important}
+}
+</style></body></html>
