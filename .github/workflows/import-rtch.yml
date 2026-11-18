@@ -1,0 +1,50 @@
+name: Import FLX RTCH images
+on:
+  push:
+    paths:
+      - '.github/workflows/import-rtch.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - name: Optimize RTCH photos and add portfolio project
+        run: |
+          python - <<'PY'
+          import json,pathlib,urllib.request,io
+          from PIL import Image,ImageOps
+          items=json.loads("[{\"name\":\"00\",\"url\":\"https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-5138-820a-825c-c036da38002f/raw?se=2026-11-18T14%3A25%3A53Z&sp=r&sv=2026-06-06&sr=b&scid=da31982a-0378-57e7-81dc-cd4231685838&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T10%3A02%3A41Z&ske=2026-11-19T10%3A02%3A41Z&sks=b&skv=2026-06-06&sig=8mWTlnm%2BqOyFcTIYbt//qLMasqHMESD2jWlvvvCJvcs%3D\"},{\"name\":\"01\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-75e8-81f4-ac8b-956cfedd46ce/raw?se=2026-11-18T14%3A25%3A53Z&sp=r&sv=2026-06-06&sr=b&scid=6162d06f-9d91-5105-8181-3f4ec606ebe4&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T10%3A08%3A35Z&ske=2026-11-19T10%3A08%3A35Z&sks=b&skv=2026-06-06&sig=yA20q1U5uU4MEm0mkuJkFQkAXchDE6dKEVXCUDgpD54%3D\"},{\"name\":\"02\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-77a4-8210-918c-c1ff2a6a9d24/raw?se=2026-11-18T14%3A25%3A53Z&sp=r&sv=2026-06-06&sr=b&scid=4fc5c5f1-eab5-5d95-9837-7cd8408e53ef&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T08%3A55%3A30Z&ske=2026-11-19T08%3A55%3A30Z&sks=b&skv=2026-06-06&sig=FqWPOOfs/hsr9brCCGcglLSBTLJn2Hf3br/R/52FlQc%3D\"},{\"name\":\"03\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-5ba4-8210-be62-0a8395da24d0/raw?se=2026-11-18T14%3A25%3A53Z&sp=r&sv=2026-06-06&sr=b&scid=b0c55b1f-76f1-5993-a0f7-4e528b7bc8bc&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T04%3A25%3A10Z&ske=2026-11-19T04%3A25%3A10Z&sks=b&skv=2026-06-06&sig=8KHm5v3JA6KCCYwcYqoA0dAzrXJ7Ild/7z6gDH7wn04%3D\"},{\"name\":\"04\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-f3f0-81f4-918c-3346e0ccc889/raw?se=2026-11-18T14%3A25%3A53Z&sp=r&sv=2026-06-06&sr=b&scid=db1fcee5-c032-526d-9197-13e7b1d28037&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T13%3A44%3A48Z&ske=2026-11-19T13%3A44%3A48Z&sks=b&skv=2026-06-06&sig=XCw8PxChDjITA6PF/qCysCEH7ulMM6czQeq836kWNhM%3D\"},{\"name\":\"05\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-8da8-8210-8c8c-36d03f7110c5/raw?se=2026-11-18T14%3A25%3A55Z&sp=r&sv=2026-06-06&sr=b&scid=6d114344-3d8b-5d1c-a766-074f62710379&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T07%3A34%3A39Z&ske=2026-11-19T07%3A34%3A39Z&sks=b&skv=2026-06-06&sig=zZQPJF9bqMkzWJoJliaLgafJ5DN9LmJ1TTunl4kMNDA%3D\"},{\"name\":\"06\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-496c-81f4-bce0-d213da499065/raw?se=2026-11-18T14%3A25%3A55Z&sp=r&sv=2026-06-06&sr=b&scid=1f160b50-0f07-546c-bc99-6c6240694ffe&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T09%3A26%3A37Z&ske=2026-11-19T09%3A26%3A37Z&sks=b&skv=2026-06-06&sig=7WyMNZKkA%2ByRAVr/0ObZThekr4wy/quL3Ty0lIdt13M%3D\"},{\"name\":\"07\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-5c50-81f4-a52e-d589fcd43d83/raw?se=2026-11-18T14%3A25%3A55Z&sp=r&sv=2026-06-06&sr=b&scid=46e8d418-bd3b-51a8-9dbc-187c31866715&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T09%3A16%3A41Z&ske=2026-11-19T09%3A16%3A41Z&sks=b&skv=2026-06-06&sig=GvN4IM%2BK%2BxyPpDuRBe3ROuxUQX0Jr2H%2B0n4HbU6J/b4%3D\"},{\"name\":\"08\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-0f34-81f4-a21d-aee77ebe36c6/raw?se=2026-11-18T14%3A25%3A55Z&sp=r&sv=2026-06-06&sr=b&scid=186c85ed-bcae-5060-8f78-290985e9f54d&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T03%3A19%3A28Z&ske=2026-11-19T03%3A19%3A28Z&sks=b&skv=2026-06-06&sig=jkIv6VIqI70hHwC8sSasPffo8IkK8rgOBg0YUvGu/xE%3D\"}]")
+          folder=pathlib.Path("images");folder.mkdir(exist_ok=True)
+          paths=[]
+          for item in items:
+           req=urllib.request.Request(item["url"],headers={"User-Agent":"FLX-import/1.0"})
+           with urllib.request.urlopen(req,timeout=120) as response: raw=response.read()
+           im=ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")
+           im.thumbnail((2000,2000),Image.Resampling.LANCZOS)
+           path=folder/("rtch-%s.webp"%item["name"])
+           im.save(path,"WEBP",quality=82,method=6)
+           paths.append(str(path))
+           print(path,path.stat().st_size)
+          p=pathlib.Path("index.html");s=p.read_text(encoding="utf-8")
+          if '"id":"22_RTCH"' not in s:
+           project={"id":"22_RTCH","title":"RTCH – IQtech","year":"2022","images":paths,"hero":paths[0],"details":{"description":"Interiér RTCH – IQtech. Výběr fotografií z projektu zachycuje návrh prostoru a jeho řešení.","note":"Fotografie jsou ve zdrojové složce označeny jako NÁVRH; rozsah skutečné realizace a autorství je potřeba ověřit."}}
+           needle="const projects=[";assert needle in s
+           s=s.replace(needle,needle+json.dumps(project,ensure_ascii=False,separators=(",",":"))+",",1)
+           p.write_text(s,encoding="utf-8")
+          PY
+      - name: Publish
+        run: |
+          git config user.name "FLX website automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html images/rtch-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish RTCH portfolio gallery"
+            git push
+          fi
