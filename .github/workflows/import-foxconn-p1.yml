@@ -1,0 +1,50 @@
+name: Import FLX Foxconn P1 images
+on:
+  push:
+    paths:
+      - '.github/workflows/import-foxconn-p1.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - name: Optimize Foxconn P1 photos and add portfolio project
+        run: |
+          python - <<'PY'
+          import json,pathlib,urllib.request,io
+          from PIL import Image,ImageOps
+          items=json.loads("[{\"number\":\"00\",\"url\":\"https://sdmntprukwest.oaiusercontent.com/files/00000000-cc9c-8243-b38d-92fc3ab126c4/raw?se=2026-11-18T15%3A10%3A21Z&sp=r&sv=2026-06-06&sr=b&scid=8767a36c-ca1c-5261-8734-01530506270c&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T09%3A34%3A37Z&ske=2026-11-19T09%3A34%3A37Z&sks=b&skv=2026-06-06&sig=Yrmd%2BqvzUJeAnzKZ%2BIx5S6FL9HfBfPBHe6isSY/FfOY%3D\"},{\"number\":\"01\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-65bc-8210-ab73-f661cc717edf/raw?se=2026-11-18T15%3A10%3A21Z&sp=r&sv=2026-06-06&sr=b&scid=f9bfdafb-41ac-52f3-9893-537e0b426145&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T06%3A58%3A29Z&ske=2026-11-19T06%3A58%3A29Z&sks=b&skv=2026-06-06&sig=h6drlagxrQJMnniOKVlVCVN5Lnkh1PwkYp9jasYz74I%3D\"},{\"number\":\"02\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-ce80-8210-93d7-5a89baf43262/raw?se=2026-11-18T15%3A10%3A21Z&sp=r&sv=2026-06-06&sr=b&scid=32bc3093-b1c0-5b31-9694-efa075697328&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T06%3A03%3A39Z&ske=2026-11-19T06%3A03%3A39Z&sks=b&skv=2026-06-06&sig=Q//p/FjrYbTxA8fAXiumbg4HOsJNs9CO6sNtuicg1wA%3D\"},{\"number\":\"03\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-fc6c-81f4-af06-2d04fe9f2e03/raw?se=2026-11-18T15%3A10%3A21Z&sp=r&sv=2026-06-06&sr=b&scid=eb71cd91-cc31-5c78-bc5e-e8daddf61ad1&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T10%3A17%3A45Z&ske=2026-11-19T10%3A17%3A45Z&sks=b&skv=2026-06-06&sig=qStKr6j6NGUs1mV49/SlB3i92v31YBgsz5mce2MhlJo%3D\"},{\"number\":\"04\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-4ba8-81f4-9740-73a4f7bb9ae0/raw?se=2026-11-18T15%3A10%3A21Z&sp=r&sv=2026-06-06&sr=b&scid=11513735-3e0a-5449-84e0-9ce27ee55d77&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T06%3A29%3A37Z&ske=2026-11-19T06%3A29%3A37Z&sks=b&skv=2026-06-06&sig=BEx2n7CMGAVszMikNCYumrV0DGtChtrmHS4uOXTYXk8%3D\"},{\"number\":\"05\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-a1dc-81f4-a200-bfc514775e3e/raw?se=2026-11-18T15%3A10%3A23Z&sp=r&sv=2026-06-06&sr=b&scid=37eb4d76-230a-57f7-8576-816d9e029b26&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T07%3A48%3A36Z&ske=2026-11-19T07%3A48%3A36Z&sks=b&skv=2026-06-06&sig=6kNCUdSk9kV3Xg1PnD8buT6TtBNOqjEXO1c4509YT28%3D\"},{\"number\":\"06\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-6168-81f4-8902-b43de67164bb/raw?se=2026-11-18T15%3A10%3A23Z&sp=r&sv=2026-06-06&sr=b&scid=612b8e87-a3bd-50a4-b00d-f940db7403a5&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T07%3A34%3A32Z&ske=2026-11-19T07%3A34%3A32Z&sks=b&skv=2026-06-06&sig=CKP3GsPhhH%2B%2B%2BR4sT6vUHiMOKRQPK5UGJKzNfVrh9S0%3D\"},{\"number\":\"07\",\"url\":\"https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-c8cc-820a-b012-ec74bbb375e5/raw?se=2026-11-18T15%3A10%3A24Z&sp=r&sv=2026-06-06&sr=b&scid=4f997d62-f879-5585-9c87-01007151107a&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T13%3A40%3A41Z&ske=2026-11-19T13%3A40%3A41Z&sks=b&skv=2026-06-06&sig=VIPrTGQ75T%2B8Uh3oB7C28XLuzVfQYHDrNJ/kqNL%2Bdlg%3D\"},{\"number\":\"08\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-dac0-8210-8d37-dcfb8cf9765e/raw?se=2026-11-18T15%3A10%3A23Z&sp=r&sv=2026-06-06&sr=b&scid=f613a6ff-d849-58ba-9c60-2f09eefb2d46&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T04%3A28%3A44Z&ske=2026-11-19T04%3A28%3A44Z&sks=b&skv=2026-06-06&sig=dOcE5eUXGxjQRJh3wVKORmajSFbliXoddYAZPiLbowU%3D\"},{\"number\":\"09\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-de64-8210-8d0f-6ffb107137ea/raw?se=2026-11-18T15%3A10%3A23Z&sp=r&sv=2026-06-06&sr=b&scid=afe2fa12-9da8-5c25-9120-9eb1100f2a50&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T09%3A16%3A47Z&ske=2026-11-19T09%3A16%3A47Z&sks=b&skv=2026-06-06&sig=Rug%2Bp2WDxUDEcspDsWh7f8yAMC%2BBDZpACW6K15xGa/g%3D\"},{\"number\":\"10\",\"url\":\"https://sdmntprukwest.oaiusercontent.com/files/00000000-6ce8-8243-8fc8-e23e11f50cd4/raw?se=2026-11-18T15%3A10%3A25Z&sp=r&sv=2026-06-06&sr=b&scid=72b85381-6d2e-5623-af93-6ce910e4067d&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T06%3A45%3A24Z&ske=2026-11-19T06%3A45%3A24Z&sks=b&skv=2026-06-06&sig=KGmskesw2k%2BfmbuRjlkVQL1ywOwHSoaofe5NXIlA/yA%3D\"},{\"number\":\"11\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-9a7c-8210-acb4-2962b6730eb3/raw?se=2026-11-18T15%3A10%3A25Z&sp=r&sv=2026-06-06&sr=b&scid=38512e25-4497-5f76-928b-12fc860db1af&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T13%3A43%3A37Z&ske=2026-11-19T13%3A43%3A37Z&sks=b&skv=2026-06-06&sig=tx/RSnH47o4HyK4UMMBzxV9E%2BrV7%2BPDP915J%2B7esFis%3D\"},{\"number\":\"12\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-3dac-81f4-9074-b4ddfd54b1bd/raw?se=2026-11-18T15%3A10%3A25Z&sp=r&sv=2026-06-06&sr=b&scid=cf06e26a-c575-5d8b-8be0-959b744c4ca6&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T08%3A39%3A35Z&ske=2026-11-19T08%3A39%3A35Z&sks=b&skv=2026-06-06&sig=J64WrHBdH1t3ksnp/sVhADKqG5NW8lMnfejx9RGMh3c%3D\"},{\"number\":\"13\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-f828-8210-a9be-3ebd135c22f6/raw?se=2026-11-18T15%3A10%3A25Z&sp=r&sv=2026-06-06&sr=b&scid=2da83590-bf43-5137-ae05-53b9ee7423f9&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T03%3A14%3A42Z&ske=2026-11-19T03%3A14%3A42Z&sks=b&skv=2026-06-06&sig=rxvSvzlaIZw4DGcKWzqKwCIhzvb57nLaeim%2BM/PW70w%3D\"}]")
+          folder=pathlib.Path("images");folder.mkdir(exist_ok=True)
+          paths=[]
+          for item in items:
+           req=urllib.request.Request(item["url"],headers={"User-Agent":"FLX-import/1.0"})
+           with urllib.request.urlopen(req,timeout=120) as response: raw=response.read()
+           im=ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")
+           im.thumbnail((2000,2000),Image.Resampling.LANCZOS)
+           path=folder/("foxconn-p1-%s.webp"%item["number"])
+           im.save(path,"WEBP",quality=82,method=6)
+           paths.append(str(path))
+           print(path,path.stat().st_size)
+          p=pathlib.Path("index.html");s=p.read_text(encoding="utf-8")
+          if '"id":"21_FOXCONN_P1"' not in s:
+           project={"id":"21_FOXCONN_P1","title":"Foxconn P1 – Cisco","year":"2022","images":paths,"hero":paths[0],"details":{"description":"Interiér Foxconn P1 – Cisco. Fotogalerie realizace zachycuje prostor a jeho interiérové detaily."}}
+           needle="const projects=[";assert needle in s
+           s=s.replace(needle,needle+json.dumps(project,ensure_ascii=False,separators=(",",":"))+",",1)
+           p.write_text(s,encoding="utf-8")
+          PY
+      - name: Publish
+        run: |
+          git config user.name "FLX website automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html images/foxconn-p1-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Foxconn P1 gallery with 14 numbered photos"
+            git push
+          fi
