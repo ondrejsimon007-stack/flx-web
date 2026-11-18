@@ -1,0 +1,52 @@
+name: Import FLX Foxconn Z1 images
+on:
+  push:
+    paths:
+      - '.github/workflows/import-foxconn-z1.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install Pillow
+      - name: Optimize and add Foxconn Z1
+        run: |
+          python - <<'PY'
+          import json, pathlib, urllib.request, io
+          from PIL import Image, ImageOps
+          items=json.loads("[{\"name\":\"00 JUNI9504-HDR.jpg\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-05a0-81f4-aebf-92804cc1b52a/raw?se=2026-11-18T13%3A42%3A24Z&sp=r&sv=2026-06-06&sr=b&scid=8f247025-df3a-53f9-b259-d23d2cd95387&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T05%3A41%3A36Z&ske=2026-11-19T05%3A41%3A36Z&sks=b&skv=2026-06-06&sig=GCy0e8QioY/8gy2Il3uOZWdHkM851y8M/7vvn9Rx1DA%3D\"},{\"name\":\"01 JUNI9519-HDR.jpg\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-6740-8210-b345-7519b89a454a/raw?se=2026-11-18T13%3A42%3A25Z&sp=r&sv=2026-06-06&sr=b&scid=58799bbf-9b4d-53a1-8462-6fb063fd8de1&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T09%3A07%3A42Z&ske=2026-11-19T09%3A07%3A42Z&sks=b&skv=2026-06-06&sig=5wb1FAtLSjGVPdtpQ7u0vJmQW04GXq/r%2BYkCy2jFGow%3D\"},{\"name\":\"03 JUNI9364-HDR.jpg\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-c29c-8210-9e0a-2284349c288e/raw?se=2026-11-18T13%3A42%3A24Z&sp=r&sv=2026-06-06&sr=b&scid=b3dc9458-022f-5fff-b49a-abd8780bb1f3&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T09%3A07%3A43Z&ske=2026-11-19T09%3A07%3A43Z&sks=b&skv=2026-06-06&sig=57ONFXEKpgNzDYmnDtX8zOzBe66Kph388BmV0eMaSzg%3D\"},{\"name\":\"04 JUNI9399-HDR.jpg\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-9a4c-81f4-a126-be8b278743de/raw?se=2026-11-18T13%3A42%3A25Z&sp=r&sv=2026-06-06&sr=b&scid=6f18d9a0-144b-5122-8384-867058b4ca44&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T12%3A11%3A47Z&ske=2026-11-19T12%3A11%3A47Z&sks=b&skv=2026-06-06&sig=ZGx/1DlEms2mOIWwZ6rvXJZHRrSAfrEeUXPB7a44388%3D\"},{\"name\":\"05 JUNI9419-HDR.jpg\",\"url\":\"https://sdmntprukwest.oaiusercontent.com/files/00000000-c00c-8243-a6af-44cbd0c09c2f/raw?se=2026-11-18T13%3A42%3A25Z&sp=r&sv=2026-06-06&sr=b&scid=2d4a31a9-96c3-5ef5-982c-012b789d6f67&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T05%3A25%3A31Z&ske=2026-11-19T05%3A25%3A31Z&sks=b&skv=2026-06-06&sig=cvaliPwOofS/5y13AbhW49DIJED/5vn4biEKRI7eP1o%3D\"},{\"name\":\"06  JUNI9429-HDR.jpg\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-0a24-81f4-9556-afa3408ee195/raw?se=2026-11-18T13%3A42%3A27Z&sp=r&sv=2026-06-06&sr=b&scid=4dba6f4b-4d07-5ddd-989d-7bc6bdaaaa34&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T08%3A55%3A30Z&ske=2026-11-19T08%3A55%3A30Z&sks=b&skv=2026-06-06&sig=eFO42jyPPE9pExYsA2KIrw1MC9EocmmD2J0hOOMyjl0%3D\"},{\"name\":\"07 JUNI9439-HDR.jpg\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-7174-8210-adf2-524c72970afc/raw?se=2026-11-18T13%3A42%3A27Z&sp=r&sv=2026-06-06&sr=b&scid=a47b5c6e-a4fd-5ec3-8fa1-270719418d6c&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T12%3A12%3A03Z&ske=2026-11-19T12%3A12%3A03Z&sks=b&skv=2026-06-06&sig=itV9ZjhNoMbSR0gfTQJKGtteC9CFQ8jkJ/ZsRpdYbIA%3D\"},{\"name\":\"08 JUNI9379-HDR.jpg\",\"url\":\"https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-2f88-8210-bef7-a2b26a682282/raw?se=2026-11-18T13%3A42%3A28Z&sp=r&sv=2026-06-06&sr=b&scid=388b58de-2214-5990-852f-bc92178b591f&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T08%3A03%3A41Z&ske=2026-11-19T08%3A03%3A41Z&sks=b&skv=2026-06-06&sig=rPWcQTlK/P%2BE6vzY/1AGPhPCnSNaE01yRMTJwv4Pv78%3D\"},{\"name\":\"09 JUNI9359-HDR.jpg\",\"url\":\"https://sdmntprnortheu.oaiusercontent.com/files/00000000-0d88-81f4-809a-fa275141d9f6/raw?se=2026-11-18T13%3A42%3A27Z&sp=r&sv=2026-06-06&sr=b&scid=982295e4-368e-5397-a3ef-af8d8a776a21&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T08%3A03%3A41Z&ske=2026-11-19T08%3A03%3A41Z&sks=b&skv=2026-06-06&sig=jM%2BLW6eXDEIYc1tRCx50SUIlBPlV13iHdv/2AOQOkrE%3D\"},{\"name\":\"10 JUNI9469-HDR.jpg\",\"url\":\"https://sdmntpritalynorth.oaiusercontent.com/files/00000000-4298-8246-8294-f21a19a3b289/raw?se=2026-11-18T13%3A42%3A28Z&sp=r&sv=2026-06-06&sr=b&scid=163e179e-9869-5259-91d6-fb18f3d499b9&skoid=002823aa-689d-47ca-9347-108c20f4f00d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-18T04%3A22%3A47Z&ske=2026-11-19T04%3A22%3A47Z&sks=b&skv=2026-06-06&sig=QZwAzDOUcU9U3KWQbY5AkX5KX9JVaQ88moPJzwM4AsI%3D\"}]")
+          folder=pathlib.Path("images");folder.mkdir(exist_ok=True)
+          paths=[]
+          for i,item in enumerate(items):
+              req=urllib.request.Request(item["url"],headers={"User-Agent":"FLX-import/1.0"})
+              with urllib.request.urlopen(req,timeout=120) as response: raw=response.read()
+              im=ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")
+              im.thumbnail((2000,2000),Image.Resampling.LANCZOS)
+              path=folder/("foxconn-z1-7np-%02d.webp"%i)
+              im.save(path,"WEBP",quality=82,method=6)
+              paths.append(str(path))
+              print(item["name"],len(raw),"->",path,path.stat().st_size)
+          p=pathlib.Path("index.html")
+          s=p.read_text(encoding="utf-8")
+          if '"id":"24_FOXCONN_Z1_7np"' not in s:
+              project={"id":"24_FOXCONN_Z1_7np","title":"Foxconn Z1 – 7. NP","year":"2024","images":paths,"hero":paths[0],"details":{"description":"Realizace interiéru Foxconn Z1 – 7. nadzemní podlaží"}}
+              needle="const projects=["
+              assert needle in s
+              s=s.replace(needle,needle+json.dumps(project,ensure_ascii=False,separators=(",",":"))+",",1)
+              p.write_text(s,encoding="utf-8")
+          PY
+      - name: Publish
+        run: |
+          git config user.name "FLX website automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html images/foxconn-z1-7np-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Foxconn Z1 7NP optimized gallery"
+            git push
+          fi
