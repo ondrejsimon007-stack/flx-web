@@ -1121,6 +1121,46 @@ html{scroll-padding-top:82px}
  #kontakt .contact-lead .contact-intro{margin:0!important}
  #kontakt .flx-consultation{padding-top:12px!important}
 }
+</style><meta name="flx-revision" content="20261128-contact-06"/><style id="flx-mobile-compact-contacts">
+/* Mobile: editorial contact layout; desktop and staff cards retain original styles. */
+@media(max-width:700px), (max-width:1024px) and (hover:none) and (pointer:coarse){
+ #kontakt.contact-v10 .contact-inner .contact-columns{display:block!important;grid-template-columns:minmax(0,1fr)!important;padding:18px 0 20px!important}
+ #kontakt .contact-columns>div:first-child{
+  display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);column-gap:18px;row-gap:0;align-items:start!important;min-width:0!important;
+ }
+ #kontakt .contact-columns>div:first-child>.contact-small{
+  grid-column:1/-1;grid-row:1;margin:0 0 7px!important;
+ }
+ #kontakt .contact-mainlink{
+  grid-column:1/-1;grid-row:2;justify-self:start;
+  font-size:clamp(29px,8.5vw,43px)!important;line-height:1.2!important;gap:10px!important;
+  margin:0 0 20px!important;max-width:100%!important;
+ }
+ #kontakt .contact-place{
+  grid-column:1;grid-row:3/5;align-self:start;
+  font-size:14px!important;line-height:1.55!important;margin:0!important;
+ }
+ #kontakt .contact-columns>div:first-child>.contact-social{
+  grid-column:2;justify-self:start;align-self:start;display:inline-block!important;
+  font-size:11px!important;letter-spacing:.045em!important;line-height:1.5!important;
+  margin:0!important;padding:0 0 3px!important;max-width:100%;overflow-wrap:normal;
+ }
+ #kontakt .contact-columns>div:first-child>.contact-social:nth-of-type(2){grid-row:3}
+ #kontakt .contact-columns>div:first-child>.contact-social:nth-of-type(3){grid-row:4}
+ #kontakt .contact-ident{
+  grid-column:1/-1;grid-row:5;font-size:11px!important;line-height:1.5!important;margin:12px 0 0!important;
+ }
+ #kontakt.contact-v10 .contact-columns>div:nth-child(2){display:block!important;width:100%!important;clear:both;margin-top:24px!important;border-top:1px solid var(--line);padding-top:18px!important;min-width:0}
+ #kontakt .contact-columns>div:nth-child(2)>.contact-small{margin:0 0 8px!important}
+ #kontakt .contact-hours{margin:0!important;max-width:none!important}
+ #kontakt .contact-hours>div{font-size:13px!important;line-height:1.5!important;padding:5px 0!important;gap:12px!important}
+ #kontakt .contact-hours>div span:last-child{text-align:right}
+}
+@media(max-width:350px){
+ #kontakt .contact-columns>div:first-child{column-gap:10px}
+ #kontakt .contact-columns>div:first-child>.contact-social{font-size:10px!important}
+ #kontakt .contact-place{font-size:13px!important}
+}
 </style></head><body><header class="top shell"><a aria-label="FLX – úvod" class="logo" href="#uvod"><img alt="FLX" src="images/3adfbb5f1c39ce62.png"/></a><nav><a href="#realizace">REALIZACE</a><a href="#bydleni">BYDLENÍ</a><a href="#produkty">PRODUKTY</a><a href="https://www.officepro.cz/partner/flx/sortiment" target="_blank" rel="noopener noreferrer" aria-label="E-shop – partnerský katalog FLX (otevře se na nové kartě)">E-SHOP</a><a href="#konfiguratory">KONFIGURÁTORY</a><a href="#sluzby">SLUŽBY</a><a href="#onas">O NÁS</a><a href="#kontakt">KONTAKT</a></nav></header><main><section class="intro shell" id="uvod"><div class="eyebrow">NÁVRHY · VÝROBA · REALIZACE</div><h1>Prostor.<br/><span class="flx-head-second">Promyšlený <em>do detailu.</em></span></h1><div class="intro-bottom"><p>Navrhujeme a vyrábíme interiéry, ve kterých se propojuje architektura, funkce a poctivé řemeslo. Od prvního návrhu až po poslední detail.</p></div></section><div aria-label="Výběr realizací FLX" class="hero-image" id="heroSlider">
 <div class="hero-slides" id="heroSlides"></div>
 <div class="hero-controls"><button aria-label="Předchozí fotografie" id="heroPrev" type="button">←</button><span id="heroIndex">01 / 05</span><button aria-label="Další fotografie" id="heroNext" type="button">→</button></div>
@@ -1279,45 +1319,5 @@ form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())
  #realizace .flx-more-wrap,#bydleni .flx-more-wrap{
   margin-bottom:0!important;padding-bottom:0!important;
  }
-}
-</style><style id="flx-mobile-compact-contacts">
-/* Mobile: editorial contact layout; desktop and staff cards retain original styles. */
-@media(max-width:700px){
- #kontakt .contact-columns{grid-template-columns:minmax(0,1fr)!important;gap:24px!important;padding:18px 0 20px!important;align-items:start!important}
- #kontakt .contact-columns>div:first-child{
-  display:grid!important;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);column-gap:18px;row-gap:0;align-items:start!important;min-width:0!important;
- }
- #kontakt .contact-columns>div:first-child>.contact-small{
-  grid-column:1/-1;grid-row:1;margin:0 0 7px!important;
- }
- #kontakt .contact-mainlink{
-  grid-column:1/-1;grid-row:2;justify-self:start;
-  font-size:clamp(29px,8.5vw,43px)!important;line-height:1.2!important;gap:10px!important;
-  margin:0 0 20px!important;max-width:100%!important;
- }
- #kontakt .contact-place{
-  grid-column:1;grid-row:3/5;align-self:start;
-  font-size:14px!important;line-height:1.55!important;margin:0!important;
- }
- #kontakt .contact-columns>div:first-child>.contact-social{
-  grid-column:2;justify-self:start;align-self:start;display:inline-block!important;
-  font-size:11px!important;letter-spacing:.045em!important;line-height:1.5!important;
-  margin:0!important;padding:0 0 3px!important;max-width:100%;overflow-wrap:normal;
- }
- #kontakt .contact-columns>div:first-child>.contact-social:nth-of-type(2){grid-row:3}
- #kontakt .contact-columns>div:first-child>.contact-social:nth-of-type(3){grid-row:4}
- #kontakt .contact-ident{
-  grid-column:1/-1;grid-row:5;font-size:11px!important;line-height:1.5!important;margin:12px 0 0!important;
- }
- #kontakt .contact-columns>div:nth-child(2){border-top:1px solid var(--line);padding-top:18px!important;min-width:0}
- #kontakt .contact-columns>div:nth-child(2)>.contact-small{margin:0 0 8px!important}
- #kontakt .contact-hours{margin:0!important;max-width:none!important}
- #kontakt .contact-hours>div{font-size:13px!important;line-height:1.5!important;padding:5px 0!important;gap:12px!important}
- #kontakt .contact-hours>div span:last-child{text-align:right}
-}
-@media(max-width:350px){
- #kontakt .contact-columns>div:first-child{column-gap:10px}
- #kontakt .contact-columns>div:first-child>.contact-social{font-size:10px!important}
- #kontakt .contact-place{font-size:13px!important}
 }
 </style></body></html>
