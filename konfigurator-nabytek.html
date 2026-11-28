@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLX | Konfigurátor volně stojícího nábytku</title>
+<meta name="description" content="Pracovní prototyp konfigurátoru volně stojícího nábytku FLX.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7f7f4;--ink:#191919;--muted:#696c65;--line:#deded7;--panel:#fff;--accent:#dce3d6}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 'DM Sans',Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #6b8261;outline-offset:3px}header{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px 5vw;border-bottom:1px solid var(--line);background:var(--paper)}.logo img{display:block;width:85px;height:auto}.back{font-size:12px;letter-spacing:.04em}.shell{max-width:1700px;margin:auto;padding:28px 5vw 42px}.eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.intro{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 24px}.intro h1{font:500 clamp(31px,4.2vw,58px)/1.07 Manrope,Arial,sans-serif;letter-spacing:-.065em;margin:8px 0 0}.intro p{max-width:380px;color:var(--muted);margin:0;font-size:13px}.workspace{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(310px,.95fr);gap:22px;align-items:start}.preview{min-width:0;position:sticky;top:14px}.stage{height:clamp(420px,65vh,680px);background:#e8e8e2;position:relative;overflow:hidden;border:1px solid var(--line);isolation:isolate}canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}.stage-label{position:absolute;top:16px;left:17px;font-size:10px;font-weight:600;letter-spacing:.13em;color:var(--muted);pointer-events:none}.dim-overlay{position:absolute;bottom:15px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:end;gap:8px;pointer-events:none;color:#454942;font-size:12px}.dim-overlay strong{font:600 16px Manrope,Arial,sans-serif;letter-spacing:-.035em}.viewbar{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:10px 0 0}.btn{border:1px solid #c9cbc3;background:transparent;border-radius:999px;padding:9px 14px;font-size:12px;min-height:38px}.btn:hover,.btn[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}.viewbar .zoom{padding:7px 12px;min-width:38px}.viewbar .hint{margin-left:auto;color:var(--muted);font-size:11px}.panel{background:var(--panel);border:1px solid var(--line);min-width:0}.panel-section{padding:17px 20px;border-bottom:1px solid var(--line)}.panel-section:last-child{border:0}.panel h2{font:600 19px/1.2 Manrope,Arial,sans-serif;letter-spacing:-.04em;margin:0 0 15px;display:flex;align-items:center;gap:9px}.step{color:var(--muted);font-size:11px;font-weight:500;letter-spacing:0}.dimension{display:grid;grid-template-columns:1fr 100px;gap:5px 12px;align-items:center;margin-bottom:12px}.dimension:last-child{margin-bottom:0}.dimension label{font-size:13px;font-weight:600}.number{display:flex;align-items:center;position:relative}.number input{width:100%;padding:8px 22px 8px 7px;border:1px solid var(--line);background:var(--paper);border-radius:3px;min-width:0;appearance:textfield}.number input::-webkit-inner-spin-button,.number input::-webkit-outer-spin-button{appearance:none}.number span{position:absolute;right:7px;font-size:10px;color:var(--muted);pointer-events:none}.dimension input[type=range]{grid-column:1/-1;width:100%;margin:2px 0 0;accent-color:#586a51;height:19px}.select-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0}.select-row label{font-weight:600;font-size:13px}.select-row select{max-width:58%;border:1px solid var(--line);background:var(--paper);border-radius:3px;padding:8px 6px}.module-row{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding:9px 0}.module-row:last-child{padding-bottom:0}.module-row label{flex:1;font-size:12px}.module-row select{width:60%;min-width:0;border:1px solid var(--line);background:var(--paper);padding:8px 6px;border-radius:3px}.small{color:var(--muted);font-size:12px;margin:8px 0 0}.warning{color:#8e5425}.swatches{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 12px}.swatch{width:37px;height:37px;background:var(--swatch);border:1px solid #b9b9b2;border-radius:50%;position:relative}.swatch[aria-pressed=true]{outline:2px solid var(--ink);outline-offset:2px}.swatch[aria-pressed=true]:after{content:"";position:absolute;inset:12px;border-radius:50%;background:#fff;box-shadow:0 0 2px #333}.material-label{font-size:12px;font-weight:600;display:flex;justify-content:space-between;gap:10px}.material-label span{font-weight:400;color:var(--muted)}.summary{background:#eaf0e5;padding:17px 20px}.summary strong{font:600 19px Manrope,Arial,sans-serif;letter-spacing:-.04em}.summary p{margin:6px 0 13px;color:#525c50;font-size:12px}.summary .btn{width:100%;background:#212721;color:white;border:0;margin:3px 0}.summary .btn.secondary{background:transparent;color:var(--ink);border:1px solid #b1b8ab}.footer{margin-top:20px;font-size:12px;color:var(--muted)}#fallback{display:none;position:absolute;inset:35px 0 45px;width:100%;height:calc(100% - 80px)}#fallback.show{display:block}#fallbackMsg{position:absolute;top:42px;left:17px;font-size:11px;color:var(--muted);display:none;pointer-events:none}#fallbackMsg.show{display:block}
+@media(max-width:850px){.shell{padding:20px 4vw 32px}.intro{display:block;margin-bottom:16px}.intro p{margin-top:8px}.workspace{grid-template-columns:1fr;gap:14px}.preview{position:relative;top:auto}.stage{height:clamp(285px,48vh,450px)}.viewbar .hint{margin-left:0}.panel-section{padding:15px 16px}.summary{padding:15px 16px}.logo img{width:69px}.intro h1{font-size:clamp(29px,7vw,42px)}}
+@media(max-width:390px){.viewbar{gap:4px}.viewbar .btn{padding:8px 10px}.dim-overlay strong{font-size:13px}.dim-overlay{font-size:10px}.stage-label{font-size:9px}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="index.html" aria-label="FLX – úvod"><img src="images/3adfbb5f1c39ce62.png" alt="FLX"></a><a class="back" href="index.html#konfiguratory">← Zpět na konfigurátory</a></header>
+<main class="shell">
+<div class="intro"><div><div class="eyebrow">FLX Furniture Studio / prototyp 03</div><h1>Volně stojící nábytek.</h1></div><p>Navrhněte si komodu, knihovnu nebo úložnou sestavu. Zvolte rozměry, členění, materiály a podnož.</p></div>
+<div class="workspace">
+<div class="preview">
+<div class="stage"><canvas id="model" aria-label="Interaktivní 3D model nábytku. Pro otočení použijte tažení nebo tlačítka."></canvas><svg id="fallback" viewBox="0 0 500 400" aria-label="Náhradní čelní pohled nábytku"></svg><div class="stage-label">FLX / ŽIVÝ MODEL</div><div id="fallbackMsg">Náhradní 2D pohled – 3D není dostupné</div><div class="dim-overlay"><strong id="dimensions"></strong><span>mm · orientační návrh</span></div></div>
+<div class="viewbar"><button class="btn" type="button" id="open" aria-pressed="false">Interiér</button><button class="btn" type="button" id="closed" aria-pressed="true">Zavřeno</button><button class="btn" type="button" id="front">Čelně</button><button class="btn" type="button" id="angle">3D</button><button class="btn zoom" type="button" id="left" aria-label="Otočit doleva">↶</button><button class="btn zoom" type="button" id="right" aria-label="Otočit doprava">↷</button><button class="btn zoom" type="button" id="minus" aria-label="Oddálit">−</button><button class="btn zoom" type="button" id="plus" aria-label="Přiblížit">+</button><span class="hint">Tažením otáčíte model.</span></div>
+</div>
+<aside class="panel" aria-label="Nastavení nábytku">
+<section class="panel-section"><h2><span class="step">01</span> Rozměry</h2><div id="dimensionControls"></div></section>
+<section class="panel-section"><h2><span class="step">02</span> Členění sestavy</h2><div class="select-row"><label for="modules">Počet modulů</label><select id="modules"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option></select></div><p id="moduleWidth" class="small" aria-live="polite"></p><div id="moduleControls"></div><div class="select-row"><label for="extra">Podnož</label><select id="extra"><option value="feet">Nožičky 120 mm</option><option value="plinth">Sokl 60 mm</option><option value="none">Bez podnože</option></select></div><p class="small">První verze: moduly stejné šířky, celková výška včetně podnože.</p></section>
+<section class="panel-section"><h2><span class="step">03</span> Materiály</h2><div class="material-label">Korpus <span id="bodyLabel"></span></div><div class="swatches" id="bodySwatches" role="group" aria-label="Materiál korpusu"></div><div class="material-label">Dvířka <span id="doorLabel"></span></div><div class="swatches" id="doorSwatches" role="group" aria-label="Materiál dvířek"></div><p class="small">Barevné odstíny jsou ilustrační, bez konkrétních dekorů dodavatelů.</p></section>
+<section class="summary"><strong>Váš návrh.</strong><p id="summary"></p><button class="btn" type="button" id="save">Stáhnout specifikaci (.txt)</button><button class="btn secondary" type="button" id="reset">Obnovit výchozí návrh</button><p class="small">Zkušební verze: bez ceny, výrobního výkresu a objednávky. Proveditelnost ověříme individuálně.</p></section>
+</aside></div>
+<div class="footer">FLX · vlastní truhlářská výroba · Pardubice · <a href="mailto:flx@flx.cz">flx@flx.cz</a></div>
+</main>
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const materials=[{name:"Bílá",hex:"#e9e9e3"},{name:"Dub přírodní",hex:"#b89a70"},{name:"Ořech",hex:"#82634c"},{name:"Kašmír",hex:"#b9afa1"},{name:"Šedá",hex:"#898e8b"},{name:"Antracit",hex:"#454945"}];
+const types=[["shelves","Otevřené police"],["doors","Skříňka s dvířky"],["drawers","Zásuvky"],["mix","Police a zásuvky"],["open","Otevřená nika"]];
+const defaults=()=>({w:1800,h:900,d:450,n:3,body:1,door:3,extra:"feet",types:["shelves","drawers","doors","shelves","open","doors"],closed:true});
+let state=defaults(),yaw=.47,pitch=.12,zoom=1;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const dimSpec=[["w","Šířka",400,3600,10],["h","Výška",350,2400,10],["d","Hloubka",250,700,10]];
+function makeDimensions(){
+ $("dimensionControls").innerHTML=dimSpec.map(([k,label,min,max,step])=>'<div class="dimension"><label for="num-'+k+'">'+label+'</label><div class="number"><input id="num-'+k+'" type="number" inputmode="numeric" min="'+min+'" max="'+max+'" step="'+step+'"><span>mm</span></div><input id="range-'+k+'" type="range" min="'+min+'" max="'+max+'" step="'+step+'" aria-label="'+label+'"></div>').join("");
+ dimSpec.forEach(([k,label,min,max,step])=>{
+ const num=$("num-"+k),range=$("range-"+k);
+ function commit(v){if(!Number.isFinite(v))v=state[k];state[k]=clamp(Math.round(v),min,max);num.value=state[k];range.value=state[k];refresh();}
+ num.addEventListener("input",()=>{const v=num.valueAsNumber;if(Number.isFinite(v)&&v>=min&&v<=max){state[k]=Math.round(v);range.value=v;refresh();}});
+ num.addEventListener("change",()=>commit(num.valueAsNumber));range.addEventListener("input",()=>commit(range.valueAsNumber));
+ });
+}
+function makeModules(){
+ $("modules").value=state.n;
+ $("moduleControls").innerHTML=Array.from({length:state.n},(_,i)=>'<div class="module-row"><label for="mod-'+i+'">Modul '+(i+1)+'</label><select id="mod-'+i+'">'+types.map(([v,t])=>'<option value="'+v+'"'+(state.types[i]===v?' selected':'')+'>'+t+'</option>').join("")+'</select></div>').join("");
+ for(let i=0;i<state.n;i++)$("mod-"+i).addEventListener("change",e=>{state.types[i]=e.target.value;refresh();});
+}
+function makeSwatches(){
+ for(const key of ["body","door"]){
+ const group=$(key+"Swatches");group.innerHTML=materials.map((m,i)=>'<button type="button" class="swatch" style="--swatch:'+m.hex+'" title="'+m.name+'" aria-label="'+m.name+'" aria-pressed="'+(state[key]===i)+'"></button>').join("");
+ Array.from(group.children).forEach((el,i)=>el.addEventListener("click",()=>{state[key]=i;updateSwatches();refresh();}));
+ }
+ updateSwatches();
+}
+function updateSwatches(){for(const key of ["body","door"]){$(key+"Label").textContent=materials[state[key]].name;Array.from($(key+"Swatches").children).forEach((el,i)=>el.setAttribute("aria-pressed",String(i===state[key])));}}
+function sync(){dimSpec.forEach(([k])=>{$("num-"+k).value=state[k];$("range-"+k).value=state[k];});makeModules();$("extra").value=state.extra;updateSwatches();refresh();}
+function interiorWidth(){return (state.w-(state.n+1)*18)/state.n;}
+function modelHeight(){return state.h;}
+function refresh(){
+ $("dimensions").textContent=state.w+" × "+state.h+" × "+state.d;
+ const iw=interiorWidth(),warn=iw<200||iw>1000;
+ $("moduleWidth").classList.toggle("warning",warn);
+ $("moduleWidth").textContent="Světlá šířka modulu cca "+Math.round(iw)+" mm."+ (warn?" Rozměry doporučujeme ověřit s výrobcem.":"");
+ $("summary").textContent=state.w+" × "+state.h+" × "+state.d+" mm · "+state.n+" modulů · "+materials[state.body].name+" / "+materials[state.door].name+" · "+$("extra").selectedOptions[0].textContent;
+ $("open").setAttribute("aria-pressed",String(!state.closed));$("closed").setAttribute("aria-pressed",String(state.closed));draw();
+}
+function rgb(hex){return [1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255);}
+function geometry(){
+ const {w,h,d,n}=state,t=18,base=state.extra==="feet"?120:state.extra==="plinth"?60:0,back=8,iw=interiorWidth(),x0=-w/2,z0=-d/2,zf=d/2,body=rgb(materials[state.body].hex),door=rgb(materials[state.door].hex),inside=body.map(v=>v*.93),hardware=[.31,.33,.31],boxes=[];
+ function box(x,y,z,bw,bh,bd,c){if(bw>0&&bh>0&&bd>0)boxes.push({x,y,z,w:bw,h:bh,d:bd,c});}
+ if(state.extra==="plinth")box(x0+20,0,z0+25,w-40,base,d-50,inside);
+ if(state.extra==="feet"){const fw=38;for(const x of [x0+35,x0+w-35-fw])for(const z of [z0+30,zf-30-fw])box(x,0,z,fw,base,fw,hardware);if(w>1800)for(const z of [z0+30,zf-30-fw])box(-fw/2,0,z,fw,base,fw,hardware);}
+ box(x0,base,z0,t,h-base,d,body);box(x0+w-t,base,z0,t,h-base,d,body);box(x0+t,base,z0,w-2*t,t,d,body);box(x0+t,h-t,z0,w-2*t,t,d,body);box(x0+t,base+t,z0,w-2*t,h-base-2*t,back,inside);
+ const f=zf-t-3,inner=f-z0-back;
+ for(let i=0;i<n;i++){let x=x0+t+i*(iw+t),lo=base+t,hi=h-t,A=hi-lo,type=state.types[i];
+ if(i>0)box(x-t,lo,z0+back,t,A,inner,body);
+ const shelf=y=>box(x,y,z0+back,iw,t,inner,body);
+ function drawRows(count,height){let dh=height/count;for(let j=0;j<count;j++){let y=lo+j*dh,z=state.closed?zf-t:f-20;box(x+2,y+2,z,iw-4,dh-4,t,state.closed?door:body);box(x+iw*.32,y+dh*.70,z+t,iw*.36,8,7,hardware);}}
+ if(type==="shelves"||type==="doors"){let count=Math.min(5,Math.max(1,Math.floor(A/280)));for(let j=1;j<=count;j++)shelf(lo+A*j/(count+1));}
+ if(type==="doors"&&state.closed){box(x+2,lo+2,zf-t,iw-4,A-4,t,door);box(x+iw-30,lo+A*.5,zf,10,Math.min(120,A*.22),9,hardware);}
+ if(type==="drawers")drawRows(Math.min(6,Math.max(2,Math.round(A/190))),A);
+ if(type==="mix"){let height=A*.48;drawRows(2,height);shelf(lo+height);if(A>700)shelf(lo+height+(A-height)*.5);}
+ }
+ return boxes;
+}
+const canvas=$("model");let gl=null,program=null,buffer=null,attribPos=-1,attribColor=-1,matrixLoc=null;
+function setupGL(){
+ try{
+ gl=canvas.getContext("webgl",{antialias:true,alpha:false})||canvas.getContext("experimental-webgl",{antialias:true,alpha:false});
+ if(!gl)return false;
+ const compile=(type,source)=>{let sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));return sh;};
+ const vs=compile(gl.VERTEX_SHADER,"attribute vec3 aPos;attribute vec3 aColor;uniform mat4 uMatrix;varying vec3 vColor;void main(){gl_Position=uMatrix*vec4(aPos,1.0);vColor=aColor;}");
+ const fs=compile(gl.FRAGMENT_SHADER,"precision mediump float;varying vec3 vColor;void main(){gl_FragColor=vec4(vColor,1.0);}");
+ program=gl.createProgram();gl.attachShader(program,vs);gl.attachShader(program,fs);gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));
+ gl.useProgram(program);attribPos=gl.getAttribLocation(program,"aPos");attribColor=gl.getAttribLocation(program,"aColor");matrixLoc=gl.getUniformLocation(program,"uMatrix");buffer=gl.createBuffer();gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);return true;
+ }catch(e){gl=null;return false;}
+}
+const faces=[[[0,1,2,3],.86],[[4,7,6,5],1],[[0,4,5,1],.72],[[3,2,6,7],1.09],[[0,3,7,4],.79],[[1,5,6,2],.91]];
+function vertices(boxes){const out=[];for(const b of boxes){const x=b.x,y=b.y,z=b.z,X=x+b.w,Y=y+b.h,Z=z+b.d,p=[[x,y,z],[X,y,z],[X,Y,z],[x,Y,z],[x,y,Z],[X,y,Z],[X,Y,Z],[x,Y,Z]];for(const [f,k] of faces){const color=b.c.map(v=>Math.min(1,v*k));for(const idx of [f[0],f[1],f[2],f[0],f[2],f[3]])out.push(...p[idx],...color);}}return new Float32Array(out);}
+function projection(aspect){
+ const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ // Orthographic rotation about the centre, with a consistent vertical axis.
+ const right=[cy,0,-sy],up=[-sy*sp,cp,-cy*sp],forward=[sy*cp,sp,cy*cp];
+ const w=state.w,h=modelHeight(),d=state.d+20;
+ const extX=Math.abs(right[0])*w+Math.abs(right[2])*d,extY=Math.abs(up[0])*w+Math.abs(up[1])*h+Math.abs(up[2])*d;
+ const halfY=Math.max(extY,extX/aspect)*.64/zoom,halfX=halfY*aspect,depth=Math.max(w,h,d)*2;
+ return new Float32Array([right[0]/halfX,up[0]/halfY,-forward[0]/depth,0,right[1]/halfX,up[1]/halfY,-forward[1]/depth,0,right[2]/halfX,up[2]/halfY,-forward[2]/depth,0,0,-up[1]*h/2/halfY,forward[1]*h/2/depth,1]);
+}
+function drawGL(boxes){
+ const rect=canvas.getBoundingClientRect(),ratio=Math.min(window.devicePixelRatio||1,2),W=Math.max(1,Math.round(rect.width*ratio)),H=Math.max(1,Math.round(rect.height*ratio));
+ if(canvas.width!==W||canvas.height!==H){canvas.width=W;canvas.height=H;}
+ gl.viewport(0,0,W,H);gl.clearColor(.91,.91,.885,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(program);
+ const data=vertices(boxes);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,data,gl.DYNAMIC_DRAW);
+ gl.enableVertexAttribArray(attribPos);gl.vertexAttribPointer(attribPos,3,gl.FLOAT,false,24,0);gl.enableVertexAttribArray(attribColor);gl.vertexAttribPointer(attribColor,3,gl.FLOAT,false,24,12);gl.uniformMatrix4fv(matrixLoc,false,projection(W/H));gl.drawArrays(gl.TRIANGLES,0,data.length/6);
+}
+function drawFallback(boxes){
+ const svg=$("fallback"),scale=Math.min(420/state.w,310/modelHeight())*zoom,x=250-state.w*scale/2,y=200+modelHeight()*scale/2;
+ function col(c){return "rgb("+c.map(v=>Math.round(clamp(v,0,1)*255)).join(",")+")";}
+ svg.innerHTML=boxes.slice().sort((a,b)=>(a.z+a.d)-(b.z+b.d)).map(b=>'<rect x="'+(x+(b.x+state.w/2)*scale)+'" y="'+(y-(b.y+b.h)*scale)+'" width="'+(b.w*scale)+'" height="'+(b.h*scale)+'" fill="'+col(b.c)+'" stroke="#52564f" stroke-width=".55"/>').join("");
+}
+function draw(){const boxes=geometry();if(gl&&!gl.isContextLost())drawGL(boxes);else drawFallback(boxes);}
+function setFallback(){canvas.style.visibility="hidden";$("fallback").classList.add("show");$("fallbackMsg").classList.add("show");}
+if(!setupGL())setFallback();
+canvas.addEventListener("webglcontextlost",e=>{e.preventDefault();gl=null;setFallback();draw();});
+let drag=null;
+canvas.addEventListener("pointerdown",e=>{drag={x:e.clientX,y:e.clientY};canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener("pointermove",e=>{if(!drag)return;yaw+=(e.clientX-drag.x)*.008;pitch=clamp(pitch+(e.clientY-drag.y)*.005,-.55,.65);drag={x:e.clientX,y:e.clientY};draw();});
+for(const event of ["pointerup","pointercancel","lostpointercapture"])canvas.addEventListener(event,()=>{drag=null;});
+$("open").onclick=()=>{state.closed=false;refresh();};$("closed").onclick=()=>{state.closed=true;refresh();};
+$("front").onclick=()=>{yaw=0;pitch=0;zoom=1;draw();};$("angle").onclick=()=>{yaw=.47;pitch=.12;zoom=1;draw();};
+$("left").onclick=()=>{yaw-=.26;draw();};$("right").onclick=()=>{yaw+=.26;draw();};$("minus").onclick=()=>{zoom=clamp(zoom-.12,.6,1.65);draw();};$("plus").onclick=()=>{zoom=clamp(zoom+.12,.6,1.65);draw();};
+$("modules").onchange=e=>{state.n=Number(e.target.value);makeModules();refresh();};
+$("extra").onchange=e=>{state.extra=e.target.value;refresh();};
+$("reset").onclick=()=>{state=defaults();yaw=.47;pitch=.12;zoom=1;sync();};
+$("save").onclick=()=>{const content=["FLX – Konfigurátor volně stojícího nábytku / pracovní návrh","Rozměry (Š × V × H): "+state.w+" × "+state.h+" × "+state.d+" mm","Počet modulů: "+state.n,"Světlá šířka modulu: cca "+Math.round(interiorWidth())+" mm","Korpus: "+materials[state.body].name,"Dvířka: "+materials[state.door].name,$("extra").previousElementSibling.textContent+": "+$("extra").selectedOptions[0].textContent,...state.types.slice(0,state.n).map((v,i)=>"Modul "+(i+1)+": "+types.find(t=>t[0]===v)[1]),"","Orientační návrh bez ceny a bez výrobních podkladů. Nutno ověřit u FLX."].join("\n");const blob=new Blob([content],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="FLX-navrh-nabytku.txt";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+makeDimensions();makeSwatches();sync();
+if(typeof ResizeObserver!=="undefined"){new ResizeObserver(draw).observe(canvas);}else window.addEventListener("resize",draw);
+})();
+</script>
+</body></html>
