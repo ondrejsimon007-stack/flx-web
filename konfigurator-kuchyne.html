@@ -11,11 +11,12 @@
 @media(max-width:850px){.shell{padding:20px 4vw 32px}.intro{display:block;margin-bottom:16px}.intro p{margin-top:8px}.workspace{grid-template-columns:1fr;gap:14px}.preview{position:relative;top:auto}.stage{height:clamp(285px,48vh,450px)}.viewbar .hint{margin-left:0}.panel-section{padding:15px 16px}.summary{padding:15px 16px}.logo img{width:69px}.intro h1{font-size:clamp(29px,7vw,42px)}}
 @media(max-width:390px){.viewbar{gap:4px}.viewbar .btn{padding:8px 10px}.dim-overlay strong{font-size:13px}.dim-overlay{font-size:10px}.stage-label{font-size:9px}}
 </style>
-</head>
+<style>.demo-notice{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding:10px 0 15px;margin-top:-5px;color:var(--muted);font-size:12px;line-height:1.5}.demo-notice strong{font-size:10px;letter-spacing:.1em;color:var(--ink);white-space:nowrap}@media(max-width:850px){.demo-notice{gap:3px 9px;padding-bottom:11px}}</style></head>
 <body>
 <header><a class="logo" href="index.html" aria-label="FLX – úvod"><img src="images/3adfbb5f1c39ce62.png" alt="FLX"></a><a class="back" href="index.html#konfiguratory">← Zpět na konfigurátory</a></header>
 <main class="shell">
-<div class="intro"><div><div class="eyebrow">FLX Furniture Studio / prototyp 02</div><h1>Kuchyně.</h1></div><p>Navrhněte si rovnou kuchyňskou linku. Zvolte rozměry, typy skříněk, horní sestavu a materiály.</p></div>
+<div class="intro"><div><div class="eyebrow">FLX Furniture Studio / DEMO 02</div><h1>Kuchyně.</h1></div><p>Navrhněte si rovnou kuchyňskou linku. Zvolte rozměry, typy skříněk, horní sestavu a materiály.</p></div>
+<div class="demo-notice" role="note"><strong>DEMO · VE VÝVOJI</strong><span>Vyzkoušejte si připravovaný konfigurátor. Návrh je orientační, funkce postupně doplňujeme.</span></div>
 <div class="workspace">
 <div class="preview">
 <div class="stage"><canvas id="model" aria-label="Interaktivní 3D model kuchyně. Pro otočení použijte tažení nebo tlačítka."></canvas><svg id="fallback" viewBox="0 0 500 400" aria-label="Náhradní čelní pohled kuchyně"></svg><div class="stage-label">FLX / ŽIVÝ MODEL</div><div id="fallbackMsg">Náhradní 2D pohled – 3D není dostupné</div><div class="dim-overlay"><strong id="dimensions"></strong><span>mm · orientační návrh</span></div></div>
